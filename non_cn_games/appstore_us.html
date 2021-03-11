@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">  
+  <title>App Store US</title>
+  <style>
+  .appImage{
+  	width:180px;
+  }
+  </style>
+</head>
+<body>
+
+
+<h1>非中資遊戲列表 (未整理完) (App Store US)</h1>
+<h1>
+|
+<a href='./appstore_hk.html'>HK</a>｜
+<a href='./appstore_tw.html'>TW</a>｜
+<a href='./appstore_us.html'>US</a>｜
+<a href='./appstore_jp.html'>JP</a>｜
+</h1>
+<div class="slidecontainer" >
+  <input type="range" min="30" max="1000" value="180" class="slider" id="myRange">
+</div>
+<br />
+
+<a href='https://apps.apple.com/us/app/brave-frontier/id694609161'><img title='勇者前線  ブレイブ フロンティア Brave Frontier' class='appImage'  src='./index_files/unnamed(170).jpg'></a>
+<a href='https://apps.apple.com/us/app/weapon-throwing-rpg-2/id1237972914'><img title='扔武器 RPG 探索空島 Weapons throwing RPG ' class='appImage'  src='./index_files/unnamed(283).jpg'></a>
+<a href='https://apps.apple.com/us/app/nba-live-mobile-basketball/id1055502792'><img title='NBA LIVE Mobile' class='appImage'  src='./index_files/unnamed(371).jpg'></a>
+<a href='https://apps.apple.com/us/app/final-fantasy-record-keeper/id964320334'><img title='FINAL FANTASY Record Keeper ファイナルファンタジーレコードキーパー' class='appImage'  src='./index_files/unnamed(373).jpg'></a>
+<a href='https://apps.apple.com/us/app/lord-of-heroes-mobile/id1496742556'><img title='英雄之王 Lord of Heroes' class='appImage'  src='./index_files/unnamed(400).jpg'></a>
+
+
+<footer>圖片源自Google Play Store 及 Apple App Store</footer>
+
+<script>
+var slider = document.getElementById("myRange");
+slider.oninput = function() {
+	document.querySelectorAll(".appImage").forEach(function(item) {
+		item.style.width = slider.value+'px';
+	});
+}
+</script>
+</body>
+</html>
