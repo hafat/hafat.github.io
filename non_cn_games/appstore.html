@@ -100,7 +100,7 @@ function loadGame(){
 			parseFloat(loadGameObject.china_share) <= max_china_share_var &&
 			loadGameObject.name.toUpperCase().search(search_input.value.toUpperCase())!=-1
 		){
-			imgList.innerHTML +="<div style='display:inline; position: relative;color: white; '>"+
+/*			imgList.innerHTML +="<div style='display:inline; position: relative;color: white; '>"+
 							"<a href='"+loadGameObject[store_selected.value]+
 							"'><img title='"+loadGameObject.name+
 							"' class='appImage "+imgClass+
@@ -111,6 +111,18 @@ function loadGame(){
 							"</div>"+
 							"</div>"
 							;
+*/
+			imgList.insertAdjacentHTML("beforeend", "<div style='display:inline; position: relative;color: white; '>"+
+							"<a href='"+loadGameObject[store_selected.value]+
+							"'><img title='"+loadGameObject.name+
+							"' class='appImage "+imgClass+
+							"'  src='./index_files/"+loadGameObject.file_name+
+							"'></a>"+
+							"<div style='position: absolute;top:-0.5em;left: 0px; font-size:2em;'>"+
+							loadGameIndex+
+							"</div>"+
+							"</div>"
+							);
 			shownNum++;
 		}
 		loadGameIndex++;
