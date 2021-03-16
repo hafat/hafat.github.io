@@ -43,9 +43,9 @@
   <option value="play_store_us">Play Store US</option>
   <option value="play_store_jp">Play Store JP</option>
 </select>
+<input id="max_china_share" onkeyup="search()" style="font-size:30px" type='number' value="20" placeholder="中資佔比<="/>
 
-由第#項開始
-<input id="start_index" onkeyup="search()" style="font-size:30px" type='number' value="0"/>
+
 </h1>
 <h1>
 Size:<select id="image_size" onchange="changeImgSize(this.value)" style=" height:40px; font-size:30px">
@@ -63,7 +63,7 @@ Size:<select id="image_size" onchange="changeImgSize(this.value)" style=" height
 <div   style="position:sticky; top:0;  background-color: white; z-index:100;">
 <h1>
 <input id="search_input" onkeyup="search()" style="font-size:30px" type='text' placeholder="search name"/>
-<input id="max_china_share" onkeyup="search()" style="font-size:30px" type='number' value="20" placeholder="中資佔比<="/>
+<input id="start_index" onkeyup="search()" style="font-size:30px" type='number' value="" placeholder="由第#項開始"/>
 <button onclick="search()" style="font-size:30px">Search</button>
 </div>
 </h1>
@@ -77,7 +77,7 @@ Size:<select id="image_size" onchange="changeImgSize(this.value)" style=" height
 
 
 var shownNum = 0;
-var loadGameIndex = start_index.value;
+var loadGameIndex = (start_index.value!="")?(start_index.value):0;
 var loadNum = 20;
 var loadGameObject = "";
 var imgClass = "width100";
@@ -130,7 +130,7 @@ function showMore(num){
 
 function reload(){
 	shownNum = 0;
-	loadGameIndex = start_index.value;;
+	loadGameIndex = (start_index.value!="")?(start_index.value):0;
 	loadNum = 20;
 	imgList.innerHTML = "";
 }
