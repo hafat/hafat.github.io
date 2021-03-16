@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">  
+  <title>手機遊戲</title>
+  <style>
+  .appImage{
+  	width:180px;
+  }
+  .width100{
+  	width:100%;
+  }
+  .width50{
+  	width:50%;
+  }
+  .width33{
+  	width:33%;
+  }  
+  .width25{
+  	width:25%;
+  }  
+  .width20{
+  	width:20%;
+  }   
+  .width10{
+  	width:10%;
+  }   
+   </style>
+  <script src="gameList.js"></script>
+</head>
+<body id="body" onscroll="scroll_add_game()">
+
+
+<h1>非中資遊戲列表 (未整理完) (手機遊戲)</h1>
+<h1>
+<select id="store_selected" onchange="search()" style=" height:40px; font-size:30px">
+  <option value="apps_store_hk">apps_store_hk</option>
+  <option value="apps_store_tw">apps_store_tw</option>
+  <option value="apps_store_us">apps_store_us</option>
+  <option value="apps_store_jp">apps_store_jp</option>
+  <option value="play_store_hk">play_store_hk</option>
+  <option value="play_store_tw">play_store_tw</option>
+  <option value="play_store_us">play_store_us</option>
+  <option value="play_store_jp">play_store_jp</option>
+</select>
+
+由第#項開始
+<input id="start_index" onkeyup="search()" style="font-size:30px" type='number' value="0"/>
+</h1>
+<h1>
+|
+
+
+<span onclick="changeImgSize('100')">100%</span>｜
+<span onclick="changeImgSize('50')">50%</span>｜
+<span onclick="changeImgSize('33')">33%</span>｜
+<span onclick="changeImgSize('25')">25%</span>｜
+<span onclick="changeImgSize('20')">20%</span>｜
+<span onclick="changeImgSize('10')">10%</span>｜
+<br>
+</h1>
+
+<div   style="position:sticky; top:0;  background-color: white; z-index:100;">
+<h1>
+<input id="search_input" onkeyup="search()" style="font-size:30px" type='text' placeholder="search name"/>
+<input id="max_china_share" onkeyup="search()" style="font-size:30px" type='number' value="20" placeholder="中資佔比<="/>
+<button onclick="showMore(20)" style="font-size:25px">載入多20項</button>
+</div>
+</h1>
+
+
+<div id="imgList"></div>
+
+<footer>圖片源自Google Play Store 及 Apple App Store</footer>
+
+<script>
+
+
+var shownNum = 0;
+var loadGameIndex = start_index.value;
+var loadNum = 20;
+var loadGameObject = "";
+var imgClass = "width100";
+var storeName = "apps_store_hk";
+var max_china_share_var = 49;
+
+var loadStore;
+
+function loadGame(){
+	while(shownNum<loadNum){
+		loadGameObject = gameList[loadGameIndex];
+		if(!max_china_share.value)
+			max_china_share_var = 0;
+		else
+			max_china_share_var = parseFloat(max_china_share.value);
+			
+
+		if(loadGameObject[store_selected.value] &&
+			parseFloat(loadGameObject.china_share) <= max_china_share_var &&
+			loadGameObject.name.toUpperCase().search(search_input.value.toUpperCase())!=-1
+		){
+			imgList.innerHTML +="<div style='display:inline; position: relative;color: white; '>"+
+							"<a href='"+loadGameObject[store_selected.value]+
+							"'><img title='"+loadGameObject.name+
+							"' class='appImage "+imgClass+
+							"'  src='./index_files/"+loadGameObject.file_name+
+							"'></a>"+
+							"<div style='position: absolute;top: 0px;left: 0px;'>"+
+							loadGameIndex+
+							"</div>"+
+							"</div>"
+							;
+			shownNum++;
+		}
+		loadGameIndex++;
+	}
+}
+
+function changeImgSize(size){
+	document.querySelectorAll(".appImage").forEach(function(item) {
+		item.style.width = size+'%';
+	});
+	imgClass = "width" + size;
+}
+
+function showMore(num){
+	loadNum+=num;
+	loadGame();
+}
+
+function reload(){
+	shownNum = 0;
+	loadGameIndex = start_index.value;;
+	loadNum = 20;
+	imgList.innerHTML = "";
+}
+
+function search(){
+	reload();
+	loadGame();
+}
+
+function scroll_add_game() {
+	if(window.scrollY + window.innerHeight   >= body.offsetHeight ){
+		showMore(20)
+	}
+}
+
+loadGame();
+
+
+
+//alert(gameList[0].name)
+</script>
+
+<p id="demo"  style='position: absolute;top: 0px;left: 0px; background-color:white' ></p>
+
+</body>
+</html>
