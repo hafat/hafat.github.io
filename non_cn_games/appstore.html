@@ -45,7 +45,7 @@
 </select>
 
 由第#項開始
-<input id="start_index" onkeytop="search()" style="font-size:30px" type='number' value="0"/>
+<input id="start_index" onkeyup="search()" style="font-size:30px" type='number' value="0"/>
 </h1>
 
 <select id="image_size" onchange="changeImgSize(this.value)" style=" height:40px; font-size:30px">
@@ -62,8 +62,9 @@
 
 <div   style="position:sticky; top:0;  background-color: white; z-index:100;">
 <h1>
-<input id="search_input" onkeytop="search()" style="font-size:30px" type='text' placeholder="search name"/>
-<input id="max_china_share" onkeytop="search()" style="font-size:30px" type='number' value="20" placeholder="中資佔比<="/>
+<input id="search_input" onkeyup="search()" style="font-size:30px" type='text' placeholder="search name"/>
+<input id="max_china_share" onkeyup="search()" style="font-size:30px" type='number' value="20" placeholder="中資佔比<="/>
+<button onclick="search()" style="font-size:30px">Search</button>
 </div>
 </h1>
 
