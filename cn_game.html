@@ -5,6 +5,9 @@
 	<title>China's Game List 中資遊戲列表</title>
 </head>
 <body>
+
+
+
 <div   style="position:sticky; top:0;  background-color: white; z-index:100;">
   <h2>
   <a href='cn_game_company.html'>中資公司</a> |
@@ -12,9 +15,13 @@
   <a href='cn_game_lihkg.html'>LIHKG上的中資遊戲</a> |
   <a href='non_cn_games/appstore.html' target='_blank'>非中資手機遊戲</a> |
   <a href='non_cn_games/cn_game_definition.html' target='_blank'>中資定義</a>
+  <br>
+  <input id="search_input" onkeyup="search()" style="font-size:30px" type='text' placeholder="search name"/>
+
   </h2>
 </div>
-<table width='100%' cellpadding="0" cellspacing="0" border="1" dir="ltr"> <colgroup> <col width="100"> <col width="100"> <col width="100"> <col width="100"> </colgroup> <tbody> <tr> <td></td> <td></td> <td></td> <td></td> </tr> <tr> <td>中文名</td> <td>英文名</td> <td>Google Play</td> <td>原因</td> </tr> <tr> <td></td> <td></td> <td></td> <td></td> </tr> <tr> <td></td> <td></td> <td></td> <td></td> </tr>
+<table width='100%' cellpadding="0" cellspacing="0" border="1" dir="ltr"> <colgroup> <col width="100"> <col width="100"> <col width="100"> <col width="100"> </colgroup> <tbody> 
+ <tr> <td>中文名</td> <td>英文名</td> <td>Google Play</td> <td>原因</td> </tr> <tr> <td></td> <td></td> <td></td> <td></td> </tr> <tr> <td></td> <td></td> <td></td> <td></td> </tr>
 
 
 
@@ -550,6 +557,26 @@
 <tr> <td>異能學園：Soulworker/ 靈魂行者學院</td> <td>Soul Worker Academia</td> <td><a target='_blank' href=''></a></td> <td> <div> <div>迅猛龍工作室</div> </div> </td> </tr>
 <tr> <td>最強修仙 </td> <td>Legendary Immortals</td> <td><a target='_blank' href=''></a></td> <td> <div> <div>HK DODJOY LIMITED</div> </div> </td> </tr>
 <tr> <td>末日喧囂 </td> <td>Doomsday Hustle</td> <td><a target='_blank' href=''></a></td> <td> <div> <div>純白之境網路科技有限公司</div> </div> </td> </tr>
+<tr> <td>侍魂：朧月傳說</td> <td></td> <td><a target='_blank' href=''></a></td> <td> <div> <div>樂道互動,SNK,魔方數位</div> </div> </td> </tr>
+
+</tbody>
+</table>
+<script>
+var tr_tag = document.getElementsByTagName("tr");
+function search(){
+//console.log(document.getElementById("search_input").value)
+	for(var i= 0; i< tr_tag.length ; i++){
+		if(!document.getElementById("search_input").value)
+			tr_tag[i].style.display = "table-row";
+		else if(tr_tag[i].getElementsByTagName("td")[0].textContent.toUpperCase().search(document.getElementById("search_input").value.toUpperCase())!=-1 
+			|| tr_tag[i].getElementsByTagName("td")[1].textContent.toUpperCase().search(document.getElementById("search_input").value.toUpperCase())!=-1
+			)
+			tr_tag[i].style.display = "table-row";
+		else 
+			tr_tag[i].style.display = "none";
+	}
+}
+</script>
 
 </body>
 </html>
