@@ -60,6 +60,7 @@
 8. 詳細狀況描述：	<span id="detail"></span>
 </div>
 <button onclick="copyText(print_data)">Copy Text</button>
+<button onclick="download_as_HTML()">download As HTML</button>
 
 <script>
 var print_data = document.getElementById("print_data");
@@ -93,6 +94,13 @@ function output_img(row,data){
 function copyText(ele) {
   window.getSelection().selectAllChildren(ele);
   document.execCommand("copy");
+}
+
+function download_as_HTML(){
+	var link = document.createElement('a');
+    link.setAttribute('download', "redive_cheat_report.html");
+    link.setAttribute('href', 'data:text/html;charset=utf-8,' + encodeURIComponent(print_data.outerHTML));
+    link.click(); 
 }
 </script>
 
