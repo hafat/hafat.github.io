@@ -3,11 +3,10 @@
 <head>
   <meta charset="UTF-8">  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-	<title>Re:Dive Cheat Report</title>
+  <title>Re:Dive Cheat Report</title>
 </head>
 <body style="font-family: Courier； font-size:16px;">
-<div style="white-space: pre-wrap;font-family: Courier;">		圖片質素(1最高)：	<input id="compress_rate" type="number" max="1" min="0.1"step="0.05" value="0.7"/>
+<div style="white-space: pre-wrap;font-family: Courier;">		圖片質素(1最高)：	<input id="compress_rate" type="number" max="1" min="0.1" step="0.05" value="0.7"/>
 1. 資料提供者九碼ID：	<input onchange="output(my_id,this.value)"/>
 2. 外掛玩家九碼ID：	<input onchange="output(cheat_id,this.value)"/>
 3. 伺服器名稱：		<select onchange="output(server_name,this.value)">
@@ -62,7 +61,7 @@
 <span id="vs_detail">8. 詳細狀況描述：</span>	<span id="detail"></span>
 </div>
 <button onclick="copyText(print_data)">Copy Text</button>
-<button onclick="download_as_HTML()">download As HTML</button>
+<button onclick="download_as_HTML()">Download As HTML</button>
 
 <script>
 var print_data = document.getElementById("print_data");
