@@ -116,7 +116,7 @@ function copyText(ele) {
 function download_as_HTML(){
 	var link = document.createElement('a');
     link.setAttribute('download', "redive_cheat_report.html");
-    link.setAttribute('href', 'data:text/html;charset=utf-8,' + encodeURIComponent(print_data.outerHTML));
+    link.setAttribute('href', 'data:text/html;charset=utf-8,' + encodeURIComponent(`<!DOCTYPE html> <html> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> </head>`+print_data.outerHTML));
     link.click(); 
 }
 </script>
