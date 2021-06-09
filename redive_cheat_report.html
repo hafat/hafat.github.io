@@ -53,11 +53,11 @@
 5. 使用於遊戲內何項目：	<span id="game_item"></span>
 6. 您為攻擊方/防守方：	<span id="my_state"></span>
 7. 被舉報的玩家的相關截圖：
-<span id="cheat_info">個人資訊：</span>
-<span id="cheat_progress">個人進度：</span>
-<span id="vs_report">傷害報告截圖： </span>
-<span id="vs_detail">對戰紀錄詳細資訊：</span>
-8. 詳細狀況描述：	<span id="detail"></span>
+個人資訊：
+<span id="cheat_info"></span>個人進度：
+<span id="cheat_progress"></span>傷害報告截圖： 
+<span id="vs_report"></span>對戰紀錄詳細資訊：
+<span id="vs_detail"></span>8. 詳細狀況描述：	<span id="detail"></span>
 </div>
 <button onclick="copyText(print_data)">Copy Text</button>
 <button onclick="download_as_HTML()">download As HTML</button>
@@ -84,10 +84,10 @@ function output(row,data){
 }
 
 function output_img(row,data){
-	for(var i=data.length-1; i>=0;i--){
+	for(var i=0; i<data.length;i++){
 		let reader = new FileReader();
 		reader.readAsDataURL(data[i]);
-		reader.onload = ()=>row.insertAdjacentHTML("afterend", `<br /><img src=${reader.result} />`);
+		reader.onload = ()=>row.insertAdjacentHTML("beforebegin", `<img src=${reader.result} /><br />`);
 	}
 }
 
