@@ -126,7 +126,7 @@ $('#circlr').bind('mousewheel', function(e){
 //Firefox 沒有試
  $('#circlr').bind('DOMMouseScroll', function(e){
  	 distance = $("#distance").val();
-  	 sumXY = e.originalEvent.detail;
+  	 sumXY = e.originalEvent.detail*20;
    	 val += sumXY;
      if(val < -distance || val > distance) {
          changePhoto();
