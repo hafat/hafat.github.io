@@ -52,11 +52,26 @@
       <!-- 將需要的圖片放置在這個區域 結束-->
     </div>
 Image from http://www.shadowg-pvc.com/
+
+
 <script>
+// 第一張圖 index
 var curImg = 0;
+
+// 計算用
 var val =0;
 var sumXY =0;
 var distance =0;
+
+var imgList = $('#circlr').find('img');
+
+
+for(var i=0 ; i<imgList.length ; i++){
+	imgList[i].style.display="none";
+}
+for(var i=0 ; i<imgList.length ; i++){
+	imgList[i].style.width="100%";
+}
 
 function changeImgWidth(newWidth){
 	 $('#circlr').width(newWidth+"%")
@@ -76,25 +91,6 @@ function toPercentSize(){
 	}
 }
 
-var imgList = $('#circlr').find('img');
-for(var i=0 ; i<imgList.length ; i++){
-	imgList[i].style.display="none";
-}
-for(var i=0 ; i<imgList.length ; i++){
-	imgList[i].style.width="100%";
-}
- //IE, Opera, Safari , Chrome
-$('#circlr').bind('mousewheel', function(e){
- 	 distance = $("#distance").val();
-  	 sumXY = e.originalEvent.wheelDeltaX+e.originalEvent.wheelDeltaY;
-  	 val += sumXY;
-    if(val < -distance || val > distance) {
-         changePhoto();
-     }
-     //prevent page fom scrolling
-     return false;
-});
-
 function changePhoto(){
  	distance = $("#distance").val();
 	imgList[curImg].style.display="none";
@@ -108,6 +104,20 @@ function changePhoto(){
 }
 
 changePhoto();
+
+
+ //IE, Opera, Safari , Chrome
+$('#circlr').bind('mousewheel', function(e){
+ 	 distance = $("#distance").val();
+  	 sumXY = e.originalEvent.wheelDeltaX+e.originalEvent.wheelDeltaY;
+  	 val += sumXY;
+    if(val < -distance || val > distance) {
+         changePhoto();
+     }
+     //prevent page fom scrolling
+     return false;
+});
+
 
 
 
@@ -129,7 +139,7 @@ changePhoto();
 
 
 
-
+// mobile 用
 var lastTouch = 0;
  // mobile
 $('#circlr').on("touchstart", function(event) {
