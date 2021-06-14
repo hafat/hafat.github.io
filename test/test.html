@@ -120,7 +120,7 @@ $('#circlr').on("touchstart", function(event) {
 $('#circlr').on('touchmove', function(event) {
     event.preventDefault(); 
     var touches = event.changedTouches;
-	sumXY =  touches[0].pageX - lastTouch;
+	sumXY =  (touches[0].pageX - lastTouch)*10;
 	lastTouch = touches[0].pageX;
 	val += sumXY;
 	if(val < -distance || val > distance) {
