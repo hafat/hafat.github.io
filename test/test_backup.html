@@ -52,14 +52,29 @@
     </div>
 Image from http://www.shadowg-pvc.com/
 <pre>
-
-
-
-
-
-
-
-
+<button onclick='changeImgSrc(this.textContent)'>rinsia</button>
+<button onclick='changeImgSrc(this.textContent)'>saber%20alter%20mizuki</button>
+<button onclick='changeImgSrc(this.textContent)'>saber%20alter%20mizuki%2002</button>
+<button onclick='changeImgSrc(this.textContent)'>BEATLESS%20full</button>
+<button onclick='changeImgSrc(this.textContent)'>BEATLESS</button>
+<button onclick='changeImgSrc(this.textContent)'>amilia%20black</button>
+<button onclick='changeImgSrc(this.textContent)'>saber%20alter%20dress</button>
+<button onclick='changeImgSrc(this.textContent)'>saber%20alter%20dress%2002</button>
+<button onclick='changeImgSrc(this.textContent)'>saber%20alter%20huke</button>
+<button onclick='changeImgSrc(this.textContent)'>BGS</button>
+<button onclick='changeImgSrc(this.textContent)'>DM</button>
+<button onclick='changeImgSrc(this.textContent)'>sennto</button>
+<button onclick='changeImgSrc(this.textContent)'>saber%20haregi</button>
+<button onclick='changeImgSrc(this.textContent)'>yami</button>
+<button onclick='changeImgSrc(this.textContent)'>sekasaha</button>
+<button onclick='changeImgSrc(this.textContent)'>saber%20alter%20kimono</button>
+<button onclick='changeImgSrc(this.textContent)'>hayami%20kanade</button>
+<button onclick='changeImgSrc(this.textContent)'>kurumi</button>
+<button onclick='changeImgSrc(this.textContent)'>swan</button>
+<button onclick='changeImgSrc(this.textContent)'>swan%20b</button>
+<button onclick='changeImgSrc(this.textContent)'>swan%20w</button>
+<button onclick='changeImgSrc(this.textContent)'>alice</button>
+<button onclick='changeImgSrc(this.textContent)'>white</button>
 </pre>
 
 <script>
@@ -186,6 +201,46 @@ $('#circlr').on('touchmove', function(event) {
 
 
 
+
+
+/*
+// get Data and recreate all img tag
+function changeImgSrc(name){
+	$("#circlr").empty();
+	imgList=[];
+	var noError = true;
+	var index = 1;
+	function addImg(){
+		let image = new Image(); 
+		image.src = `http://1.34.216.71/360%20PVC/${name}/images/${index}.jpg`; 
+		image.onerror = function(){
+			reset();
+			changePhoto();
+		}
+		image.onload = function(){
+			$("#circlr").append(image);
+			imgList[index-1] =  image;
+			index++;
+			addImg()
+		}		
+	}
+	addImg()
+}
+*/
+
+	
+function changeImgSrc(name){
+	for(let i=0 ; i<imgList.length ; i++){
+		imgList[i].src= `http://1.34.216.71/360%20PVC/${name}/images/${i+1}.jpg`;
+		imgList[i].onerror = function(){
+			imgList[i].src= imgList[i-1].src;
+		}
+		if(i==imgList.length-1)
+			reset()
+			changePhoto();
+			changeImgWidth(100)
+	}
+}
 
 
  </script>
