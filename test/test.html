@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>test</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="jquery.min.js"></script>
+</head>
+<body>
+	速度（數值越高越慢）<input id="distance"  value="100"/>
+	<div id="circlr" style=" width: 100%;  margin: auto;">
+      <!-- 將需要的圖片放置在這個區域 開始 -->
+    	<img src='./1.jpg'>
+		<img src='./2.jpg'>
+		<img src='./3.jpg'>
+		<img src='./4.jpg'>
+		<img src='./5.jpg'>
+		<img src='./6.jpg'>
+		<img src='./7.jpg'>
+		<img src='./8.jpg'>
+		<img src='./9.jpg'>
+		<img src='./10.jpg'>
+		<img src='./11.jpg'>
+		<img src='./12.jpg'>
+		<img src='./13.jpg'>
+		<img src='./14.jpg'>
+		<img src='./15.jpg'>
+		<img src='./16.jpg'>
+		<img src='./17.jpg'>
+		<img src='./18.jpg'>
+		<img src='./19.jpg'>
+		<img src='./20.jpg'>
+		<img src='./21.jpg'>
+		<img src='./22.jpg'>
+		<img src='./23.jpg'>
+		<img src='./24.jpg'>
+		<img src='./25.jpg'>
+		<img src='./26.jpg'>
+		<img src='./27.jpg'>
+		<img src='./28.jpg'>
+		<img src='./29.jpg'>
+		<img src='./30.jpg'>
+		<img src='./31.jpg'>
+		<img src='./32.jpg'>
+		<img src='./33.jpg'>
+		<img src='./34.jpg'>
+		<img src='./35.jpg'>
+    	<img src='./36.jpg'>
+      <!-- 將需要的圖片放置在這個區域 結束-->
+    </div>
+
+<script>
+var curImg = 0;
+var val =0;
+var sumXY =0;
+var distance =0;
+
+var imgList = $('#circlr').find('img');
+for(var i=0 ; i<imgList.length ; i++){
+	imgList[i].style.display="none";
+}
+for(var i=0 ; i<imgList.length ; i++){
+	imgList[i].style.width="100%";
+}
+ //IE, Opera, Safari
+ $('#circlr').bind('mousewheel', function(e){
+ 	 distance = $("#distance").val();
+  	 sumXY = e.originalEvent.wheelDeltaX+e.originalEvent.wheelDeltaY;
+  	 val += sumXY;
+    if(val < -distance || val > distance) {
+         changePhoto();
+     }
+     //prevent page fom scrolling
+     return false;
+ });
+
+function changePhoto(){
+ 	distance = $("#distance").val();
+	imgList[curImg].style.display="none";
+	curImg += Math.round(val/distance);
+	if(curImg>=imgList.length)
+		curImg = 0;
+	if(curImg<0)
+		curImg = imgList.length-1;
+	imgList[curImg].style.display="block";
+	val=0;
+}
+
+changePhoto();
+
+
+
+
+
+//Firefox
+ $('#circlr').bind('DOMMouseScroll', function(e){
+ 	 distance = $("#distance").val();
+  	 sumXY = e.originalEvent.detail;
+   	 val += sumXY;
+     if(val < -distance || val > distance) {
+         changePhoto();
+     }
+     //prevent page fom scrolling
+     return false;
+ });
+ </script>
+</body>
+</html>
