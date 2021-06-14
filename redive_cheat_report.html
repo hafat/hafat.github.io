@@ -6,34 +6,34 @@
   <title>Re:Dive Cheat Report</title>
 </head>
 <body style="font-family: Courier； font-size:16px;">
-<div style="white-space: pre-wrap;font-family: Courier;">		圖片質素(1最高)：	<input id="compress_rate" type="number" max="1" min="0.1" step="0.05" value="0.7"/>
-1. 資料提供者九碼ID：	<input onchange="output(my_id,this.value)"/>
-2. 外掛玩家九碼ID：	<input onchange="output(cheat_id,this.value)"/>
-3. 伺服器名稱：		<select onchange="output(server_name,this.value)">
+<div style="white-space: pre-wrap;font-family: Courier;">		圖片質素(1最高)：<input id="compress_rate" type="number" max="1" min="0.1" step="0.05" value="0.7"/>
+1. 資料提供者九碼ID： <input onchange="output(my_id,this.value)"/>
+2. 外掛玩家九碼ID： <input onchange="output(cheat_id,this.value)"/>
+3. 伺服器名稱： <select onchange="output(server_name,this.value)">
 <option></option>
 <option value="美食殿堂">美食殿堂</option>
 <option value="真步真步王國">真步真步王國</option>
 <option value="破曉之星">破曉之星</option>
 <option value="小小甜心">小小甜心</option>
 </select>
-4. 舉報確切時間：		<input type="date" onchange="output(the_date,this.value.toString())"/> <input type="time" onchange="output(the_time,this.value.toString())"/>
-5. 使用於遊戲內何項目：	<select onchange="output(game_item,this.value)">
+4. 舉報確切時間： <input type="date" onchange="output(the_date,this.value.toString())"/> <input type="time" onchange="output(the_time,this.value.toString())"/>
+5. 使用於遊戲內何項目： <select onchange="output(game_item,this.value)">
 <option></option>
 <option value="戰鬥競技場">戰鬥競技場</option>
 <option value="公主競技場">公主競技場</option>
 <option value="對戰異常">對戰異常</option>
 <option value="推圖檢舉">推圖檢舉</option>
 </select>
-6. 您為攻擊方/防守方：	<select onchange="output(my_state,this.value)">
+6. 您為攻擊方/防守方： <select onchange="output(my_state,this.value)">
 <option></option>
 <option value="攻擊方">攻擊方</option>
 <option value="防守方">防守方</option>
 </select>
 7. 被舉報的玩家的相關截圖：為避免附檔過大及惡意病毒，還請附截圖即可。
-個人資訊 	<input type="file" onchange="output_img(cheat_info,this.files)" multiple/>
-個人進度 	<input type="file" onchange="output_img(cheat_progress,this.files)" multiple/>
-傷害報告截圖 	<input type="file" onchange="output_img(vs_report,this.files)" multiple/>
-對戰紀錄詳細資訊 	<input type="file" onchange="output_img(vs_detail,this.files)" multiple/>
+個人資訊 <input type="file" onchange="output_img(cheat_info,this.files)" multiple/>
+個人進度 <input type="file" onchange="output_img(cheat_progress,this.files)" multiple/>
+傷害報告截圖 <input type="file" onchange="output_img(vs_report,this.files)" multiple/>
+對戰紀錄詳細資訊 <input type="file" onchange="output_img(vs_detail,this.files)" multiple/>
 8. 詳細狀況描述： <input list="detail_list" onchange="output(detail,this.value)" />
   <datalist id="detail_list">
     <option value="重播都是我勝利">
@@ -47,18 +47,7 @@
 </div>
 
 <!-- -->
-<div id="print_data" style="white-space: pre-wrap;font-family: Courier" contenteditable="true">1. 資料提供者九碼ID：	<span id="my_id"></span>
-2. 外掛玩家九碼ID：	<span id="cheat_id"></span>
-3. 伺服器名稱：		<span id="server_name"></span>
-4. 舉報確切時間：		<span id="the_date"></span>  <span id="the_time"></span>
-5. 使用於遊戲內何項目：	<span id="game_item"></span>
-6. 您為攻擊方/防守方：	<span id="my_state"></span>
-7. 被舉報的玩家的相關截圖：
-個人資訊：
-<span id="cheat_info">個人進度：</span>
-<span id="cheat_progress">傷害報告截圖： </span>
-<span id="vs_report">對戰紀錄詳細資訊：</span>
-<span id="vs_detail">8. 詳細狀況描述：</span>	<span id="detail"></span>
+<div id="print_data" style="white-space: pre-wrap;font-family: Courier" contenteditable="true">1. 資料提供者九碼ID：	<span id="my_id"></span><br>2. 外掛玩家九碼ID：	<span id="cheat_id"></span><br>3. 伺服器名稱：		<span id="server_name"></span><br>4. 舉報確切時間：		<span id="the_date"></span>  <span id="the_time"></span><br>5. 使用於遊戲內何項目：	<span id="game_item"></span><br>6. 您為攻擊方/防守方：	<span id="my_state"></span><br>7. 被舉報的玩家的相關截圖：<br>個人資訊：<br><span id="cheat_info">個人進度：</span><br><span id="cheat_progress">傷害報告截圖： </span><br><span id="vs_report">對戰紀錄詳細資訊：</span><br><span id="vs_detail">8. 詳細狀況描述：</span>	<span id="detail"></span>
 </div>
 <button onclick="copyText(print_data)">Copy Text</button>
 <button onclick="download_as_HTML()">Download As HTML</button>
