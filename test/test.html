@@ -106,23 +106,25 @@ changePhoto();
 
 var lastTouch = 0;
 
+$('#circlr').on("touchstart", function(event) {
+	var touches = event.changedTouches;
+	lastTouch = touches[0].pageX;
+});
+
  // mobile
- $('#circlr').on('touchmove', function(event) {
+$('#circlr').on('touchmove', function(event) {
 
     event.preventDefault(); 
       var touches = event.changedTouches;
-	for (var i = 0; i < touches.length; i++) {
-		if(i>0){
-			sumXY =  touches[i].pageX - lastTouch;
-		}
-		else 
-			sumXY =  0;
-		lastTouch = touches[i].pageX;
+	
+			sumXY =  touches[0].pageX - lastTouch;
+
+		lastTouch = touches[0].pageX;
 		val += sumXY;
 		if(val < -distance || val > distance) {
 			changePhoto();
 		}
-	}
+	
 });
 
 
