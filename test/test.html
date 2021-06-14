@@ -84,7 +84,7 @@ for(var i=0 ; i<imgList.length ; i++){
 	imgList[i].style.width="100%";
 }
  //IE, Opera, Safari , Chrome
- $('#circlr').bind('mousewheel', function(e){
+$('#circlr').bind('mousewheel', function(e){
  	 distance = $("#distance").val();
   	 sumXY = e.originalEvent.wheelDeltaX+e.originalEvent.wheelDeltaY;
   	 val += sumXY;
@@ -93,7 +93,7 @@ for(var i=0 ; i<imgList.length ; i++){
      }
      //prevent page fom scrolling
      return false;
- });
+});
 
 function changePhoto(){
  	distance = $("#distance").val();
@@ -113,7 +113,7 @@ changePhoto();
 
 
 
-//Firefox
+//Firefox 沒有試
  $('#circlr').bind('DOMMouseScroll', function(e){
  	 distance = $("#distance").val();
   	 sumXY = e.originalEvent.detail;
