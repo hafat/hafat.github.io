@@ -7,8 +7,10 @@
 	<script src="jquery.min.js"></script>
 </head>
 <body>
-	速度（數值越高越慢）<input id="distance"  value="100"/>
-	闊度 <input value="100" onchange="changeImgWidth(this.value)"/>
+	速度（數值越高越慢）<input id="distance"  value="100"/><br>
+	闊度 <input id="img_width" value="100" onchange="changeImgWidth(this.value)"/><br>
+	<button onclick="toActualSize()">實際大小</button>
+	<button onclick="toPercentSize()">百分比大小</button>
 	<div id="circlr" style=" width: 100%;  margin: auto;">
       <!-- 將需要的圖片放置在這個區域 開始 -->
     	<img src='./1.jpg'>
@@ -58,6 +60,20 @@ var distance =0;
 
 function changeImgWidth(newWidth){
 	 $('#circlr').width(newWidth+"%")
+}
+
+function toActualSize(){
+	for(var i=0 ; i<imgList.length ; i++){
+		imgList[i].style.width="auto";
+		img_width.value = 100;
+		$('#circlr').width("100%")
+	}
+}
+
+function toPercentSize(){
+	for(var i=0 ; i<imgList.length ; i++){
+		imgList[i].style.width="100%";
+	}
 }
 
 var imgList = $('#circlr').find('img');
