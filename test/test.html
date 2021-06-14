@@ -10,8 +10,7 @@
 	捲動距離（數值越高越慢）<input id="distance"  value="100"/><br>
 	闊度 <input id="img_width" value="100" onchange="changeImgWidth(this.value)"/><br>
 	<button onclick="toActualSize()">實際大小</button>
-	<button onclick="toPercentSize()">百分比大小</button>
-	<div id="circlr" style=" width: 100%;  margin: auto;">
+	<div id="circlr" style=" width: 100%; margin: auto;">
       <!-- 將需要的圖片放置在這個區域 開始 -->
     	<img src='./1.jpg'>
 		<img src='./2.jpg'>
@@ -62,8 +61,15 @@ var curImg = 0;
 var val =0;
 var sumXY =0;
 var distance =0;
+var imageWidth;
 
 var imgList = $('#circlr').find('img');
+
+let image = new Image(); 
+image.src = imgList[0].src; 
+image.onload = function(){
+	imageWidth = this.width;
+}
 
 
 for(var i=0 ; i<imgList.length ; i++){
@@ -74,15 +80,15 @@ for(var i=0 ; i<imgList.length ; i++){
 }
 
 function changeImgWidth(newWidth){
-	 $('#circlr').width(newWidth+"%")
+	toPercentSize()
+	$('#circlr').width(newWidth +'%')
 }
 
 function toActualSize(){
 	for(var i=0 ; i<imgList.length ; i++){
 		imgList[i].style.width="auto";
-		img_width.value = 100;
-		$('#circlr').width("100%")
 	}
+	$('#circlr').width(imageWidth)
 }
 
 function toPercentSize(){
