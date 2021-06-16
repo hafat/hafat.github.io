@@ -8,8 +8,11 @@
 </head>
 <body>
 	捲動距離（數值越高越慢）<input id="distance"  value="100"/><br>
-	闊度 <input id="img_width" value="100" onchange="changeImgWidth(this.value)"/><br>
+	闊度 <input id="img_width" value="100" onchange="changeImgWidth()"/><button onclick="changeImgWidth()">設定</button><br>
+	動畫間隔(ms) <input id="animate_interval" value="30" /><br>
+	動畫下一影格 <input id="frame_interval" value="1" /><br>
 	<button onclick="toActualSize()">實際大小</button>
+	<button onclick="toggleAnimate()">開關動畫</button>
 	<div id="circlr" style=" width: 100%; margin: auto;">
       <!-- 將需要的圖片放置在這個區域 開始 -->
     	<img src='./1.jpg'>
@@ -96,9 +99,9 @@ function reset(){
 
 reset()
 
-function changeImgWidth(newWidth){
+function changeImgWidth(){
 	toPercentSize()
-	$('#circlr').width(newWidth +'%')
+	$('#circlr').width($("#img_width").val() +'%')
 }
 
 function toActualSize(){
@@ -118,12 +121,17 @@ function changePhoto(){
  	distance = $("#distance").val();
 	imgList[curImg].style.display="none";
 	curImg += Math.round(val/distance);
-	if(curImg>=imgList.length)
-		curImg = 0;
-	if(curImg<0)
-		curImg = imgList.length-1;
-	imgList[curImg].style.display="block";
+	nextImg(curImg);
 	val=0;
+}
+
+function nextImg(nextIndex){
+	if(nextIndex>=imgList.length)
+		nextIndex = nextIndex%imgList.length;
+	if(nextIndex<0)
+		nextIndex = imgList.length+nextIndex%imgList.length;
+	curImg = nextIndex;
+	imgList[curImg].style.display="block";
 }
 
 changePhoto();
@@ -183,6 +191,50 @@ $('#circlr').on('touchmove', function(event) {
 		}
 	}
 });
+
+
+// animate
+let start;
+var isAnimate = false;
+
+
+function toggleAnimate(){
+	if(isAnimate)
+		isAnimate = false;
+	else{
+		isAnimate = true;
+		window.requestAnimationFrame(step);
+	}
+}
+
+/*
+// setTimeout
+setTimeout(function runTest(){ 
+		imgList[curImg].style.display="none";
+		nextImg(curImg+1)
+		if (isAnimate)
+			setTimeout(runTest, $("#animate_interval").val())
+ }, $("#animate_interval").val());
+*/
+
+
+// requestAnimationFrame 
+function step(timestamp) {
+  if (start === undefined)
+    start = timestamp;
+  const elapsed = timestamp - start;
+
+	if(Math.floor(elapsed/$("#animate_interval").val())>=1){
+		start = timestamp;
+		if(Number.isInteger(parseInt($("#frame_interval").val()))){
+			imgList[curImg].style.display="none";
+			nextImg(curImg+parseInt($("#frame_interval").val()))
+		}
+	}
+  if (isAnimate) { 
+    window.requestAnimationFrame(step);
+  }
+}
 
 
 
