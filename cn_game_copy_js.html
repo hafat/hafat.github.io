@@ -7,9 +7,9 @@
 </head>
 <body>
 <div   style="position:sticky; top:0;  background-color: white; z-index:100;">
-  <input id="search_input"  style="font-size:30px" type='text' placeholder="search name"/>
+  <input id="search_input" onchange="search()"  style="font-size:30px" type='text' placeholder="search name"/>
   <button onclick="search()" style="font-size:30px">Search</button>
-  <input id="searchCompany_input"  style="font-size:30px" type='text' placeholder="Search Company"/>
+  <input id="searchCompany_input" onchange="searchCompany()" style="font-size:30px" type='text' placeholder="Search Company"/>
   <button onclick="searchCompany()" style="font-size:30px">Search</button>
 </div>
 
@@ -57,8 +57,8 @@ function searchCompany(){
 
 	for(var i =0 ; i<gameList.length ; i++){
 		if(searchCompany_input.value !="" 
-		  && gameList[i].publisher.search(searchCompany_input.value.toUpperCase())!=-1 
-		  || gameList[i].operator.search(searchCompany_input.value.toUpperCase())!=-1 
+		  && (gameList[i].publisher.search(searchCompany_input.value.toUpperCase())!=-1 
+		  || gameList[i].operator.search(searchCompany_input.value.toUpperCase())!=-1 )
 		  ){
 			let row = new_tbody.insertRow(-1);
 			let cell1 = row.insertCell(0);
