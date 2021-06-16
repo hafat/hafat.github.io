@@ -5,14 +5,25 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="jquery.min.js"></script>
+	<style>
+		.sticky-left{
+			position:sticky; 
+			left: 12px;
+		}
+	</style>
 </head>
 <body>
-	捲動距離（數值越高越慢）<input id="distance"  value="100"/><br>
-	闊度 <input id="img_width" value="100" onchange="changeImgWidth()"/><button onclick="changeImgWidth()">設定</button><br>
-	動畫間隔(ms) <input id="animate_interval" value="30" /><br>
-	動畫下一影格 <input id="frame_interval" value="1" /><br>
-	<button onclick="toActualSize()">實際大小</button>
-	<button onclick="toggleAnimate()">開關動畫</button>
+	<div id="setting">
+	<span class="sticky-left"> 捲動距離（數值越高越慢）<input id="distance"  value="100"/></span><br>
+	<span class="sticky-left">闊度 <input id="img_width" value="100" onchange="changeImgWidth()"/><button onclick="changeImgWidth()">設定</button></span><br>
+	<span class="sticky-left">動畫間隔(ms) <input id="animate_interval" value="30" /></span><br>
+	<span class="sticky-left">動畫下一影格 <input id="frame_interval" value="1" /></span><br>
+	<span class="sticky-left"><button onclick="toActualSize()">實際大小</button>
+	<button onclick="toggleAnimate()">開關動畫</button></span>
+	</div>
+	
+	<div id="hide_right" style=" height: 100%;width: 3%; position: fixed; bottom: 0; right: 0; background-color:white;opacity: 0.5;"></div>
+	<div id="hide_bottom" style=" height: 3%;width: 100%; position: fixed; bottom: 0; right: 0; background-color:white;opacity: 0.5;"></div>
 	<div id="circlr" style=" width: 100%; margin: auto;">
       <!-- 將需要的圖片放置在這個區域 開始 -->
     	<img src='./1.jpg'>
@@ -102,6 +113,7 @@ reset()
 function changeImgWidth(){
 	toPercentSize()
 	$('#circlr').width($("#img_width").val() +'%')
+	$('#setting').width($("#img_width").val() +'%')
 }
 
 function toActualSize(){
@@ -109,6 +121,7 @@ function toActualSize(){
 		imgList[i].style.width="auto";
 	}
 	$('#circlr').width(imageWidth)
+	$('#setting').width(imageWidth)
 }
 
 function toPercentSize(){
