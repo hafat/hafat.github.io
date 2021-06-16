@@ -9,6 +9,8 @@
 <div   style="position:sticky; top:0;  background-color: white; z-index:100;">
   <input id="search_input"  style="font-size:30px" type='text' placeholder="search name"/>
   <button onclick="search()" style="font-size:30px">Search</button>
+  <input id="searchCompany_input"  style="font-size:30px" type='text' placeholder="Search Company"/>
+  <button onclick="searchCompany()" style="font-size:30px">Search</button>
 </div>
 
 <table id="table" width="100%" cellpadding="0" cellspacing="0" border="1"> 
@@ -33,6 +35,31 @@ function search(){
 
 	for(var i =0 ; i<gameList.length ; i++){
 		if(search_input.value !="" && gameList[i].name.search(search_input.value.toUpperCase())!=-1 ){
+			let row = new_tbody.insertRow(-1);
+			let cell1 = row.insertCell(0);
+			let cell2 = row.insertCell(1);
+			let cell3 = row.insertCell(2);
+			let cell4 = row.insertCell(3);
+
+			// Add some text to the new cells:
+			cell1.innerHTML = gameList[i].name;
+			cell2.innerHTML = gameList[i].publisher;
+			cell3.innerHTML = gameList[i].operator;
+			cell4.innerHTML = gameList[i].time;
+		}
+	}
+}
+
+function searchCompany(){
+	var new_tbody = document.createElement('tbody');
+	var old_tbody = table.getElementsByTagName("tbody")[0];
+	old_tbody.parentNode.replaceChild(new_tbody, old_tbody);
+
+	for(var i =0 ; i<gameList.length ; i++){
+		if(searchCompany_input.value !="" 
+		  && gameList[i].publisher.search(searchCompany_input.value.toUpperCase())!=-1 
+		  || gameList[i].operator.search(searchCompany_input.value.toUpperCase())!=-1 
+		  ){
 			let row = new_tbody.insertRow(-1);
 			let cell1 = row.insertCell(0);
 			let cell2 = row.insertCell(1);
