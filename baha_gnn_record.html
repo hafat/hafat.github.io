@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+a {
+  color: black;
+  text-decoration: none; /* no underline */
+}
+</style>
+<body>
+
+<input id="search_date" list="detail_list" />
+  <datalist id="detail_list">
+  </datalist>
+<button onclick="search()">Search</button>
+
+<div id="gnn_news" ></div>
+
+<button onclick="copyText(gnn_news)">copyText</button>
+
+</body>
+
+<script>
+
+function search(){
+	for(var i = 0; i<data_list.length ; i++){
+		if(search_date.value===data_list[0].time){
+			gnn_news.innerHTML = data_list[0].content
+		}
+	}
+}
+
+function copyText(ele) {
+  window.getSelection().selectAllChildren(ele);
+  document.execCommand("copy");
+}
+
+
+var data_list = [
+
+{content: ` <div onclick="changeColor(this)"><a href="https://gnn.gamer.com.tw/detail.php?sn=216753" style="color: red;">《寶可夢大集結》 Switch 版、智慧型手機版確定推出！公開玩法介紹及登場寶可夢</a></div> <div onclick="changeColor(this)"><a href="https://gnn.gamer.com.tw/detail.php?sn=216713" style="color: red;">NEXON 原廠授權《楓之谷 R》代理權確認 限量測試招募開啟</a></div> <div onclick="changeColor(this)"><a href="https://gnn.gamer.com.tw/detail.php?sn=216703">《彈射世界》繁中版將舉辦期間限定活動「新春賀歲彈射台」及免費角色轉蛋 10 連抽</a></div> <div onclick="changeColor(this)"><a href="https://gnn.gamer.com.tw/detail.php?sn=216697">【E3 21】《Final Fantasy》系列像素 Remaster 版預計於 Steam 及行動平台推出</a></div> <div onclick="changeColor(this)"><a href="https://gnn.gamer.com.tw/detail.php?sn=216691">各作品美少女大集合！《出租女友 女主角全明星》預計今年 9 月推出</a></div> <div onclick="changeColor(this)"><a href="https://gnn.gamer.com.tw/detail.php?sn=216686">【E3 21】E3 2021 大獎揭曉！《極限競速：地平線 5》與 Xbox 發表會獲評審肯定</a></div> <div onclick="changeColor(this)"><a href="https://gnn.gamer.com.tw/detail.php?sn=216683" style="color: red;">3D 鋼彈動作對戰遊戲《鋼彈爭鋒對決》正式上線 舉辦神盾鋼彈主題開服活動</a></div> <div onclick="changeColor(this)"><a href="https://gnn.gamer.com.tw/detail.php?sn=216733">《Code Geass Genesic Re;CODE》確認 8 月問世 展開 app icon 投票活動</a></div> <div onclick="changeColor(this)"><a href="https://gnn.gamer.com.tw/detail.php?sn=216720">【E3 21】《傾聽畫語》獲夏季遊戲節 SGF 等 E3 期間線上發布會推薦 公開新遊戲畫面</a></div> <div onclick="changeColor(this)"><a href="https://gnn.gamer.com.tw/detail.php?sn=216717">擬真 3D 棒球遊戲《CPBL 職業棒球 2021》雙平台正式上線 同步釋出多項慶祝活動</a></div> <div onclick="changeColor(this)"><a href="https://gnn.gamer.com.tw/detail.php?sn=216715">台灣團隊打造《境界奧德賽》主人公設定及副官系統公開</a></div> <div onclick="changeColor(this)"><a href="https://gnn.gamer.com.tw/detail.php?sn=216711" style="color: hotpink;">《爐石戰記》2021 第三場大師巡迴賽達拉然 19 日開打 爭奪大師職業賽第 2 賽季門票</a></div> <div onclick="changeColor(this)"><a href="https://gnn.gamer.com.tw/detail.php?sn=216710">《風色幻想 SP 手機版》事前預約開啟 承襲 SLG 獨創玩法「RAP 真實行動點數系統」</a></div> <div onclick="changeColor(this)"><a href="https://gnn.gamer.com.tw/detail.php?sn=216704">《寶可夢大師 EX》推出精選拍組「★5 皇家蒙面人＆熾焰咆哮虎」</a></div> <div onclick="changeColor(this)"><a href="https://gnn.gamer.com.tw/detail.php?sn=216687" style="color: red;">沉浸式武俠探索單機 RPG《煙雨江湖》全球中文版即將登場 釋出世界觀、門派等情報</a></div> <div onclick="changeColor(this)"><a href="https://gnn.gamer.com.tw/detail.php?sn=216685" style="color: red;">線性戰略 RPG《白夜極光》於日本等地展開服務 同步舉辦一系列上市紀念活動</a></div> <div onclick="changeColor(this)"><a href="https://gnn.gamer.com.tw/detail.php?sn=216743">UBISOFT 宣布在東南亞舉辦全新《英靈神殿大亂鬥》系列錦標賽</a></div> <div onclick="changeColor(this)"><a href="https://gnn.gamer.com.tw/detail.php?sn=216735">《英靈神殿大亂鬥》Nickelodeon 動畫《忍者龜》史詩跨界活動正式登場</a></div> <div onclick="changeColor(this)"><a href="https://gnn.gamer.com.tw/detail.php?sn=216727">《SEGA 新創造球會 ROAD to the WORLD》擅長反擊戰術的義大利強豪球團新★5 球員登場</a></div> <div onclick="changeColor(this)"><a href="https://gnn.gamer.com.tw/detail.php?sn=216726" style="color: red;">BBIN 再次攜手 MAD TEAM 代表 GCS 賽區前進 2021 AWC 世界盃</a></div> <div onclick="changeColor(this)"><a href="https://gnn.gamer.com.tw/detail.php?sn=216723" style="color: hotpink;">《絕地求生：未來之役》全球預先登錄突破 1,700 萬人次 釋出首部開發者影片</a></div> <div onclick="changeColor(this)"><a href="https://gnn.gamer.com.tw/detail.php?sn=216722" style="color: red;">《英雄聯盟：激鬥峽谷》東南亞 Icon Series 夏季超級盃將於本周末登場</a></div> <div onclick="changeColor(this)"><a href="https://gnn.gamer.com.tw/detail.php?sn=216719">《命運之子》全新諸神強襲副本「救贖（Salvation）」更新</a></div> <div onclick="changeColor(this)"><a href="https://gnn.gamer.com.tw/detail.php?sn=216718" style="color: red;">《夢幻西遊放置版》搶先體驗限時封測開啟 釋出寵物、夥伴介紹</a></div> <div onclick="changeColor(this)"><a href="https://gnn.gamer.com.tw/detail.php?sn=216707">《全民打棒球 Pro》全新教練卡登場 球團戰力再升級</a></div> <div onclick="changeColor(this)"><a href="https://gnn.gamer.com.tw/detail.php?sn=216690" style="color: red;">《閃耀暖暖》感應活動「愛語之汐」限時復刻 主線章節「新月初升」更新</a></div> <div onclick="changeColor(this)"><a href="https://gnn.gamer.com.tw/detail.php?sn=216689">《WOTV FFBE》刻紀念聯動活動即日開跑 全新 UR 兵員「薩麗雅（甜心）」登場</a></div> <div onclick="changeColor(this)"><a href="https://gnn.gamer.com.tw/detail.php?sn=216682" style="color: red;">【模型】 miHoYo《 崩壞 3rd》八重櫻 綺羅幻夢 ver.1/7 模型預定 2022 年 3 月發售</a></div> ` ,time:'2021 6 17'},
+
+];
+
+for(var i = 0; i<data_list.length ; i++){
+let new_option = document.createElement("option")
+new_option.value = data_list[i].time;
+document.getElementById('detail_list').append(new_option);
+
+}
+
+
+</script>
+</html>
