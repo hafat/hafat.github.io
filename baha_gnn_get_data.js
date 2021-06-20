@@ -26,10 +26,10 @@ if(window.location.href.search("gnn.gamer.com.tw/index.php")!=-1){
 		}
 	}
 
-	var str2 = `<div id="white_box" contenteditable="true" style="overflow: scroll; height: 30%;width: 30%; z-index:99999; position: fixed; top: 10%;right:0; background-color:white"></div>`
-	str2 += `<button id="btn" style="z-index:99999; position: fixed; top: 40%;right:0; ">copyText</button>`
-	str2 += `<button id="btn_js" style="z-index:99999; position: fixed; top: 40%;right:100px; ">toJsText</button>`
-	str2 += `<div id="output_text" contenteditable="true" style="overflow: scroll; height: 50px;width: 30%; z-index:99999; position: fixed; top: 45%;right:0; background-color:white"></div>`
+	var str2 = `<div id="white_box" contenteditable="true" style="overflow: scroll; height: 80%;width: 30%; z-index:99999; position: fixed; top: 10%;right:0; background-color:white"></div>`
+	str2 += `<button id="btn" style="z-index:99999; position: fixed; top: 90%;right:0; ">copyText</button>`
+	str2 += `<button id="btn_js" style="z-index:99999; position: fixed; top: 90%;right:100px; ">toJsText</button>`
+	str2 += `<div id="output_text" contenteditable="true" style=" height: 50px;width: 30%; z-index:99999; position: fixed; top: 95%;right:0; background-color:white"></div>`
 	body.insertAdjacentHTML('beforeend',str2);
 
 	var white_box = document.getElementById('white_box')
