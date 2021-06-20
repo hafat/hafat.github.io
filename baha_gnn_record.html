@@ -24,10 +24,11 @@ a {
 
 function search(){
 	for(var i = 0; i<data_list.length ; i++){
-		if(search_date.value===data_list[0].time){
-			gnn_news.innerHTML = data_list[0].content
+		if(search_date.value===data_list[i].time){
+			gnn_news.innerHTML = data_list[i].content
 		}
 	}
+	search_date.value ="";
 }
 
 function copyText(ele) {

@@ -53,7 +53,7 @@ Size:<select id="image_size" onchange="changeImgSize(this.value)" style=" height
   <option value="100">100%</option>
   <option value="50">50%</option>
   <option value="33">33%</option>
-  <option value="25">25%</option>
+  <option value="25" selected>25%</option>
   <option value="20">20%</option>
   <option value="10">10%</option>
 </select>
@@ -76,13 +76,26 @@ Size:<select id="image_size" onchange="changeImgSize(this.value)" style=" height
 <footer>圖片源自Google Play Store 及 Apple App Store</footer>
 
 <script>
+	//	sort the gameList with rank
+	let arr2 = [];
+	let arr1 = [];
+	let arr0 = [];
+for(var i = 0; i < gameList.length; i++){
+	if(gameList[i].rank == 2)
+		arr2.push(gameList[i]);
+	if(gameList[i].rank == 1)
+		arr1.push(gameList[i]);
+	if(gameList[i].rank == 0)
+		arr0.push(gameList[i]);
+}
+gameList = arr2.concat(arr1).concat(arr0);
 
 
 var shownNum = 0;
 var loadGameIndex = (start_index.value!="")?(start_index.value):0;
 var loadNum = 20;
 var loadGameObject = "";
-var imgClass = "width100";
+var imgClass = "width25";
 var storeName = "apps_store_hk";
 var max_china_share_var = 49;
 
