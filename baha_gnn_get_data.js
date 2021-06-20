@@ -47,8 +47,9 @@ if(window.location.href.search("gnn.gamer.com.tw/index.php")!=-1){
 		else 
 			this.children[0].style.color = 'red';
 		});
+		let rowTextEdited = replaceSearchText(row[i].children[0].innerHTML)
 		for(var j =0; j<new_list.length; j++){
-			if(replaceSearchText(row[i].children[0].innerHTML).search(new_list[j])!=-1){
+			if(rowTextEdited.search(new_list[j])!=-1){
 				row[i].children[0].style.color = 'red';
 				j = new_list.length;
 			}
