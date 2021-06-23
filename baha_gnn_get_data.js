@@ -48,8 +48,11 @@ var maybeList =[
 	var white_box = document.getElementById('white_box')
 	white_box.innerHTML = str;
 	
-
+	
 	let row = white_box.getElementsByTagName('div')
+	let btn = document.getElementById('btn')
+	btn.innerHTML = btn.innerHTML +' ' +  row.length
+	
 	for(var i = 0; i<row.length ; i++){
 		row[i].addEventListener('click', function(){
 		if(this.children[0].style.color == 'red')
