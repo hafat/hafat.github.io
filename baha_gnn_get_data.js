@@ -10,6 +10,8 @@ if(window.location.href.search("gnn.gamer.com.tw/index.php")!=-1){
 `神姬裁決`,
 `BTS WORLD`,
 `魔龍與聖劍||魔竜と聖剣||Dragon And Sword`,
+`血咒之城：暗夜儀式||Bloodstained: Ritual of the Night mobile`,
+
 	]
 	
 var maybeList =[
