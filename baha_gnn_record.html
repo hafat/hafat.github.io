@@ -16,19 +16,39 @@ a {
 
 <div id="gnn_news" ></div>
 
-<button onclick="copyText(gnn_news)">copyText</button>
+<div style="white-space: pre-wrap;"><div id="statistics" ></div><button onclick="copyText(gnn_news)">copyText</button>
+<div id="statistics_all" ></div>
+</div>
 
 </body>
 
 <script>
 
+var statistics_all = document.getElementById('statistics_all');
+var statistics = document.getElementById('statistics');
+
+
 function search(){
+	let countTotal = 0;
+	let countPink = 0;
+	let countRed = 0;
 	for(var i = 0; i<data_list.length ; i++){
 		if(search_date.value===data_list[i].time){
-			gnn_news.innerHTML = data_list[i].content
+			gnn_news.innerHTML = data_list[i].content;
+			countPink += (data_list[i].content.match(/color: hotpink;/g) || []).length;
+			countRed += (data_list[i].content.match(/color: red;/g) || []).length;
+			countTotal += (data_list[i].content.match(/<a href=/g) || []).length;
 		}
 	}
 	search_date.value ="";
+	
+	var countNormal = countTotal - countPink - countRed ;
+
+	statistics.innerHTML = `<hr>當日統計
+中資：	${countRed},	${Math.round(countRed/countTotal*100)}%
+疑似：	${countPink},	${Math.round(countPink/countTotal*100)}%
+非中資：	${countNormal},	${Math.round(countNormal/countTotal*100)}%
+合計：	${countTotal}`;
 }
 
 function copyText(ele) {
@@ -53,13 +73,27 @@ var data_list = [
 
 ];
 
-for(var i = 0; i<data_list.length ; i++){
-let new_option = document.createElement("option")
-new_option.value = data_list[i].time;
-document.getElementById('detail_list').append(new_option);
+var countTotal = 0;
+var countPink = 0;
+var countRed = 0;
 
+for(var i = 0; i<data_list.length ; i++){
+	let new_option = document.createElement("option")
+	new_option.value = data_list[i].time;
+	document.getElementById('detail_list').append(new_option);
+	
+	countPink += (data_list[i].content.match(/color: hotpink;/g) || []).length;
+	countRed += (data_list[i].content.match(/color: red;/g) || []).length;
+	countTotal += (data_list[i].content.match(/<a href=/g) || []).length;	
 }
 
+var countNormal = countTotal - countPink - countRed ;
+
+statistics_all.innerHTML = `<hr>總統計
+中資：	${countRed},	${Math.round(countRed/countTotal*100)}%
+疑似：	${countPink},	${Math.round(countPink/countTotal*100)}%
+非中資：	${countNormal},	${Math.round(countNormal/countTotal*100)}%
+合計：	${countTotal}`;
 
 </script>
 </html>
