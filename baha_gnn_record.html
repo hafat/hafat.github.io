@@ -46,7 +46,7 @@ function search(){
 	
 	var countNormal = countTotal - countPink - countRed ;
 
-	statistics.innerHTML = `<table><tr><td>中資：</td><td>${countRed}, ${Math.round(countRed/countTotal*100)}%</td></tr>
+	statistics.innerHTML = `<hr>當日統計<table><tr><td>中資：</td><td>${countRed}, ${Math.round(countRed/countTotal*100)}%</td></tr>
 <tr><td>疑似：</td><td>${countPink}, ${Math.round(countPink/countTotal*100)}%</td></tr>
 <tr><td>非中資：</td><td>${countNormal}, ${Math.round(countNormal/countTotal*100)}%</td></tr>
 <tr><td>合計：</td><td>${countTotal}</td></tr></table>`;
