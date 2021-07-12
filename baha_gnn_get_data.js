@@ -20,13 +20,12 @@ if(window.location.href.search("gnn.gamer.com.tw/index.php")!=-1){
 `因格瑪的預言|| 終焉默示錄 || 因格瑪の預言||Puzzle & Tales || Apocalypse Of Demise`,
 `歡樂大東家`,
 `封神異世錄`,
-
+`董卓來了`,
+`叫我君主：紅顏江山我都要`,
 	]
 	// 中資遊戲疑似清單	
 	var maybeList =[
-`大航海時代 6`, `RO 仙境傳說：我的戰術`, `卡拉邦`, `突襲：暗影傳說`, `逆轉奧賽羅尼亞`, `LoveLive! 學園偶像祭`, `Tap Titans`, `石器時代：世界`, `FINAL BLADE：英雄不滅`, `TsumTsum Stadium`, `Iron Marines`, `三小俠||Grand Chase`, `大富翁卡牌戰爭`, `跑跑卡丁車官方競速版`, `獎牌英雄`, `Dawn of Titans`, `FINAL FANTASY BRAVE EXVIUS`, `FFBE 幻影戰爭 WAR OF THE VISIONS`, `GOH 軍團的榮耀`, `風之國度`, `咖位我最大`, `SimCity BuildIt`, `月兔冒險`, `精靈樂章 - 這樣的夥伴沒問題嗎`, `NBA 2K 行動版`, `動物朋友`, `戰艦世界 閃擊戰`, `女王 2`, `消滅都市||AFTERLOST`, `口袋楓之谷 ||Pocket Maple Story`, `Dynamix`, `小鎮奇緣`, `無盡之劍 3 インフィニティブレード 3 ||Infinity Blade 3`, `仙境傳說 普隆德拉迷宮`, `傳奇商店||Shop Titans`, `Kingdom Rush Origins `, `暗影格鬥 3   `, `聖鬥士星矢 小宇宙幻想傳 `, `王國 5：繼承者 `, `絕望地下城 ||Dungeon of Despair `, `忍豆：新世代 `, `為了誰的鍊金術師 `, `幽遊白書：BANG！靈丸 `, `PUBG：NEW STATE`, `陽春白雪`, `聖鬪士星矢：銀河之魂  `, `滾滾飛球||Eagle Fantasy Golf`, `三國萌戰記`, `穿越火線：戰爭地帶||CrossFire: Warzone`, `穀穀雞莊園 ||Gogogaie Farm`, `仙境傳說：波利合併  ||Ragnarok: Poring Merge`, `新火鳳燎原 亂世英雄`, `魔法軍團 Z WarLocksZ `, `魔法軍團零`, `甜點王子 2：心動奇蹟`, `古惑仔 M`, `爐石戰記`, `暴雪英霸`, `魔獸世界：暗影之境`, `仙境傳說：女武神之起義||Ragnarok Online：Valkyrie Uprising`,
-`城堡工藝世界大戰||Castle Craft：World War`,
-`絕地求生：未來之役||PUBG：NEW STATE`,
+`大航海時代 6`, `RO 仙境傳說：我的戰術`, `卡拉邦`, `突襲：暗影傳說`, `逆轉奧賽羅尼亞`, `LoveLive! 學園偶像祭`, `Tap Titans`, `石器時代：世界`, `FINAL BLADE：英雄不滅`, `TsumTsum Stadium`, `Iron Marines`, `三小俠||Grand Chase`, `大富翁卡牌戰爭`, `跑跑卡丁車官方競速版`, `獎牌英雄`, `Dawn of Titans`, `FINAL FANTASY BRAVE EXVIUS`, `FFBE 幻影戰爭 WAR OF THE VISIONS`, `GOH 軍團的榮耀`, `風之國度`, `咖位我最大`, `SimCity BuildIt`, `月兔冒險`, `精靈樂章 - 這樣的夥伴沒問題嗎`, `NBA 2K 行動版`, `動物朋友`, `戰艦世界 閃擊戰`, `女王 2`, `消滅都市||AFTERLOST`, `口袋楓之谷 ||Pocket Maple Story`, `Dynamix`, `小鎮奇緣`, `無盡之劍 3 インフィニティブレード 3 ||Infinity Blade 3`, `仙境傳說 普隆德拉迷宮`, `傳奇商店||Shop Titans`, `Kingdom Rush Origins `, `暗影格鬥 3   `, `聖鬥士星矢 小宇宙幻想傳 `, `王國 5：繼承者 `, `絕望地下城 ||Dungeon of Despair `, `忍豆：新世代 `, `為了誰的鍊金術師 `, `幽遊白書：BANG！靈丸 `, `PUBG：NEW STATE`, `陽春白雪`, `聖鬪士星矢：銀河之魂  `, `滾滾飛球||Eagle Fantasy Golf`, `三國萌戰記`, `穿越火線：戰爭地帶||CrossFire: Warzone`, `穀穀雞莊園 ||Gogogaie Farm`, `仙境傳說：波利合併  ||Ragnarok: Poring Merge`, `新火鳳燎原 亂世英雄`, `魔法軍團 Z WarLocksZ `, `魔法軍團零`, `甜點王子 2：心動奇蹟`, `古惑仔 M`, `爐石戰記`, `暴雪英霸`, `魔獸世界：暗影之境`, `城堡工藝世界大戰||Castle Craft：World War`, `絕地求生：未來之役||PUBG：NEW STATE`,
 
 	];
 	

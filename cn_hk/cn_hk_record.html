@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>中國香港記錄 (未整理完) China & HK record </title>
+</head>
+<body>
+
+
+
+<div   style="position:sticky; top:0;  background-color: white; z-index:100;">
+  <h2>
+  <a href='cn_hk_record.html'>中國香港記錄 (未整理)</a> |
+  <a href='hk_record.html'>香港事件記錄 (未整理)</a> |
+  <a href='hk_poll_record.html'>香港獨立機構民調記錄 (未整理)</a> |
+  <br>
+  </h2>
+</div>
+<table cellpadding="0" cellspacing="0" border="1">
+
+<tr><td>事件</td><td>中文</td><td>連結</td></tr>
+<tr><td>1997 Asian financial crisis (亞洲金融風暴)</td><td>憶98年金融風暴　董建華透露曾請中央派人來港解危　遭錢其琛拒絕指違一國兩制</td><td><a href='https://news.mingpao.com/ins/港聞/article/20170707/s00001/1499416884207/憶98年金融風暴-董建華透露曾請中央派人來港解危-遭錢其琛拒絕指違一國兩制'>■</a></td></tr>
+<tr><td>1997 Asian financial crisis (亞洲金融風暴)</td><td>亞洲金融風暴：香港金融穩定保衞戰</td><td><a href='https://www.hkma.gov.hk/chi/news-and-media/insight/2019/09/20190911/'>■</a></td></tr>
+<tr><td>1997 Asian financial crisis (亞洲金融風暴)</td><td>亞洲金融危機──入市難，退市更難</td><td><a href='https://www.hkma.gov.hk/chi/news-and-media/insight/2019/09/20190918/'>■</a></td></tr>
+<tr><td>1997 Asian financial crisis (亞洲金融風暴)</td><td>應付金融危機：任志剛演辭</td><td><a href='https://www.info.gov.hk/gia/general/199811/23/1123182.htm'>■</a></td></tr>
+<tr><td>1998 Asian financial crisis (亞洲金融風暴)</td><td>盲撐中央 也不容篡改打大鱷歷史</td><td><a href='https://m.mingpao.com/fin/instantf2.php?node=1567050328511&issue=20190829'>■</a></td></tr>
+
+<tr><td>SARS</td><td></td><td><a href=''>■</a></td></tr>
+
+<tr><td>法輪功</td><td></td><td><a href=''>■</a></td></tr>
+
+<tr><td>新疆</td><td></td><td><a href=''>■</a></td></tr>
+
+<tr><td>西藏</td><td></td><td><a href=''>■</a></td></tr>
+
+</tbody>
+</table>
+
+<script>
+var tr_tag = document.getElementsByTagName("tr");
+var search_input = document.getElementById("search_input")
+function replaceSearchText(text){
+	return text.replace(/[`：・！～「」－~!@#$%^&*()_|+\-=?;:'",.<>\s\{\}\[\]\\\/]/gi, '').toUpperCase()
+}
+
+function search(){
+//console.log(document.getElementById("search_input").value)
+	for(var i= 0; i< tr_tag.length ; i++){
+		if(!search_input.value)
+			tr_tag[i].style.display = "table-row";
+		else if(replaceSearchText(tr_tag[i].getElementsByTagName("td")[0].textContent).search(replaceSearchText(search_input.value))!=-1 
+			|| replaceSearchText(tr_tag[i].getElementsByTagName("td")[1].textContent).search(replaceSearchText(search_input.value))!=-1 
+			)
+			tr_tag[i].style.display = "table-row";
+		else 
+			tr_tag[i].style.display = "none";
+	}
+}
+</script>
+
+</body>
+</html>
