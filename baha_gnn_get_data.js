@@ -16,6 +16,16 @@ if(window.location.href.search("gnn.gamer.com.tw/index.php")!=-1){
 `新劍蕩江湖||劍蕩江湖`,
 `大妖籙`,
 `爆笑武道會`,
+`我在江湖有座城`,
+`ChinaJoy`,
+`少女前線：雲圖計劃||Girls' Frontline: Project Neural Cloud || Neural Cloud`,
+`實況力量足球`,
+`Garena Undawn`,
+`Project Cat`,
+`爆走兄弟：疾速奔跑`,
+`真・三國無雙 霸`,
+`魂斗羅：歸來`,
+`海底小縱隊學英文||Octonauts English`,
 
 	]
 	// 中資遊戲疑似清單	
@@ -31,6 +41,7 @@ if(window.location.href.search("gnn.gamer.com.tw/index.php")!=-1){
 	var otherGameList =[
 `《最後的克勞迪亞》日版`,
 `《Re 0：Lost in Memories》日版`,
+`《FGO》日版`,
 
 	];
 	
