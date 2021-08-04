@@ -4,6 +4,9 @@
   <meta charset="UTF-8">  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>save img</title>
+  <script type="text/javascript" src="lib/jszip.js"></script>
+  <script type="text/javascript" src="lib/jszip-utils.js"></script>
+  <script type="text/javascript" src="lib/FileSaver.js"></script>
 </head>
 <body style="font-family: Courier； font-size:16px;">
 <div style="white-space: pre-wrap;font-family: Courier;">		圖片質素(1最高)：<input id="compress_rate" type="number" max="1" min="0.1" step="0.05" value="1"/>
@@ -19,6 +22,8 @@
 <button onclick="copyText(print_data)">Copy Text</button>
 <button onclick="download_as_HTML()">Download As HTML</button>
 <button onclick="download_all_img()">Download All Img</button>
+<button onclick="download_all_img_as_zip()">Download All Img As Zip</button>
+
 
 <script>
 var print_data = document.getElementById("print_data");
@@ -71,11 +76,23 @@ function download_all_img(){
 		link.href = img_arr[i].src;
 		
 		link.download = `${(new Date()).getFullYear()}_${(new Date()).getMonth()+1}_${(new Date()).getDate()}_${i+1}.jpg`;
-		//img_arr[i].setAttribute('download', `.`);
-		//link.setAttribute('href', 'data:text/html;charset=utf-8,' + encodeURIComponent(`<!DOCTYPE html> <html> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> </head>`+print_data.outerHTML));
 		link.click(); 	
 	}
 }
+
+function download_all_img_as_zip(){
+	let img_arr = print_data.getElementsByTagName('img');
+	var zip = new JSZip();
+	for(var i=0; i<img_arr.length;i++){
+zip.file(`${(new Date()).getFullYear()}_${(new Date()).getMonth()+1}_${(new Date()).getDate()}_${i+1}.jpg`, img_arr[i].src.replace('data:image/jpeg;base64,',''), {base64: true});
+	}
+	zip.generateAsync({type:"blob"})
+.then(function(content) {
+    // see FileSaver.js
+    saveAs(content, "img.zip");
+});
+}
+
 </script>
 
 </body>
