@@ -50,6 +50,22 @@ if(window.location.href.search("gnn.gamer.com.tw/index.php")!=-1){
 `暗影火炬城||F.I.S.T.: Forged In Shadow Torch`,
 `斬妖行 ||Eastern Exorcist`,
 `光明記憶：無限||Bright Memory: Infinite`,
+`魔導少年：力量覺醒||Fairy Tail: Power Awakens`,
+`小小蟻國||The Ants - Underground Kingdom`,
+`絕地求生 M`,
+`ICEY`,
+`無盡戰記 Infinity Conflict||Infinity Conflict`,
+`雀魂麻將 majsoul`,
+`神魔煉 ||Alchemy of God&Demon`,
+`不休戰隊||Nonstop Game: Cyber Raid`,
+`碰碰蛇`,
+`萌趣醫院 ||Mochi Hospital`,
+`山海旅人||The Rewinder`,
+`仙劍奇俠傳七||Chinese Paladin 7`,
+`重返帝國`,
+`少女末世錄`,
+`永恆守護`,
+
 
 	];
 	
@@ -89,7 +105,7 @@ if(window.location.href.search("gnn.gamer.com.tw/index.php")!=-1){
 	var body = document.getElementsByTagName('body')[0]
 	// 把GNN新聞標題轉換為HTML存到str
 	var str = "";
-	for(var i =1 ; obj[0].children[i].children[0] ; i++){
+	for(var i =3 ; obj[0].children[i].children[0] ; i++){
 		if(obj[0].children[i].children[1].children[0].textContent!='其他'){
 	//		str += `<div onclick=changeColor(this)><a href="`
 			str += `<div ><a href="`
