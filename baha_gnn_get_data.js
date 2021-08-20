@@ -65,7 +65,13 @@ if(window.location.href.search("gnn.gamer.com.tw/index.php")!=-1){
 `重返帝國`,
 `少女末世錄`,
 `永恆守護`,
-
+`英雄聯盟：聯盟戰棋 || 金鏟鏟之戰`,
+`聖女戰旗||Banner of the Maid`,
+`靈之秘境: 異像殘影||Mysteria: Occult Shadows`,
+`諾弗蘭物語 || 鍊金少女 M`,
+`合金彈頭：指揮官||METAL SLUG：COMMANDER`,
+`哈利波特：魔法覺醒||Harry Potter: Magic Awakened`,
+`放置英雄Eureka||Idle Hero Eureka`,
 
 	];
 	
@@ -75,6 +81,7 @@ if(window.location.href.search("gnn.gamer.com.tw/index.php")!=-1){
 `要塞英雄||Fortnite`,
 `旋轉音律||Rotaeno`,
 `英雄大暴走`,
+`好食成雙`,
 
 	];
 	
@@ -83,6 +90,10 @@ if(window.location.href.search("gnn.gamer.com.tw/index.php")!=-1){
 `《最後的克勞迪亞》日版`,
 `《Re 0：Lost in Memories》日版`,
 `《FGO》日版`,
+`《Fate/Grand Order》日版`,
+`Fate/Grand Order - 神聖圓桌領域卡美洛`,
+`A3: STILL ALIVE 倖存者`,
+//`《Fate/Grand Order》`,
 
 	];
 	
