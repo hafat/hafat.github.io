@@ -72,6 +72,19 @@ if(window.location.href.search("gnn.gamer.com.tw/index.php")!=-1){
 `合金彈頭：指揮官||METAL SLUG：COMMANDER`,
 `哈利波特：魔法覺醒||Harry Potter: Magic Awakened`,
 `放置英雄Eureka||Idle Hero Eureka`,
+`大富翁 10||RichMan 10`,
+`不朽的眾神殿`,
+`映月城與電子姬`,
+`三國戰神記||Three Kingdoms:Heroes of Legend`,
+`Everdale`,
+`失落城堡||Lost Castle`,
+`荒野狩獵||Cave Shooter`,
+`戰爭雷霆||War Thunder`,
+`黑神話：悟空||Black Myth: Wu Kong`,
+`靈魂潮汐 || ソウルタイド||-Soul Tide-`,
+`戰火勛章||Warpath`,
+`ACE Soccer 球場風雲`,
+`拂曉：勝利之刻||ヴェルヴェットコード||Velvet Code`,
 
 	];
 	
