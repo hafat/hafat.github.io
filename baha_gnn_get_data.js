@@ -85,6 +85,22 @@ if(window.location.href.search("gnn.gamer.com.tw/index.php")!=-1){
 `戰火勛章||Warpath`,
 `ACE Soccer 球場風雲`,
 `拂曉：勝利之刻||ヴェルヴェットコード||Velvet Code`,
+`世界計畫 繽紛舞台！ feat. 初音未來`,
+`Zold:out`,
+`時光公主||Time Princess`,
+`Project Snow`,
+`喵遊世界`,
+`龍與誓約 - 守護`,
+`神覺者`,
+`夢想新大陸`,
+`少年封神傳`,
+`地藏伏魔錄`,
+`這位勇者超普通`,
+`激鬥峽谷`,
+`伊格利亞戰記||The Heroic Legend of Eagarlnia`,
+`BLEACH 境・界：斬魂之刃 || 境・界：斬魂之刃`,
+`三國殺手機版||Game of Heroes: Three Kingdoms`,
+`星魂2M`,
 
 	];
 	
@@ -106,7 +122,6 @@ if(window.location.href.search("gnn.gamer.com.tw/index.php")!=-1){
 `《Fate/Grand Order》日版`,
 `Fate/Grand Order - 神聖圓桌領域卡美洛`,
 `A3: STILL ALIVE 倖存者`,
-//`《Fate/Grand Order》`,
 
 	];
 	
@@ -129,7 +144,7 @@ if(window.location.href.search("gnn.gamer.com.tw/index.php")!=-1){
 	var body = document.getElementsByTagName('body')[0]
 	// 把GNN新聞標題轉換為HTML存到str
 	var str = "";
-	for(var i =3 ; obj[0].children[i].children[0] ; i++){
+	for(var i =1 ; obj[0].children[i].children[0] ; i++){
 		if(obj[0].children[i].children[1].children[0].textContent!='其他'){
 	//		str += `<div onclick=changeColor(this)><a href="`
 			str += `<div ><a href="`
