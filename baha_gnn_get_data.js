@@ -185,6 +185,11 @@ if(window.location.href.search("gnn.gamer.com.tw/index.php")!=-1){
 `夢幻新誅仙`,
 `小浣熊百將傳`,
 `百鬼夜行錄`,
+`摩爾莊園`,
+`神武4`,
+`提燈與地下城`,
+
+
 
 
 	];
