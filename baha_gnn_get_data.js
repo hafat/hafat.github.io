@@ -188,19 +188,51 @@ if(window.location.href.search("gnn.gamer.com.tw/index.php")!=-1){
 `摩爾莊園`,
 `神武4`,
 `提燈與地下城`,
-
-
-
+`蔚藍檔案`,
+`鐵甲雄兵||Blood of Steel`,
+`生死狙擊||battle teams || Blood Strike || Global Strike`,
+`音樂少女||Music Girls`,
+`世上英雄`,
+`守望傳說 ||ガーディアンテイルズ|| Guardian Tales`,
+`魔物調查者||Tiny Pixel Knight`,
+`魔法門之英雄無敵：王朝`,
+`快打旋風：對決`,
+`記憶事務所`,
+`BLADE 刀鋒戰記 2`,
+`影之刃：斷罪者`,
+`影之刃||Phantom Blade || DARK BLADE`,
+`怪物之家||Dad's Monster House`,
+`崩壞：星穹鐵道`,
+`辣妹網咖||Gamer Cafe`,
 
 	];
 	
 	// 中資遊戲疑似清單	
 	var maybeList =[
-`大航海時代 6`, `RO 仙境傳說：我的戰術`, `卡拉邦`, `突襲：暗影傳說`, `逆轉奧賽羅尼亞`, `LoveLive! 學園偶像祭`, `Tap Titans`, `石器時代：世界`, `FINAL BLADE：英雄不滅`, `TsumTsum Stadium`, `Iron Marines`, `三小俠||Grand Chase`, `大富翁卡牌戰爭`, `跑跑卡丁車官方競速版`, `獎牌英雄`, `Dawn of Titans`, `FINAL FANTASY BRAVE EXVIUS`, `FFBE 幻影戰爭 WAR OF THE VISIONS`, `GOH 軍團的榮耀`, `風之國度`, `咖位我最大`, `SimCity BuildIt`, `月兔冒險`, `精靈樂章 - 這樣的夥伴沒問題嗎`, `NBA 2K 行動版`, `動物朋友`, `戰艦世界 閃擊戰`, `女王 2`, `消滅都市||AFTERLOST`, `口袋楓之谷 ||Pocket Maple Story`, `Dynamix`, `小鎮奇緣`, `無盡之劍 3 インフィニティブレード 3 ||Infinity Blade 3`, `仙境傳說 普隆德拉迷宮`, `傳奇商店||Shop Titans`, `Kingdom Rush Origins `, `暗影格鬥 3   `, `聖鬥士星矢 小宇宙幻想傳 `, `王國 5：繼承者 `, `絕望地下城 ||Dungeon of Despair `, `忍豆：新世代 `, `為了誰的鍊金術師 `, `幽遊白書：BANG！靈丸 `, `PUBG：NEW STATE`, `陽春白雪`, `聖鬪士星矢：銀河之魂  `, `滾滾飛球||Eagle Fantasy Golf`, `三國萌戰記`, `穿越火線：戰爭地帶||CrossFire: Warzone`, `穀穀雞莊園 ||Gogogaie Farm`, `仙境傳說：波利合併  ||Ragnarok: Poring Merge`, `新火鳳燎原 亂世英雄`, `魔法軍團 Z WarLocksZ `, `魔法軍團零`, `甜點王子 2：心動奇蹟`, `古惑仔 M`, `爐石戰記`, `暴雪英霸`, `魔獸世界：暗影之境`, `城堡工藝世界大戰||Castle Craft：World War`, `絕地求生：未來之役||PUBG：NEW STATE`,
+`大航海時代 6`, `RO 仙境傳說：我的戰術`, `卡拉邦`, `突襲：暗影傳說`, `逆轉奧賽羅尼亞`, /*`LoveLive! 學園偶像祭`,*/ `Tap Titans`, `石器時代：世界`, `FINAL BLADE：英雄不滅`, `TsumTsum Stadium`, `Iron Marines`, `三小俠||Grand Chase`, `大富翁卡牌戰爭`, `跑跑卡丁車官方競速版`, `獎牌英雄`, `Dawn of Titans`, `FINAL FANTASY BRAVE EXVIUS`, `FFBE 幻影戰爭 WAR OF THE VISIONS`, `GOH 軍團的榮耀`, `風之國度`, `咖位我最大`, `SimCity BuildIt`, `月兔冒險`, `精靈樂章 - 這樣的夥伴沒問題嗎`, `NBA 2K 行動版`, `動物朋友`, `戰艦世界 閃擊戰`, `女王 2`, `消滅都市||AFTERLOST`, `口袋楓之谷 ||Pocket Maple Story`, `Dynamix`, `小鎮奇緣`, `無盡之劍 3 インフィニティブレード 3 ||Infinity Blade 3`, `仙境傳說 普隆德拉迷宮`, `傳奇商店||Shop Titans`, `Kingdom Rush Origins `, `暗影格鬥 3   `, `聖鬥士星矢 小宇宙幻想傳 `, `王國 5：繼承者 `, `絕望地下城 ||Dungeon of Despair `, `忍豆：新世代 `, `為了誰的鍊金術師 `, `幽遊白書：BANG！靈丸 `, `PUBG：NEW STATE`, `陽春白雪`, `聖鬪士星矢：銀河之魂  `, `滾滾飛球||Eagle Fantasy Golf`, `三國萌戰記`, `穿越火線：戰爭地帶||CrossFire: Warzone`, `穀穀雞莊園 ||Gogogaie Farm`, `仙境傳說：波利合併  ||Ragnarok: Poring Merge`, `新火鳳燎原 亂世英雄`, `魔法軍團 Z WarLocksZ `, `魔法軍團零`, `甜點王子 2：心動奇蹟`, `古惑仔 M`, `爐石戰記`, `暴雪英霸`, `魔獸世界：暗影之境`, `城堡工藝世界大戰||Castle Craft：World War`, `絕地求生：未來之役||PUBG：NEW STATE`,
 `要塞英雄||Fortnite`,
 `旋轉音律||Rotaeno`,
 `英雄大暴走`,
 `好食成雙`,
+`暗黑破壞神`,
+`暗黑破壞神 3`,
+`三國 BLADE：再戰`,
+`伊羅安||Elyon || A:IR(Ascent: Infinite Realm)`,
+`怪獸超級聯賽`,
+`Boxing Star`,
+`來我家玩吧`,
+`守望傳說 || 坎公騎冠劍||Guardian Tales`,
+`月光雕刻師||The Legendary Moonlight Sculptor`,
+`奧丁：神叛 || 奧丁：瓦爾哈拉之崛起||ODIN : Valhalla Rising`,
+`永恆靈魂||Eversoul`,
+`傳奇 4||MIR4`,
+`Terra Fire`,
+`Friends Shot`,
+`All Star Smash`,
+`上古世紀||アーキエイジ||ArcheAge`,
+`LINE：哆啦 A 夢樂園||LINE：ドラえもんパーク`,
+`Calice`,
+
 
 	];
 	
