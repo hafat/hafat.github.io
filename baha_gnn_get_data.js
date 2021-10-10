@@ -204,6 +204,24 @@ if(window.location.href.search("gnn.gamer.com.tw/index.php")!=-1){
 `怪物之家||Dad's Monster House`,
 `崩壞：星穹鐵道`,
 `辣妹網咖||Gamer Cafe`,
+`萌爪餐廳||Downy Inn`,
+`鈴蘭之劍：爲這和平的世界||Code: SSRPG`,
+`アイランドガール‪ズ‬||Island Girls`,
+`ラファームの少女||Rise of Girls`,
+`超次元女友：女神的幻想天堂 || 超次元女友: 神姫放置幻想樂園||超次元彼女: 神姫放置の幻想楽園||Superdimensional Girlfriend: Goddess' Fantasy Paradise`,
+`契約少女||ガールズ コントラクト||Contract Girls`,
+`ドラゴンハントレス||Dragon Huntress`,
+`銀翼計畫||プロジェクト・シルバーウイング||Project Silverwing`,
+`パズルガールズ||Puzzle Girls`,
+`百鬼夜行- 百鬼異世界物語||もののけ夜行-百鬼異世界物語||Mononoke Nocturne - The Hundred Demon World Story`,
+`絕境少女：復仇女神||ラストエスケイプ- 復讐の女神||Last Escape: Goddess of Revenge`,
+`三国ガールズ||Three Kingdoms Girls || Sangoku Girls`,
+`三國志外傳：戰姬覺醒||三国志外伝：戦姫覚醒||Dawn of Dynasty`,
+`光之童話||メルヘン・オブ・ライト～モロガミ放置RPG～||MARCHEN OF LIGHT`,
+`殭屍來了- 萌妹大冒險||Mow Zombies - 美少女サバイバルゲーム`,
+`女武神衝擊-翱翔天際的少女-||ヴァルキリーインパルス-天翔ける乙女-||Valkyrie Impulse`,
+`蒼空幻想||蒼空ファンタジー～運命のヴァルキュリア～||BlueSky Fantasy`,
+
 
 	];
 	
@@ -242,11 +260,11 @@ if(window.location.href.search("gnn.gamer.com.tw/index.php")!=-1){
 `《Re 0：Lost in Memories》日版`,
 `《FGO》日版`,
 `《Fate/Grand Order》日版`,
-`Fate/Grand Order - 神聖圓桌領域卡美洛`,
 `A3: STILL ALIVE 倖存者`,
 //`《Fate/Grand Order》`,
-`打破《天堂 2 M》紀錄`,
 `阿爾克納：命運之輪`,
+`真 ‧ 鎖鏈戰記`,
+
 
 	];
 	
