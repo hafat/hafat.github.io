@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>中資遊戲問答</title>
+</head>
+<body>
+
+
+
+<table width='100%' cellpadding="0" cellspacing="0" border="1"><tbody> 
+<!-- <tr> <td>中文名</td> <td>英文名</td><td>原因</td> </tr>-->
+ <tr> <td>時間</td><td>問題</td> <td>回答</td> </tr>
+
+<tr><td>18-10-2021</td><td>第七史詩 日服也是悠星代理 另外我想問一下是否某遊戲原本非中資，然而被中資公司代理後就必須被算作中資? 像是守望傳說和未來戰還沒被代理前應該也不算是中資?</td><td>第七史詩和守望傳說的日服、未來戰的台服都是中資遊戲，因為都是由中國公司代理。若果沒有特別註明，中資遊戲列表中的遊戲都是以台港服作準，而同一遊戲在不同伺服器可被分別視為中資或非中資</td></tr>
+
+
+
+</tbody>
+</table>
+
+中資遊戲回報/意見: <a href="https://forms.gle/vDx7ewKsUHX4JEkU9">https://forms.gle/vDx7ewKsUHX4JEkU9</a>
+
+<script>
+var tr_tag = document.getElementsByTagName("tr");
+var search_input = document.getElementById("search_input")
+function replaceSearchText(text){
+	return text.replace(/[`：・！～「」－~!@#$%^&*()_|+\-=?;:'",.<>\s\{\}\[\]\\\/]/gi, '').toUpperCase()
+}
+
+function search(){
+//console.log(document.getElementById("search_input").value)
+	for(var i= 0; i< tr_tag.length ; i++){
+		if(!search_input.value)
+			tr_tag[i].style.display = "table-row";
+		else if(replaceSearchText(tr_tag[i].getElementsByTagName("td")[0].textContent).search(replaceSearchText(search_input.value))!=-1 
+			|| replaceSearchText(tr_tag[i].getElementsByTagName("td")[1].textContent).search(replaceSearchText(search_input.value))!=-1 
+			|| replaceSearchText(tr_tag[i].getElementsByTagName("td")[2].textContent).search(replaceSearchText(search_input.value))!=-1 
+			)
+			tr_tag[i].style.display = "table-row";
+		else 
+			tr_tag[i].style.display = "none";
+	}
+}
+</script>
+
+</body>
+</html>
