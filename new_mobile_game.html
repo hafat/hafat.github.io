@@ -61,12 +61,20 @@ tr td {
 var tr_tag = document.getElementsByTagName("tr");
 var date = ((new Date()).getMonth()+1)*100 + (new Date()).getDate() + (new Date()).getFullYear()*10000;
 
+// highlight
+for(var i= 0; i< tr_tag.length ; i++){
+	if(tr_tag[i].getAttribute("data-date") && Math.abs(date - tr_tag[i].getAttribute("data-date")) <=5){
+		tr_tag[i].style.backgroundColor= "#ffd";    
+	}
+}
+
 function hideOld(){
 	for(var i= 0; i< tr_tag.length ; i++){
 		if(!tr_tag[i].getAttribute("data-date") 
 		  || parseInt(tr_tag[i].getAttribute("data-date")) >= date
-		  )
+		  ){
 			tr_tag[i].style.display = "table-row";
+		}
 		else 
 			tr_tag[i].style.display = "none";
 	}
