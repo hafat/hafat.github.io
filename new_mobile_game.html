@@ -71,7 +71,7 @@ for(var i= 0; i< tr_tag.length ; i++){
 function hideOld(){
 	for(var i= 0; i< tr_tag.length ; i++){
 		if(!tr_tag[i].getAttribute("data-date") 
-		  || parseInt(tr_tag[i].getAttribute("data-date")) >= date
+		  || parseInt(tr_tag[i].getAttribute("data-date"))+5 >= date
 		  ){
 			tr_tag[i].style.display = "table-row";
 		}
