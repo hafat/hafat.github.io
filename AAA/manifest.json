@@ -1,0 +1,14 @@
+{
+"name": "隱藏巴哈上的中資遊戲",
+"description": "",
+"version": "1.0",
+"manifest_version": 3,
+"content_scripts": [
+{
+"matches": ["*://*.gamer.com.tw/*"],
+"run_at": "document_idle",
+"css": ["myCss.css"]
+,"js": ["myJs.js"]
+}
+]
+}
