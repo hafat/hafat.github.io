@@ -10,9 +10,14 @@
   <h2>
   <a href='cn_game_company.html'>中資公司</a> |
   <a href='cn_game.html'>中資遊戲</a> |
-  <a href='cn_game_lihkg.html'>LIHKG中資遊戲post回報</a> |
+  <a href='cn_game_lihkg.html'>LIHKG中資遊戲post回報</a>
+  <button onclick='toggleView("sub_nav")'>其他相關</button>
+  <span id="sub_nav" style="display:none">
   <a href='non_cn_games/appstore.html' target='_blank'>非中資手機遊戲</a> |
-  <a href='non_cn_games/cn_game_definition.html' target='_blank'>中資定義</a>
+  <a href='non_cn_games/cn_game_definition.html' target='_blank'>中資定義</a> |
+  <a href='baha_gnn_record.html' target='_blank'>GNN手遊記錄</a> |
+  <a href='new_mobile_game.html' target='_blank'>新手機遊戲</a> 
+  </span>
   <br>
   <input id="search_input" onkeyup="search()" style="font-size:30px" type='text' placeholder="search name"/>
   <button onclick="search()" style="font-size:30px">Search</button>
@@ -911,6 +916,16 @@ function search(){
 			tr_tag[i].style.display = "none";
 	}
 }
+
+function toggleView(ele_id){
+	let ele_obj = document.getElementById(ele_id);
+	if(ele_obj.style.display=="none"){
+		ele_obj.style.display = "inline";
+	}
+	else 
+		ele_obj.style.display = "none";
+}
+
 </script>
 </body>
 </html>
