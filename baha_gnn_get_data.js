@@ -92,7 +92,26 @@ if(window.location.href.search("gnn.gamer.com.tw/index.php")!=-1){
 `古劍奇譚||Swords of Legends || Gujian`,
 `三國志幻想大陸`,
 `有殺氣童話`,
-
+`三國：英雄的榮光`,
+`無極仙途`,
+`黑暗傳說 || 黑暗傳說單機RPG||Legend of Darkness`,
+`雷索納斯||Resonance Solstice`,
+`光隙解語`,
+`紙嫁衣 3||紙装束||Paper Bride`,
+`大秦帝國`,
+`妄想山海：乾坤||Chimeraland`,
+`代號：燭`,
+`阿卡夏計劃 || 明日戰紀||The Project：Akasha`,
+`三國殺`,
+`超凡先鋒`,
+`project:1024`,
+`道士出觀-林正英正版授權`,
+`道士出觀`,
+`暗影傳說`,
+`超前綫||Hyper Front`,
+`神域||Mythic Heroes`,
+`聖樹喚歌||Holy Tree Song`,
+`迷失蔚藍||LOST in Blue`,
 
 	];
 	
