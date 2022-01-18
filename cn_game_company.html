@@ -949,6 +949,13 @@
 <tr> <td>智游在線,gamexdd, 智遊在線</td> <td>只有中資遊戲 </td></tr>
 <tr> <td>悠遊科技有限公司 /Yogame Technology</td> <td>初心網絡</td></tr>
 <tr> <td>重慶優路科技有限公司/ 優路互娛/ 北京優路互娛科技有限公司 /香港優路科技有限公司/ Hong Kong Youloft Technology Limited / Chongqing Youloft Technology Co., Ltd / Beijing Yoloogames Technology Co., Ltd /  Youloft Tech</td> <td></td></tr>
+<tr> <td>廣州零創遊戲有限公司</td> <td></td></tr>
+<tr> <td>日本明良海外投資諮詢株式会社 / MLN Consulting / Y2SGAMES株式会社  / Y2SGAMES CO.,LTD</td> <td>新加坡明良投資諮詢集團（MLN INVESTMENT HOLDING(GROUP)PTE LTD）是由中國人在新加坡設立的諮詢公司</td></tr>
+
+
+
+
+
 
 
 </tbody></table>
@@ -970,6 +977,8 @@ function search(){
 		if(!search_input.value)
 			tr_tag[i].style.display = "table-row";
 		else if(replaceSearchText(tr_tag[i].getElementsByTagName("td")[0].textContent).search(replaceSearchText(search_input.value))!=-1 
+			|| replaceSearchText(tr_tag[i].getElementsByTagName("td")[1].textContent).search(replaceSearchText(search_input.value))!=-1 
+
 			)
 			tr_tag[i].style.display = "table-row";
 		else 
