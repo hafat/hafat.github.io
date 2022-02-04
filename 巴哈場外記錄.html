@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<style>
+table{
+border-collapse: collapse;
+}
+
+td{
+border: 1px solid black;
+min-width: 30px;
+}
+</style>
+<body>
+統計<hr>
+<td><table id="statistics"></table></td>
+<hr>
+數據<hr>
+<td><table id="record" ></table></td>
+
+
+</body>
+
+<script>
+
+var record = document.getElementById('record');
+var statistics = document.getElementById('statistics');
+
+var data_list = [
+{name:'英雄聯盟',id:2980113},
+{name:'崩壞 3rd',id:3650506},
+{name:'少女前線',id:3790298},
+{name:'碧藍航線',id:3975870},
+{name:'少女前線',id:4465319},
+{name:'永遠的七日之都',id:4523218},
+{name:'明日方舟',id:5086930},
+{name:'重裝戰姬',id:5503284},
+{name:'符文大地傳說',id:5679653},
+{name:'雀魂',id:5113198},
+{name:'碧藍檔案',id:6150285},
+{name:'Warframe',id:3500784},
+{name:'Path of Exile ',id:3542402},
+{name:'少女前線',id:6200868},
+{name:'梅露可物語',id:4491469},
+{name:'原神',id:6216651},
+{name:'未來戰',id:6138993},
+{name:'部落衝突',id:4442119},
+{name:'Phigros',id:5270484},
+{name:'最終休止符',id:4817620},
+{name:'天地劫',id:6465517},
+{name:'原神',id:6485195},
+{name:'原神',id:6496312},
+{name:'戰爭雷霆',id:4870165},
+{name:'原神',id:6491990},
+{name:'荒野亂鬥',id:4858722},
+{name:'碧藍航線',id:5248094},
+{name:'原神',id:6563244},
+{name:'原神',id:6597293},
+{name:'原神',id:6160278},
+{name:'原神',id:6631597},
+{name:'原神',id:6631506},
+{name:'食物語',id:5299995},
+{name:'原神',id:6625387},
+{name:'Muse Dash',id:6491670},
+{name:'白夜極光',id:6631356},
+{name:'守望傳說',id:5835317},
+{name:'原神',id:6560747},
+{name:'原神',id:6656986},
+{name:'原神',id:6479686},
+{name:'原神',id:6674300},
+{name:'楓之谷R',id:6679508},
+{name:'原神',id:6677466},
+{name:'原神',id:6701593},
+{name:'英雄聯盟',id:6700084},
+{name:'碧藍檔案',id:6656203},
+{name:'碧藍航線',id:6718131},
+{name:'原神',id:6515165},
+{name:'原神',id:6716890},
+{name:'原神',id:6717211},
+{name:'原神',id:6726298},
+{name:'原神',id:6597442},
+{name:'崩壞 3rd',id:6704690},
+{name:'原神',id:6700311},
+{name:'原神',id:6750736},
+{name:'原神',id:6767014},
+{name:'原神',id:6656131},
+{name:'原神',id:6773728},
+{name:'原神',id:6779799},
+{name:'原神',id:6755731},
+{name:'原神',id:6780290},
+{name:'原神',id:6790262},
+{name:'原神',id:6793512},
+{name:'原神',id:6792329},
+{name:'原神',id:6796837},
+{name:'原神',id:6804014},
+{name:'原神',id:6805120},
+{name:'原神',id:6805762},
+{name:'原神',id:6817109},
+{name:'碧藍航線',id:6818065},
+{name:'原神',id:6829565},
+{name:'英雄聯盟',id:6565032},
+{name:'原神',id:6839131},
+{name:'雀魂',id:6838303},
+{name:'妄想山海',id:6835937},
+{name:'原神',id:6655691},
+{name:'原神',id:6843344},
+{name:'英雄聯盟',id:6842884},
+{name:'原神',id:6848568},
+{name:'原神',id:6522364},
+{name:'原神',id:6848293},
+{name:'原神',id:6851254},
+{name:'原神',id:6853315},
+{name:'原神',id:6853375},
+{name:'幻塔',id:6849893},
+{name:'原神',id:6854004},
+{name:'聯盟戰棋',id:6119630},
+{name:'蔚藍檔案',id:6853922},
+{name:'蔚藍檔案',id:6839070},
+{name:'原神',id:6761613},
+{name:'原神',id:6859026},
+{name:'原神',id:6862775},
+{name:'原神',id:6862874},
+{name:'原神',id:6862353},
+{name:'原神',id:6752260},
+{name:'原神',id:6861682},
+{name:'原神',id:6862751},
+{name:'原神',id:6864348},
+{name:'原神',id:6867420},
+{name:'原神',id:6867383},
+{name:'英雄聯盟',id:6784946},
+{name:'原神',id:6865828},
+{name:'原神',id:6870730},
+{name:'原神',id:6875536},
+{name:'原神',id:6876637},
+{name:'原神',id:6877308},
+{name:'煙雨江湖',id:6460862},
+{name:'原神',id:6879366},
+{name:'原神',id:6874158},
+{name:'原神',id:6882101},
+{name:'原神',id:6881978},
+{name:'原神',id:6882552},
+{name:'原神',id:6867147},
+{name:'原神',id:6882258},
+{name:'原神',id:6880578},
+{name:'原神',id:6883864},
+{name:'原神',id:6883895},
+{name:'原神',id:6883930},
+{name:'原神',id:6884585},
+
+];
+
+var key = [];
+var stat = [];
+for(var i = 0; i<data_list.length ; i++){
+		var row = record.insertRow(-1);
+		var cell1 = row.insertCell(0);
+		var cell2 = row.insertCell(1);
+		cell1.innerHTML = data_list[i].name;
+		cell2.innerHTML = data_list[i].id;
+	if(!stat[data_list[i].name]){
+		stat[data_list[i].name] = 1;
+		key.push(data_list[i].name)
+	}
+	else
+		stat[data_list[i].name]++;
+}
+
+for(var i = 0; i<key.length ; i++){
+	var row = statistics.insertRow(-1);var cell1 = row.insertCell(0);
+	var cell2 = row.insertCell(1);
+	var cell3 = row.insertCell(2);
+
+	// Add some text to the new cells:
+	cell1.innerHTML = key[i];
+	cell2.innerHTML = stat[key[i]];
+	cell3.innerHTML = Math.round(stat[key[i]]/data_list.length*10000)/100+'%';
+}
+
+
+</script>
+</html>
