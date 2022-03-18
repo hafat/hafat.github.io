@@ -206,10 +206,30 @@ if(window.location.href.search("gnn.gamer.com.tw/index.php")!=-1){
 `仙靈奇緣`,
 `雲山之約`,
 `Cytoid`,
-
-
-
-
+`Flash Party`,
+`T3 Arena`,
+`放置原始人||エイジ・オブ・ケイブ：放置原人||Age of Caves: Idle Primitive || Idle AuWuuLa`,
+`木塊數獨遊戲-益智遊戲 || 木塊拼圖消除-經典方塊益智遊戲||Block Puzzle-パズルゲ||Block Puzzle-Wood Sudoku Game`,
+`合成方塊 - 2048數字合成益智遊戲||Merge Block - 2048 Puzzle`,
+`空之勇者團||空の勇者たち||Sky Heroes`,
+`Beat Run! Pop Music Rush||ビートラッシュ！Beat Runner！人気曲音楽リズムゲー`,
+`賽博甜心||サイバーハニー||Cyber Honey`,
+`妮姬 勝利女神||NIKKE The Goddess of Victory`,
+`秘境傳說：神木遺跡 || 狩獵使命`,
+`Draw 2 Save`,
+`諾亞太空戰記||ノア宇宙戦記||Noah Space Senki `,
+`朋友任務||トモダチクエスト||Tomodachi Quest `,
+`放肆武林 || 武林閒俠`,
+`神話阿斯加德諸神||Myth:God of Asgard`,
+`仙旅奇緣||Fairy Town - CindeBella`,
+`緋石之心||Brave Hearts`,
+`唱舞全明星II：偶像之約`,
+`Wreck It Cat `,
+`深空之眼`,
+`瘋狂餐廳——烹飪之旅||Cooking Madness-Kitchen Frenzy`,
+`紙牌家居設計||ソリティア ホームデザイン Solitaire||Solitaire Home Design`,
+`越南大戰 ATTACK`,
+`戰艦出擊：無畏 || 無盡航線||Infinite Lane - World Warships || Endless Voyage`,
 
 	];
 	
@@ -238,6 +258,10 @@ if(window.location.href.search("gnn.gamer.com.tw/index.php")!=-1){
 `Tiny Fantasy `,
 `Olympic Games Jam : Beijing 2022`,
 `傳奇大亂鬥 ||Smash Legends`,
+`首爾之星||SeoulStars`,
+`Crypto Golf Impact`,
+
+
 
 	];
 	
@@ -252,6 +276,7 @@ if(window.location.href.search("gnn.gamer.com.tw/index.php")!=-1){
 `神域召喚`,
 `賽馬娘 Pretty Derby》日版`,
 `幻想神域`,
+`日版《賽馬娘 Pretty Derby`,
 
 
 	];
