@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <style>
+  .box{
+  	display:inline-block;
+  	width:230px;
+  	vertical-align: top;
+  }
+  </style>
+</head>
+<body>
+<div style="position:sticky; top:0;  background-color: white; z-index:100;">
+<select id="date_select" onchange="search()">
+</select>
+<select id="type_select" onchange="search()">
+  <option value="有台港服">有台港服</option>
+  <option value="沒有台港服">沒有台港服</option>
+  <option value="台港服由中資代理">台港服由中資代理</option>
+  <option value="日服由中資代理">日服由中資代理</option>
+  <option value="中資">中資</option>
+</select>
+</div>
+
+<div id='show_game'>
+</div>
+<br>
+排名根據 https://game-i.daa.jp/?AppStore月間アプリセールス予測
+
+<script>
+	var date_select = document.getElementById("date_select");
+	var type_select = document.getElementById("type_select");
+
+
+var data = [];
+// 202203 
+data.push({'date':'202203',
+ '有台港服':`
+<div class='box'><img src='img2/怪物彈珠〈Monster Strike〉.jpg' ><br>2. 怪物彈珠〈Monster Strike〉</div>
+<div class='box'><img src='img2/Puzzle & Dragons.jpg' ><br>4. Puzzle & Dragons</div>
+<div class='box'><img src='img2/DRAGON BALL Z -七龍珠爆裂激戰-.jpg' ><br>16. DRAGON BALL Z -七龍珠爆裂激戰-</div>
+<div class='box'><img src='img2/Pokemon GO.jpg' ><br>18. Pokemon GO</div>
+<div class='box'><img src='img2/Yu-Gi-Oh! Master Duel.jpg' ><br>24. Yu-Gi-Oh! Master Duel</div>
+<div class='box'><img src='img2/勇者鬥惡龍戰略指揮家.jpg' ><br>26. 勇者鬥惡龍戰略指揮家</div>
+<div class='box'><img src='img2/世界足球競賽2018.jpg' ><br>32. 世界足球競賽2018</div>
+<div class='box'><img src='img2/關於我轉生變成史萊姆這檔事魔王與龍的建國譚.jpg' ><br>38. 關於我轉生變成史萊姆這檔事魔王與龍的建國譚</div>
+<div class='box'><img src='img2/闇影詩章Shadowverse.jpg' ><br>46. 闇影詩章Shadowverse</div>
+<div class='box'><img src='img2/Toon Blast.jpg' ><br>47. Toon Blast</div>
+<div class='box'><img src='img2/三國志霸道.jpg' ><br>49. 三國志霸道</div>
+<div class='box'><img src='img2/迪士尼扭曲仙境.jpg' ><br>51. 迪士尼扭曲仙境</div>
+<div class='box'><img src='img2/寶可夢大師EX（Pokémon Masters EX）.jpg' ><br>55. 寶可夢大師EX（Pokémon Masters EX）</div>
+<div class='box'><img src='img2/超異域公主連結 Re-Dive.jpg' ><br>56. 超異域公主連結 Re:Dive</div>
+<div class='box'><img src='img2/LINE 航海王：秘寶尋航.jpg' ><br>59. LINE 航海王：秘寶尋航</div>
+<div class='box'><img src='img2/復活邪神Romancing SaGa Re;univerSe.jpg' ><br>65. 復活邪神Romancing SaGa Re;univerSe</div>
+<div class='box'><img src='img2/航海王Bounty Rush.jpg' ><br>67. 航海王Bounty Rush</div>
+<div class='box'><img src='img2/白貓Project.jpg' ><br>69. 白貓Project</div>
+<div class='box'><img src='img2/貓咪大戰爭.jpg' ><br>71. 貓咪大戰爭</div>
+<div class='box'><img src='img2/七龍珠激戰傳說.jpg' ><br>72. 七龍珠激戰傳說</div>
+<div class='box'><img src='img2/Gran Saga.jpg' ><br>74. Gran Saga</div>
+<div class='box'><img src='img2/空帕斯：陣地攻防戰.jpg' ><br>83. 空帕斯：陣地攻防戰</div>
+<div class='box'><img src='img2/亙古幻想.jpg' ><br>85. 亙古幻想</div>
+<div class='box'><img src='img2/JUMPUTI HEROES 英雄氣泡.jpg' ><br>99. JUMPUTI HEROES 英雄氣泡</div>
+<div class='box'><img src='img2/Royal Match.jpg' ><br>103. Royal Match</div>
+<div class='box'><img src='img2/寵物島Livly Island.jpg' ><br>105. 寵物島Livly Island</div>
+<div class='box'><img src='img2/LINE POP2.jpg' ><br>110. LINE POP2</div>
+<div class='box'><img src='img2/Hero Wars.jpg' ><br>117. Hero Wars</div>
+<div class='box'><img src='img2/北斗之拳傳承者再臨.jpg' ><br>119. 北斗之拳傳承者再臨</div>
+<div class='box'><img src='img2/LINE BUBBLE 2.jpg' ><br>120. LINE BUBBLE 2</div>
+<div class='box'><img src='img2/FFBE WAR OF THE VISIONS.jpg' ><br>129. FFBE WAR OF THE VISIONS</div>
+<div class='box'><img src='img2/聖火降魔錄英雄雲集.jpg' ><br>136. 聖火降魔錄英雄雲集</div>
+<div class='box'><img src='img2/動物森友會口袋露營廣場.jpg' ><br>148. 動物森友會口袋露營廣場</div>
+<div class='box'><img src='img2/魔靈召喚.jpg' ><br>156. 魔靈召喚</div>
+<div class='box'><img src='img2/Empires & Puzzles- RPG Quest 帝國拼圖.jpg' ><br>159. Empires & Puzzles: RPG Quest 帝國拼圖</div>
+<div class='box'><img src='img2/為美好的世界獻上祝福！Fantastic Days.jpg' ><br>167. 為美好的世界獻上祝福！Fantastic Days </div>
+<div class='box'><img src='img2/遊戲王決鬥聯盟.jpg' ><br>168. 遊戲王決鬥聯盟</div>
+<div class='box'><img src='img2/Another Eden：穿越時空的貓.jpg' ><br>182. Another Eden：穿越時空的貓</div>
+<div class='box'><img src='img2/足球小將翼：夢幻隊伍.jpg' ><br>184. 足球小將翼：夢幻隊伍</div>
+<div class='box'><img src='img2/瑪利歐賽車巡迴賽.jpg' ><br>189. 瑪利歐賽車巡迴賽</div>
+<div class='box'><img src='img2/IDOLiSH7-偶像星願-.jpg' ><br>194. IDOLiSH7-偶像星願-</div>
+<div class='box'><img src='img2/勇者鬥惡龍 達伊的大冒險　燃魂羈絆.jpg' ><br>196. 勇者鬥惡龍 達伊的大冒險　燃魂羈絆</div>
+<div class='box'><img src='img2/超級機器人大戰DD.jpg' ><br>201. 超級機器人大戰DD</div>
+<div class='box'><img src='img2/SEGA 新創造球會ROAD to the WORLD.jpg' ><br>203. SEGA 新創造球會ROAD to the WORLD</div>
+<div class='box'><img src='img2/LoveLive！學園偶像祭ALL STARS.jpg' ><br>207. LoveLive！學園偶像祭ALL STARS</div>
+<div class='box'><img src='img2/MY HERO ULTRA IMPACT.jpg' ><br>212. MY HERO ULTRA IMPACT</div>
+<div class='box'><img src='img2/夢王國與沉睡中的 100 位王子殿下.jpg' ><br>222. 夢王國與沉睡中的 100 位王子殿下</div>
+<div class='box'><img src='img2/GUNDAM BREAKER：鋼彈創壞者.jpg' ><br>223. GUNDAM BREAKER：鋼彈創壞者</div>
+<div class='box'><img src='img2/問答RPG 魔法使與黑貓維茲.jpg' ><br>227. 問答RPG 魔法使與黑貓維茲</div>
+<div class='box'><img src='img2/歌之王子殿下 Shining Live.jpg' ><br>243. 歌之王子殿下 Shining Live</div>
+<div class='box'><img src='img2/乃木恋～那天在坂道下，我墜入了情網～.jpg' ><br>244. 乃木恋～那天在坂道下，我墜入了情網～</div>
+<div class='box'><img src='img2/在地下城尋求邂逅是否搞錯了什麼～記憶憧憬.jpg' ><br>246. 在地下城尋求邂逅是否搞錯了什麼～記憶憧憬</div>
+<div class='box'><img src='img2/Dissidia Final Fantasy Opera Omnia.jpg' ><br>254. Dissidia Final Fantasy Opera Omnia </div>
+<div class='box'><img src='img2/Toy Blast.jpg' ><br>255. Toy Blast </div>
+<div class='box'><img src='img2/Family Island.jpg' ><br>256. Family Island</div>
+<div class='box'><img src='img2/FINAL FANTASY BRAVE EXVIUS.jpg' ><br>263. FINAL FANTASY BRAVE EXVIUS</div>
+<div class='box'><img src='img2/Minecraft.jpg' ><br>264. Minecraft</div>
+<div class='box'><img src='img2/太空戰士15：新帝國.jpg' ><br>266. 太空戰士15：新帝國 </div>
+<div class='box'><img src='img2/聖鬥士星矢小宇宙幻想傳.jpg' ><br>278. 聖鬥士星矢小宇宙幻想傳</div>
+<div class='box'><img src='img2/Pikmin Bloom.jpg' ><br>280. Pikmin Bloom</div>
+<div class='box'><img src='img2/募戀英雄.jpg' ><br>290. 募戀英雄</div>
+<div class='box'><img src='img2/NieR Re[in]carnation.jpg' ><br>292. NieR Re[in]carnation</div>
+<div class='box'><img src='img2/Disney POP TOWN.jpg' ><br>298. Disney POP TOWN</div>
+<div class='box'><img src='img2/D×2 真・女神轉生 Liberation.jpg' ><br>301. D×2 真・女神轉生 Liberation</div>
+<div class='box'><img src='img2/刀劍神域關鍵鬥士.jpg' ><br>305. 刀劍神域關鍵鬥士</div>
+<div class='box'><img src='img2/LINE 波兔小鎮.jpg' ><br>306. LINE 波兔小鎮</div>
+<div class='box'><img src='img2/召喚圖板Summons Board.jpg' ><br>310. 召喚圖板Summons Board</div>
+<div class='box'><img src='img2/迪士尼 我的小娃娃.jpg' ><br>313. 迪士尼 我的小娃娃</div>
+<div class='box'><img src='img2/BLEACH Brave Souls.jpg' ><br>314. BLEACH Brave Souls</div>
+<div class='box'><img src='img2/三麗鷗明星的微笑小鎮 - Hello Sweet Days.jpg' ><br>321. 三麗鷗明星的微笑小鎮 : Hello Sweet Days</div>
+<div class='box'><img src='img2/楓之谷M.jpg' ><br>327. 楓之谷M</div>
+<div class='box'><img src='img2/Unison League.jpg' ><br>329. Unison League</div>
+<div class='box'><img src='img2/黑色沙漠MOBILE.jpg' ><br>335. 黑色沙漠MOBILE</div>
+<div class='box'><img src='img2/美男王子 - 美女與野獸的最後之戀.jpg' ><br>348. 美男王子 - 美女與野獸的最後之戀</div>
+<div class='box'><img src='img2/薑餅人王國.jpg' ><br>352. 薑餅人王國</div>
+<div class='box'><img src='img2/天堂M.jpg' ><br>355. 天堂M</div>
+<div class='box'><img src='img2/Golf Rival.jpg' ><br>360. Golf Rival</div>
+<div class='box'><img src='img2/ROBLOX.jpg' ><br>370. ROBLOX</div>
+<div class='box'><img src='img2/Love Live!School idol festival.jpg' ><br>372. Love Live!School idol festival</div>
+<div class='box'><img src='img2/決勝 高球.jpg' ><br>373. 決勝 高球</div>
+<div class='box'><img src='img2/少女歌劇Revue Starlight -Re LIVE-.jpg' ><br>381. 少女歌劇Revue Starlight -Re LIVE-</div>
+<div class='box'><img src='img2/Zooba- Zoo Battle Royale Game.jpg' ><br>383. Zooba: Zoo Battle Royale Game</div>
+<div class='box'><img src='img2/LINE- 鋼彈大亂鬥.jpg' ><br>384. LINE: 鋼彈大亂鬥</div>
+<div class='box'><img src='img2/V4.jpg' ><br>391. V4</div>
+<div class='box'><img src='img2/托蘭異世錄Toram Online RPG.jpg' ><br>395. 托蘭異世錄Toram Online RPG</div>
+<div class='box'><img src='img2/刀劍神域 Unleash Blading.jpg' ><br>396. 刀劍神域 Unleash Blading</div>`,
+
+ '沒有台港服':`
+<div class='box'><img src='img2/Heaven Burns Red.jpg' ><br>6. Heaven Burns Red</div>
+<div class='box'><img src='img2/職棒野球魂A.jpg' ><br>9. 職棒野球魂A</div>
+<div class='box'><img src='img2/勇者鬥惡龍WALK.jpg' ><br>13. 勇者鬥惡龍WALK</div>
+<div class='box'><img src='img2/碧藍幻想（有英文）.jpg' ><br>28. 碧藍幻想（有英文）</div>
+<div class='box'><img src='img2/實況野球.jpg' ><br>29. 實況野球</div>
+<div class='box'><img src='img2/妖怪手錶Puni Puni.jpg' ><br>61. 妖怪手錶Puni Puni</div>
+<div class='box'><img src='img2/戰國炎舞.jpg' ><br>63. 戰國炎舞</div>
+<div class='box'><img src='img2/偶像大師灰姑娘女孩星光舞台.jpg' ><br>78. 偶像大師灰姑娘女孩星光舞台</div>
+<div class='box'><img src='img2/口袋殖民地.jpg' ><br>81. 口袋殖民地</div>
+<div class='box'><img src='img2/城與龍.jpg' ><br>84. 城與龍</div>
+<div class='box'><img src='img2/NET麻雀 MJ.jpg' ><br>101. NET麻雀 MJ </div>
+<div class='box'><img src='img2/機動戰士鋼彈U.C. ENGAGE.jpg' ><br>102. 機動戰士鋼彈U.C. ENGAGE</div>
+<div class='box'><img src='img2/星之勇者鬥惡龍.jpg' ><br>108. 星之勇者鬥惡龍</div>
+<div class='box'><img src='img2/ピグパーティ.jpg' ><br>121. ピグパーティ </div>
+<div class='box'><img src='img2/PES CARD COLLECTION.jpg' ><br>122. PES CARD COLLECTION</div>
+<div class='box'><img src='img2/逆轉奧賽羅尼亞.jpg' ><br>123. 逆轉奧賽羅尼亞</div>
+<div class='box'><img src='img2/八方旅人：大陸的霸者.jpg' ><br>127. 八方旅人：大陸的霸者</div>
+<div class='box'><img src='img2/Ragnador 妖怪皇帝與終焉的夜叉姬(有中文？）.jpg' ><br>130. Ragnador 妖怪皇帝與終焉的夜叉姬（有中文？）</div>
+<div class='box'><img src='img2/時空幻境鏡光傳奇.jpg' ><br>132. 時空幻境鏡光傳奇</div>
+<div class='box'><img src='img2/乃木坂般的碎形.jpg' ><br>133. 乃木坂般的碎形</div>
+<div class='box'><img src='img2/航海王萬千風暴.jpg' ><br>134. 航海王萬千風暴</div>
+<div class='box'><img src='img2/言靈戰士.jpg' ><br>135. 言靈戰士</div>
+<div class='box'><img src='img2/偶像大師SideM 明日之星.jpg' ><br>141. 偶像大師SideM 明日之星</div>
+<div class='box'><img src='img2/王者天下 亂 天下統一之道.jpg' ><br>149. 王者天下 亂 天下統一之道</div>
+<div class='box'><img src='img2/魔法使的約定.jpg' ><br>153. 魔法使的約定</div>
+<div class='box'><img src='img2/偶像大師百萬人演唱會！劇場時光.jpg' ><br>157. 偶像大師百萬人演唱會！劇場時光</div>
+<div class='box'><img src='img2/進擊的巨人Brave Order.jpg' ><br>165. 進擊的巨人Brave Order </div>
+<div class='box'><img src='img2/ポケコロツイン.jpg' ><br>172. ポケコロツイン</div>
+<div class='box'><img src='img2/魔法氣泡！！Quest.jpg' ><br>174. 魔法氣泡！！Quest</div>
+<div class='box'><img src='img2/勇者鬥惡龍擦擦樂.jpg' ><br>176. 勇者鬥惡龍擦擦樂</div>
+<div class='box'><img src='img2/Assault Lily Last Bullet.jpg' ><br>179. Assault Lily Last Bullet</div>
+<div class='box'><img src='img2/FINAL FANTASY Record Keeper（有英文）.jpg' ><br>180. FINAL FANTASY Record Keeper（有英文）</div>
+<div class='box'><img src='img2/乃木坂46 Rhythm Festival.jpg' ><br>183. 乃木坂46 Rhythm Festival</div>
+<div class='box'><img src='img2/暴走列伝 単車の虎.jpg' ><br>188. 暴走列伝 単車の虎</div>
+<div class='box'><img src='img2/Disney Tsum Tsum Land.jpg' ><br>191. Disney Tsum Tsum Land</div>
+<div class='box'><img src='img2/ぼくとドラゴン 仲間とギルドでリアルタイムバトル.jpg' ><br>192. ぼくとドラゴン 仲間とギルドでリアルタイムバトル</div>
+<div class='box'><img src='img2/通靈童子發奮丘戰記.jpg' ><br>193. 通靈童子發奮丘戰記</div>
+<div class='box'><img src='img2/Drift Spirits.jpg' ><br>197. Drift Spirits</div>
+<div class='box'><img src='img2/IDOLY PRIDE偶像榮耀.jpg' ><br>211. IDOLY PRIDE偶像榮耀</div>
+<div class='box'><img src='img2/為了誰的鍊金術師.jpg' ><br>213. 為了誰的鍊金術師</div>
+<div class='box'><img src='img2/第一神拳格鬥之魂.jpg' ><br>216. 第一神拳格鬥之魂</div>
+<div class='box'><img src='img2/BRAVELY DEFAULT BRILLIANT LIGHTS.jpg' ><br>221. BRAVELY DEFAULT BRILLIANT LIGHTS</div>
+<div class='box'><img src='img2/王者天下：戰國七雄.jpg' ><br>225. 王者天下：戰國七雄</div>
+<div class='box'><img src='img2/新網球王子RisingBeat.jpg' ><br>229. 新網球王子RisingBeat </div>
+<div class='box'><img src='img2/幻獸契約Cryptract.jpg' ><br>230. 幻獸契約Cryptract</div>
+<div class='box'><img src='img2/麻雀格闘倶楽部Sp ｜ 究極のオンライン対戦 麻雀 ゲーム.jpg' ><br>231. 麻雀格闘倶楽部Sp ｜ 究極のオンライン対戦 麻雀 ゲーム</div>
+<div class='box'><img src='img2/ピュアニスタ 大人も楽しめるアバターきせかえアプリ.jpg' ><br>234. ピュアニスタ 大人も楽しめるアバターきせかえアプリ</div>
+<div class='box'><img src='img2/DUEL MASTERS PLAYS.jpg' ><br>236. DUEL MASTERS PLAY'S</div>
+<div class='box'><img src='img2/ドラゴンクエストⅩ　冒険者のおでかけ超便利ツール.jpg' ><br>240. ドラゴンクエストⅩ　冒険者のおでかけ超便利ツール </div>
+<div class='box'><img src='img2/車站回憶！Our Rails.jpg' ><br>241. 車站回憶！Our Rails </div>
+<div class='box'><img src='img2/Jリーグクラブチャンピオンシップ.jpg' ><br>248. Jリーグクラブチャンピオンシップ</div>
+<div class='box'><img src='img2/迷你四驅車超速大賽.jpg' ><br>252. 迷你四驅車超速大賽</div>
+<div class='box'><img src='img2/白貓tennis.jpg' ><br>253. 白貓tennis</div>
+<div class='box'><img src='img2/元素物語.jpg' ><br>257. 元素物語</div>
+<div class='box'><img src='img2/金色琴弦星光交響曲.jpg' ><br>258. 金色琴弦星光交響曲</div>
+<div class='box'><img src='img2/人中之龍Online.jpg' ><br>262. 人中之龍Online</div>
+<div class='box'><img src='img2/FIFA Mobile.jpg' ><br>271. FIFA Mobile</div>
+<div class='box'><img src='img2/イケメン戦国◆時をかける恋 人気女性向け乙女・恋愛ゲーム.jpg' ><br>273. イケメン戦国◆時をかける恋 人気女性向け乙女・恋愛ゲーム</div>
+<div class='box'><img src='img2/みんゴル.jpg' ><br>274. みんゴル</div>
+<div class='box'><img src='img2/喧嘩道-全國不良番付-.jpg' ><br>281. 喧嘩道-全國不良番付-</div>
+<div class='box'><img src='img2/新日本職業摔角STRONG SPIRITS.jpg' ><br>282. 新日本職業摔角STRONG SPIRITS</div>
+<div class='box'><img src='img2/大熱闘 ドラゴンスマッシュ.jpg' ><br>285. 大熱闘 ドラゴンスマッシュ</div>
+<div class='box'><img src='img2/八月的棒球甜心.jpg' ><br>286. 八月的棒球甜心</div>
+<div class='box'><img src='img2/受讚頌者Lost Flag.jpg' ><br>295. 受讚頌者Lost Flag</div>
+<div class='box'><img src='img2/刀劍亂舞-ONLINE- Pocket.jpg' ><br>299. 刀劍亂舞-ONLINE- Pocket</div>
+<div class='box'><img src='img2/惡魔72.jpg' ><br>303. 惡魔72</div>
+<div class='box'><img src='img2/真・鎖鏈戰記.jpg' ><br>309. 真・鎖鏈戰記</div>
+<div class='box'><img src='img2/魔法紀錄魔法少女小圓外傳.jpg' ><br>315. 魔法紀錄魔法少女小圓外傳</div>
+<div class='box'><img src='img2/偶像大師閃耀色彩.jpg' ><br>316. 偶像大師閃耀色彩</div>
+<div class='box'><img src='img2/東方LostWord.jpg' ><br>317. 東方LostWord</div>
+<div class='box'><img src='img2/スヌーピー ドロップス -パズル：スヌーピー パズル.jpg' ><br>320. スヌーピー ドロップス -パズル：スヌーピー パズル</div>
+<div class='box'><img src='img2/ぼくらの甲子園！ポケット　高校野球ゲーム.jpg' ><br>323. ぼくらの甲子園！ポケット　高校野球ゲーム</div>
+<div class='box'><img src='img2/ダービースタリオン マスターズ.jpg' ><br>325. ダービースタリオン マスターズ</div>
+<div class='box'><img src='img2/ジョーカー～ギャングロード～.jpg' ><br>330. ジョーカー～ギャングロード～</div>
+<div class='box'><img src='img2/三国ドライブ.jpg' ><br>332. 三国ドライブ </div>
+<div class='box'><img src='img2/Crystal of Re-union.jpg' ><br>333. Crystal of Re:union</div>
+<div class='box'><img src='img2/千年戰爭Aigis～一般版～.jpg' ><br>336. 千年戰爭Aigis～一般版～</div>
+<div class='box'><img src='img2/天下統一恋の乱Love Ballad.jpg' ><br>338. 天下統一恋の乱Love Ballad</div>
+<div class='box'><img src='img2/SHOW BY ROCK!! Fes A Live.jpg' ><br>340. SHOW BY ROCK!! Fes A Live</div>
+<div class='box'><img src='img2/密特拉之星Mitrasphere.jpg' ><br>343. 密特拉之星Mitrasphere</div>
+<div class='box'><img src='img2/金肉人肌肉射擊.jpg' ><br>344. 金肉人肌肉射擊</div>
+<div class='box'><img src='img2/五等分的新娘五胞胎無法將益智遊戲分成五等分.jpg' ><br>349. 五等分的新娘五胞胎無法將益智遊戲分成五等分</div>
+<div class='box'><img src='img2/波可龍迷宮.jpg' ><br>358. 波可龍迷宮</div>
+<div class='box'><img src='img2/六本木サディスティックナイト.jpg' ><br>359. 六本木サディスティックナイト</div>
+<div class='box'><img src='img2/機戰少女Alice.jpg' ><br>361. 機戰少女Alice</div>
+<div class='box'><img src='img2/Symphogear XD Unlimited.jpg' ><br>362. Symphogear XD Unlimited</div>
+<div class='box'><img src='img2/ディズニー ミュージックパレード.jpg' ><br>363. ディズニー ミュージックパレード </div>
+<div class='box'><img src='img2/D4DJ Groovy Mix（有英文）.jpg' ><br>364. D4DJ Groovy Mix（有英文）</div>
+<div class='box'><img src='img2/Tales of Asteria.jpg' ><br>367. Tales of Asteria</div>
+<div class='box'><img src='img2/ひぐらしのなく頃に 命.jpg' ><br>369. ひぐらしのなく頃に 命</div>
+<div class='box'><img src='img2/真・北斗無双.jpg' ><br>371. 真・北斗無双</div>
+<div class='box'><img src='img2/龍族撲克.jpg' ><br>374. 龍族撲克</div>
+<div class='box'><img src='img2/東方彈幕神樂.jpg' ><br>375. 東方彈幕神樂</div>
+<div class='box'><img src='img2/PRO野球VS.jpg' ><br>377. PRO野球VS</div>
+<div class='box'><img src='img2/ミリオンモンスター.jpg' ><br>382. ミリオンモンスター</div>
+<div class='box'><img src='img2/殺戮魅影.jpg' ><br>385. 殺戮魅影</div>
+<div class='box'><img src='img2/唱吧！超時空要塞手機DeCulture.jpg' ><br>387. 唱吧！超時空要塞手機DeCulture</div>
+<div class='box'><img src='img2/徽章戰士S.jpg' ><br>390. 徽章戰士S</div>
+<div class='box'><img src='img2/SCHOOLGIRL STRIKERS　～光輝旋律～.jpg' ><br>394. SCHOOLGIRL STRIKERS　～光輝旋律～</div>
+<div class='box'><img src='img2/妖怪三國志竊國戰爭.jpg' ><br>400. 妖怪三國志竊國戰爭</div>
+ `,
+
+ '台港服由中資代理':`<div style="color:hotpink;">
+<div class='box'><img src='img2/賽馬娘Pretty Derby.jpg' ><br>1. 賽馬娘Pretty Derby</div>
+<div class='box'><img src='img2/Fate-Grand Order.jpg' ><br>5. Fate/Grand Order</div>
+<div class='box'><img src='img2/世界計畫繽紛舞台！ feat. 初音未來.jpg' ><br>14. 世界計畫繽紛舞台！ feat. 初音未來</div>
+<div class='box'><img src='img2/BanG Dream! 少女樂團派對.jpg' ><br>75. BanG Dream! 少女樂團派對</div>
+<div class='box'><img src='img2/Re：從零開始的異世界生活Lost in Memories.jpg' ><br>138. Re：從零開始的異世界生活Lost in Memories</div>
+<div class='box'><img src='img2/勇者鬥惡龍怪物仙境SUPER LIGHT.jpg' ><br>150. 勇者鬥惡龍怪物仙境SUPER LIGHT</div>
+<div class='box'><img src='img2/最後的克勞迪亞Last Cloudia.jpg' ><br>162. 最後的克勞迪亞Last Cloudia </div>
+<div class='box'><img src='img2/SINoALICE 死亡愛麗絲（有英文.jpg' ><br>164. SINoALICE 死亡愛麗絲（有英文</div>
+<div class='box'><img src='img2/實況力量足球.jpg' ><br>170. 實況力量足球</div>
+<div class='box'><img src='img2/A3!.jpg' ><br>210. A3!</div>
+<div class='box'><img src='img2/未來戰-異界事務所.jpg' ><br>235. 未來戰/異界事務所</div>
+<div class='box'><img src='img2/魔界戰記DISGAEA RPG.jpg' ><br>276. 魔界戰記DISGAEA RPG</div>
+<div class='box'><img src='img2/Grand Summoners.jpg' ><br>307. Grand Summoners</div>
+<div class='box'><img src='img2/魔法禁書目錄幻想收束.jpg' ><br>311. 魔法禁書目錄幻想收束</div>
+</div>`,
+
+ '日服由中資代理':`<div style="color:hotpink;">
+ <div class='box'><img src='img2/第七史詩.jpg' ><br>334. 第七史詩</div>
+ </div>`,
+
+ '中資':`<div style="color:red;">
+<div>8. 原神(miHoYo Limited)</div>
+<div>10. 荒野行動(NetEase Games)</div>
+<div>12. あんさんぶるスターズ！！Music(Happy Elements K.K)</div>
+<div>22. 放置少女〜百花繚乱の萌姫たち〜(Mamiko Nakao)</div>
+<div>23. 三國志 真戦(Qookka Games)</div>
+<div>25. パズル＆サバイバル(37GAMES)</div>
+<div>33. マフィア・シティ-極道風雲(YOTTA GAMES LIMITED)</div>
+<div>39. Age of Z(CamelGames INC.)</div>
+<div>45. TikTok ティックトック(TikTok Pte. Ltd.)</div>
+<div>53. おねがい社長！(Hong Kong Just Ga...)</div>
+<div>54. PUBG MOBILE(PUBG Corporation)</div>
+<div>57. 空の勇者たち(YOUNG & FUN NETWO...)</div>
+<div>58. ロードモバイル(IGG.COM)</div>
+<div>60. ステート・オブ・サバイバル(KingsGroup Intern...)</div>
+<div>62. Rise of Kingdoms ―万国覚醒―(LILITH TECHNOLOGY...)</div>
+<div>64. 商人放浪記(TOP INCREASE GLOB...)</div>
+<div>66. 獅子の如く～戦国覇王戦記～(Six Waves Inc.)</div>
+<div>77. トップウォー(Topwar Studio)</div>
+<div>87. ライフアフター(NetEase Games)</div>
+<div>89. Identity V(NetEase Games)</div>
+<div>93. Call of Duty®： Mobile(Activision Publis...)</div>
+<div>95. エボニー - 王の帰還(TOP GAMES INC.)</div>
+<div>96. 新三國志：育成型戦略シミュレーションゲーム(HK HERO ENTERTAIN...)</div>
+<div>98. 魔剣伝説(4399TH)</div>
+<div>100. 日替わり内室(37Games-japan)</div>
+<div>106. ザ・アンツ(StarUnion)</div>
+<div>107. ブロスタ(Supercell)</div>
+<div>116. 成り上がり～華と武の戦国(YOOZOO （SINGAPORE...)</div>
+<div>125. アークナイツ(Yostar, Inc.)</div>
+<div>139. 戦国布武【我が天下戦国編】(Hangzhou Jedi Tec...)</div>
+<div>140. Sky 星を紡ぐ子どもたち(thatgamecompany)</div>
+<div>144. 崩壊3rd(株式会社miHoYo)</div>
+<div>145. シャイニングニキ(Papergames(Japan))</div>
+<div>146. インフィニティ キングダム-諸王の戦争(YOOZOO （SINGAPORE...)</div>
+<div>147. Project Makeover(Bubblegum Games LLC)</div>
+<div>154. ラグナロクオリジン(GungHo Online Ent...)</div>
+<div>166. 雀魂 -じゃんたま-(Yostar, Inc.)</div>
+<div>171. アズールレーン(Yostar, Inc.)</div>
+<div>173. ブルーアーカイブ(Yostar, Inc.)</div>
+<div>175. 夢職人と忘れじの黒い妖精(GCREST,Inc.)</div>
+<div>177. ファミリーファームの冒険(Century Games Pte...)</div>
+<div>178. 聖闘士星矢 ライジングコスモ(Tencent Games)</div>
+<div>185. 天地の如く～激乱の三国志～(Six Waves Inc.)</div>
+<div>190. クラッシュ・ロワイヤル (Clash Royale)(Supercell)</div>
+<div>195. FUSHO-浮生-(Future Interactiv...)</div>
+<div>198. モバイル·レジェンド： Bang Bang(moonton)</div>
+<div>199. ウォーキング・デッド：サバイバー(Galaxy Play Techn...)</div>
+<div>202. 三国覇王戦記～乱世の系譜～(Six Waves Inc.)</div>
+<div>204. 大三国志(WINKING DIGITAL E...)</div>
+<div>206. THE KING OF FIGHTERS '98UM OL(OURPALM INC.)</div>
+<div>208. ドラゴン＆ガールズ交響曲(CoolFactory Co.,Ltd.)</div>
+<div>209. クラッシュ・オブ・クラン (Clash of Clans)(Supercell)</div>
+<div>218. コード：ドラゴンブラッド(Sixjoy Hong Kong ...)</div>
+<div>220. AFK アリーナ(LILITH TECHNOLOGY...)</div>
+<div>224. BuzzVideo（バズビデオ）(Bytedance Pte. Ltd)</div>
+<div>226. ラストシェルター(LONG TECH NETWORK...)</div>
+<div>233. 戦艦帝国-228艘の実在戦艦を集めろ(CoolFactory Co.,Ltd.)</div>
+<div>237. 超次元彼女： 神姫放置の幻想楽園(Sunny Inc.)</div>
+<div>242. 我が野望(Chuang Cool Enter...)</div>
+<div>245. シノビマスター 閃乱カグラ NEW LINK(HONEY PARADE GAME...)</div>
+<div>247. あんさんぶるスターズ！！Basic(Happy Elements K.K)</div>
+<div>259. アカシッククロニクル～黎明の黙示録(moonton)</div>
+<div>265. ラグナロク マスターズ(GungHo Online Ent...)</div>
+<div>270. 剣と魔法のログレス いにしえの女神-オンラインRPG(Marvelous Inc.)</div>
+<div>272. 剣魂～剣と絆の異世界冒険伝(4399 NET LIMITED)</div>
+<div>275. ラングリッサー モバイル(ZlongGames)</div>
+<div>279. 少女廻戦(ONEMT)</div>
+<div>283. イース6 オンライン(NovaStar-game)</div>
+<div>284. アイアム皇帝(Clicktouch Co.,Ltd.)</div>
+<div>287. Art of War： Legions(Fastone Games)</div>
+<div>293. パニシング：グレイレイヴン(HK HERO ENTERTAIN...)</div>
+<div>294. マッチングトン·マンション(Firecraft Studios)</div>
+<div>300. MU：アークエンジェル(Ujoy)</div>
+<div>304. キング・オブ・アバロン： ドラゴン戦争(KoA)(FunPlus)</div>
+<div>308. ミステリー探偵ジューン- 隠れた手がかり(wooga)</div>
+<div>312. ステラアルカナ-愛の光と運命の絆（YOOZOO (SINGAPORE...)</div>
+<div>318. 白夜極光(PROXIMA BETA PTE....)</div>
+<div>322. クラッシュ オブ キングス-「城育成シミュレーションRPG」(ELEX Wireless)</div>
+<div>324. ラストピリオド - 終わりなき螺旋の物語 -(Happy Elements K.K)</div>
+<div>326. 我が天下【世界配信一周年】(Fly Li)</div>
+<div>328. 千銃士：Rhodoknight(Marvelous Inc.)</div>
+<div>339. ウォー・アンド・ オーダー「War and Order」(Camel Games Inc.)</div>
+<div>342. 【戦艦】Warship Saga ウォーシップサーガ(SINCETIMES Co., Ltd.)</div>
+<div>346. 戦艦ファイナル -最後の戦い(Qingyi Wen)</div>
+<div>347. ONE PUNCH MAN 一撃マジファイト(GREE, Inc.)</div>
+<div>350. シティダンク2(Cookies Inc.)</div>
+<div>351. WARPATH-武装都市-(Lilith Games)</div>
+<div>353. フラッシュパーティー(XD Entertainment ...)</div>
+<div>354. フィギュアストーリー(Nuverse （Hong Kon...)</div>
+<div>357. 覇王の天下 - 戦略シミュレーション(CoolFactory Co.,Ltd.)</div>
+<div>365. Pokémon UNITE(The Pokemon Company)</div>
+<div>376. パーフェクトワールド M(ZlongGames)</div>
+<div>378. 今三国志(Archosaur Games)</div>
+<div>379. ヘイ・デイ (Hay Day)(Supercell)</div>
+<div>388. 謀りの姫：Pocket(Wish Interactive ...)</div>
+<div>389. パニリヤ・ザ・リバイバル(Rastar Mobile)</div>
+<div>392. フォーセイクンワールド：神魔転生(4399 NET LIMITED)</div>
+<div>398. 三国志名将伝(Playbest Limited)</div>
+ </div>`,
+
+
+
+
+});
+// 202202 
+data.push({'date':'202202', 
+'有台港服':`
+<div class='box'><img src='img2/DRAGON BALL Z -七龍珠爆裂激戰-.jpg' ><br>1. DRAGON BALL Z -七龍珠爆裂激戰-</div>
+<div class='box'><img src='img2/怪物彈珠〈Monster Strike〉.jpg' ><br>2. 怪物彈珠〈Monster Strike〉</div>
+<div class='box'><img src='img2/Puzzle & Dragons.jpg' ><br>5. Puzzle & Dragons</div>
+<div class='box'><img src='img2/Pokemon GO.jpg' ><br>11. Pokemon GO</div>
+<div class='box'><img src='img2/Yu-Gi-Oh! Master Duel.jpg' ><br>13. Yu-Gi-Oh! Master Duel</div>
+<div class='box'><img src='img2/航海王Bounty Rush.jpg' ><br>21. 航海王Bounty Rush</div>
+<div class='box'><img src='img2/勇者鬥惡龍戰略指揮家.jpg' ><br>22. 勇者鬥惡龍戰略指揮家</div>
+<div class='box'><img src='img2/世界足球競賽2018.jpg' ><br>23. 世界足球競賽2018</div>
+<div class='box'><img src='img2/超異域公主連結 Re-Dive.jpg' ><br>26. 超異域公主連結 Re:Dive</div>
+<div class='box'><img src='img2/復活邪神Romancing SaGa Re;univerSe.jpg' ><br>27. 復活邪神Romancing SaGa Re;univerSe</div>
+<div class='box'><img src='img2/關於我轉生變成史萊姆這檔事魔王與龍的建國譚.jpg' ><br>44. 關於我轉生變成史萊姆這檔事魔王與龍的建國譚</div>
+<div class='box'><img src='img2/Toon Blast.jpg' ><br>45. Toon Blast</div>
+<div class='box'><img src='img2/闇影詩章Shadowverse.jpg' ><br>48. 闇影詩章Shadowverse</div>
+<div class='box'><img src='img2/迪士尼扭曲仙境.jpg' ><br>49. 迪士尼扭曲仙境</div>
+<div class='box'><img src='img2/貓咪大戰爭.jpg' ><br>53. 貓咪大戰爭</div>
+<div class='box'><img src='img2/Hero Wars.jpg' ><br>54. Hero Wars</div>
+<div class='box'><img src='img2/空帕斯：陣地攻防戰.jpg' ><br>62. 空帕斯：陣地攻防戰</div>
+<div class='box'><img src='img2/Gran Saga.jpg' ><br>64. Gran Saga</div>
+<div class='box'><img src='img2/LINE 航海王：秘寶尋航.jpg' ><br>65. LINE 航海王：秘寶尋航</div>
+<div class='box'><img src='img2/三國志霸道.jpg' ><br>68. 三國志霸道</div>
+<div class='box'><img src='img2/亙古幻想.jpg' ><br>88. 亙古幻想</div>
+<div class='box'><img src='img2/FFBE WAR OF THE VISIONS.jpg' ><br>98. FFBE WAR OF THE VISIONS</div>
+<div class='box'><img src='img2/寶可夢大師EX（Pokémon Masters EX）.jpg' ><br>99. 寶可夢大師EX（Pokémon Masters EX）</div>
+<div class='box'><img src='img2/寵物島Livly Island.jpg' ><br>102. 寵物島Livly Island</div>
+<div class='box'><img src='img2/LINE POP2.jpg' ><br>103. LINE POP2</div>
+<div class='box'><img src='img2/七龍珠激戰傳說.jpg' ><br>109. 七龍珠激戰傳說</div>
+<div class='box'><img src='img2/Royal Match.jpg' ><br>113. Royal Match</div>
+<div class='box'><img src='img2/LINE BUBBLE 2.jpg' ><br>124. LINE BUBBLE 2</div>
+<div class='box'><img src='img2/白貓Project.jpg' ><br>127. 白貓Project</div>
+<div class='box'><img src='img2/JUMPUTI HEROES 英雄氣泡.jpg' ><br>128. JUMPUTI HEROES 英雄氣泡</div>
+<div class='box'><img src='img2/遊戲王決鬥聯盟.jpg' ><br>132. 遊戲王決鬥聯盟</div>
+<div class='box'><img src='img2/Another Eden：穿越時空的貓.jpg' ><br>139. Another Eden：穿越時空的貓</div>
+<div class='box'><img src='img2/北斗之拳傳承者再臨.jpg' ><br>140. 北斗之拳傳承者再臨</div>
+<div class='box'><img src='img2/動物森友會口袋露營廣場.jpg' ><br>142. 動物森友會口袋露營廣場</div>
+<div class='box'><img src='img2/聖火降魔錄英雄雲集.jpg' ><br>152. 聖火降魔錄英雄雲集</div>
+<div class='box'><img src='img2/魔靈召喚.jpg' ><br>158. 魔靈召喚</div>
+<div class='box'><img src='img2/IDOLiSH7-偶像星願-.jpg' ><br>159. IDOLiSH7-偶像星願-</div>
+<div class='box'><img src='img2/超級機器人大戰DD.jpg' ><br>163. 超級機器人大戰DD</div>
+<div class='box'><img src='img2/Dissidia Final Fantasy Opera Omnia.jpg' ><br>164. Dissidia Final Fantasy Opera Omnia </div>
+<div class='box'><img src='img2/Empires & Puzzles- RPG Quest 帝國拼圖.jpg' ><br>169. Empires & Puzzles: RPG Quest 帝國拼圖</div>
+<div class='box'><img src='img2/FINAL FANTASY BRAVE EXVIUS.jpg' ><br>181. FINAL FANTASY BRAVE EXVIUS</div>
+<div class='box'><img src='img2/SEGA 新創造球會ROAD to the WORLD.jpg' ><br>184. SEGA 新創造球會ROAD to the WORLD</div>
+<div class='box'><img src='img2/足球小將翼：夢幻隊伍.jpg' ><br>187. 足球小將翼：夢幻隊伍</div>
+<div class='box'><img src='img2/勇者鬥惡龍 達伊的大冒險　燃魂羈絆.jpg' ><br>191. 勇者鬥惡龍 達伊的大冒險　燃魂羈絆</div>
+<div class='box'><img src='img2/乃木恋～那天在坂道下，我墜入了情網～.jpg' ><br>206. 乃木恋～那天在坂道下，我墜入了情網～</div>
+<div class='box'><img src='img2/瑪利歐賽車巡迴賽.jpg' ><br>214. 瑪利歐賽車巡迴賽</div>
+<div class='box'><img src='img2/NieR Re[in]carnation.jpg' ><br>223. NieR Re[in]carnation</div>
+<div class='box'><img src='img2/召喚圖板Summons Board.jpg' ><br>226. 召喚圖板Summons Board</div>
+<div class='box'><img src='img2/歌之王子殿下 Shining Live.jpg' ><br>236. 歌之王子殿下 Shining Live</div>
+<div class='box'><img src='img2/LoveLive！學園偶像祭ALL STARS.jpg' ><br>237. LoveLive！學園偶像祭ALL STARS</div>
+<div class='box'><img src='img2/D×2 真・女神轉生 Liberation.jpg' ><br>246. D×2 真・女神轉生 Liberation</div>
+<div class='box'><img src='img2/Family Island.jpg' ><br>251. Family Island</div>
+<div class='box'><img src='img2/MY HERO ULTRA IMPACT.jpg' ><br>252. MY HERO ULTRA IMPACT</div>
+<div class='box'><img src='img2/Toy Blast.jpg' ><br>255. Toy Blast </div>
+<div class='box'><img src='img2/Pikmin Bloom.jpg' ><br>264. Pikmin Bloom</div>
+<div class='box'><img src='img2/問答RPG 魔法使與黑貓維茲.jpg' ><br>271. 問答RPG 魔法使與黑貓維茲</div>
+<div class='box'><img src='img2/Minecraft.jpg' ><br>272. Minecraft</div>
+<div class='box'><img src='img2/三麗鷗明星的微笑小鎮 - Hello Sweet Days.jpg' ><br>274. 三麗鷗明星的微笑小鎮 : Hello Sweet Days</div>
+<div class='box'><img src='img2/GUNDAM BREAKER：鋼彈創壞者.jpg' ><br>277. GUNDAM BREAKER：鋼彈創壞者</div>
+<div class='box'><img src='img2/太空戰士15：新帝國.jpg' ><br>278. 太空戰士15：新帝國 </div>
+<div class='box'><img src='img2/楓之谷M.jpg' ><br>282. 楓之谷M</div>
+<div class='box'><img src='img2/BLEACH Brave Souls.jpg' ><br>283. BLEACH Brave Souls</div>
+<div class='box'><img src='img2/Disney POP TOWN.jpg' ><br>289. Disney POP TOWN</div>
+<div class='box'><img src='img2/LINE 波兔小鎮.jpg' ><br>300. LINE 波兔小鎮</div>
+<div class='box'><img src='img2/夢王國與沉睡中的 100 位王子殿下.jpg' ><br>304. 夢王國與沉睡中的 100 位王子殿下</div>
+<div class='box'><img src='img2/迪士尼 我的小娃娃.jpg' ><br>310. 迪士尼 我的小娃娃</div>
+<div class='box'><img src='img2/Crash Fever.jpg' ><br>313. Crash Fever</div>
+<div class='box'><img src='img2/美男王子 - 美女與野獸的最後之戀.jpg' ><br>314. 美男王子 - 美女與野獸的最後之戀</div>
+<div class='box'><img src='img2/募戀英雄.jpg' ><br>317. 募戀英雄</div>
+<div class='box'><img src='img2/為美好的世界獻上祝福！Fantastic Days.jpg' ><br>318. 為美好的世界獻上祝福！Fantastic Days </div>
+<div class='box'><img src='img2/聖鬥士星矢小宇宙幻想傳.jpg' ><br>319. 聖鬥士星矢小宇宙幻想傳</div>
+<div class='box'><img src='img2/黑色沙漠MOBILE.jpg' ><br>323. 黑色沙漠MOBILE</div>
+<div class='box'><img src='img2/刀劍神域 Unleash Blading.jpg' ><br>325. 刀劍神域 Unleash Blading</div>
+<div class='box'><img src='img2/刀劍神域關鍵鬥士.jpg' ><br>337. 刀劍神域關鍵鬥士</div>
+<div class='box'><img src='img2/天堂M.jpg' ><br>338. 天堂M</div>
+<div class='box'><img src='img2/LINE Rangers 銀河特攻隊.jpg' ><br>356. LINE Rangers 銀河特攻隊</div>
+<div class='box'><img src='img2/Unison League.jpg' ><br>357. Unison League</div>
+<div class='box'><img src='img2/在地下城尋求邂逅是否搞錯了什麼～記憶憧憬.jpg' ><br>359. 在地下城尋求邂逅是否搞錯了什麼～記憶憧憬</div>
+<div class='box'><img src='img2/LINE- 鋼彈大亂鬥.jpg' ><br>360. LINE: 鋼彈大亂鬥</div>
+<div class='box'><img src='img2/Love Live!School idol festival.jpg' ><br>361. Love Live!School idol festival</div>
+<div class='box'><img src='img2/ROBLOX.jpg' ><br>369. ROBLOX</div>
+<div class='box'><img src='img2/少女歌劇Revue Starlight -Re LIVE-.jpg' ><br>373. 少女歌劇Revue Starlight -Re LIVE-</div>
+<div class='box'><img src='img2/V4.jpg' ><br>374. V4</div>
+<div class='box'><img src='img2/決勝 高球.jpg' ><br>377. 決勝 高球</div>
+<div class='box'><img src='img2/MARVEL Strike Force.jpg' ><br>382. MARVEL Strike Force</div>
+<div class='box'><img src='img2/薑餅人王國.jpg' ><br>388. 薑餅人王國</div>
+<div class='box'><img src='img2/Golf Rival.jpg' ><br>390. Golf Rival</div>
+<div class='box'><img src='img2/Rhythm Hive.jpg' ><br>391. Rhythm Hive</div>
+<div class='box'><img src='img2/神域召喚.jpg' ><br>392. 神域召喚</div>
+<div class='box'><img src='img2/Mighty Party.jpg' ><br>394. Mighty Party</div>
+ `,
+
+ '沒有台港服':`
+<div class='box'><img src='img2/職棒野球魂A.jpg' ><br>6. 職棒野球魂A</div>
+<div class='box'><img src='img2/Heaven Burns Red.jpg' ><br>12. Heaven Burns Red</div>
+<div class='box'><img src='img2/勇者鬥惡龍WALK.jpg' ><br>18. 勇者鬥惡龍WALK</div>
+<div class='box'><img src='img2/偶像大師灰姑娘女孩星光舞台.jpg' ><br>39. 偶像大師灰姑娘女孩星光舞台</div>
+<div class='box'><img src='img2/妖怪手錶Puni Puni.jpg' ><br>40. 妖怪手錶Puni Puni</div>
+<div class='box'><img src='img2/實況野球.jpg' ><br>46. 實況野球</div>
+<div class='box'><img src='img2/碧藍幻想（有英文）.jpg' ><br>63. 碧藍幻想（有英文）</div>
+<div class='box'><img src='img2/逆轉奧賽羅尼亞.jpg' ><br>70. 逆轉奧賽羅尼亞</div>
+<div class='box'><img src='img2/星之勇者鬥惡龍.jpg' ><br>72. 星之勇者鬥惡龍</div>
+<div class='box'><img src='img2/口袋殖民地.jpg' ><br>74. 口袋殖民地</div>
+<div class='box'><img src='img2/戰國炎舞.jpg' ><br>78. 戰國炎舞</div>
+<div class='box'><img src='img2/機動戰士鋼彈U.C. ENGAGE.jpg' ><br>80. 機動戰士鋼彈U.C. ENGAGE</div>
+<div class='box'><img src='img2/乃木坂般的碎形.jpg' ><br>83. 乃木坂般的碎形</div>
+<div class='box'><img src='img2/城與龍.jpg' ><br>85. 城與龍</div>
+<div class='box'><img src='img2/言靈戰士.jpg' ><br>86. 言靈戰士</div>
+<div class='box'><img src='img2/NET麻雀 MJ.jpg' ><br>89. NET麻雀 MJ </div>
+<div class='box'><img src='img2/PES CARD COLLECTION.jpg' ><br>116. PES CARD COLLECTION</div>
+<div class='box'><img src='img2/ピグパーティ.jpg' ><br>117. ピグパーティ </div>
+<div class='box'><img src='img2/Ragnador 妖怪皇帝與終焉的夜叉姬(有中文？）.jpg' ><br>125. Ragnador 妖怪皇帝與終焉的夜叉姬（有中文？）</div>
+<div class='box'><img src='img2/BRAVELY DEFAULT BRILLIANT LIGHTS.jpg' ><br>131. BRAVELY DEFAULT BRILLIANT LIGHTS</div>
+<div class='box'><img src='img2/王者天下 亂 天下統一之道.jpg' ><br>136. 王者天下 亂 天下統一之道</div>
+<div class='box'><img src='img2/為了誰的鍊金術師.jpg' ><br>137. 為了誰的鍊金術師</div>
+<div class='box'><img src='img2/偶像大師百萬人演唱會！劇場時光.jpg' ><br>146. 偶像大師百萬人演唱會！劇場時光</div>
+<div class='box'><img src='img2/航海王萬千風暴.jpg' ><br>150. 航海王萬千風暴</div>
+<div class='box'><img src='img2/魔法使的約定.jpg' ><br>151. 魔法使的約定</div>
+<div class='box'><img src='img2/通靈童子發奮丘戰記.jpg' ><br>160. 通靈童子發奮丘戰記</div>
+<div class='box'><img src='img2/Disney Tsum Tsum Land.jpg' ><br>167. Disney Tsum Tsum Land</div>
+<div class='box'><img src='img2/ポケコロツイン.jpg' ><br>168. ポケコロツイン</div>
+<div class='box'><img src='img2/進擊的巨人Brave Order.jpg' ><br>171. 進擊的巨人Brave Order </div>
+<div class='box'><img src='img2/Assault Lily Last Bullet.jpg' ><br>176. Assault Lily Last Bullet</div>
+<div class='box'><img src='img2/偶像大師SideM 明日之星.jpg' ><br>178. 偶像大師SideM 明日之星</div>
+<div class='box'><img src='img2/ドラゴンクエストⅩ　冒険者のおでかけ超便利ツール.jpg' ><br>179. ドラゴンクエストⅩ　冒険者のおでかけ超便利ツール </div>
+<div class='box'><img src='img2/勇者鬥惡龍擦擦樂.jpg' ><br>183. 勇者鬥惡龍擦擦樂</div>
+<div class='box'><img src='img2/ぼくとドラゴン 仲間とギルドでリアルタイムバトル.jpg' ><br>188. ぼくとドラゴン 仲間とギルドでリアルタイムバトル</div>
+<div class='box'><img src='img2/新網球王子RisingBeat.jpg' ><br>190. 新網球王子RisingBeat </div>
+<div class='box'><img src='img2/第一神拳格鬥之魂.jpg' ><br>197. 第一神拳格鬥之魂</div>
+<div class='box'><img src='img2/Drift Spirits.jpg' ><br>200. Drift Spirits</div>
+<div class='box'><img src='img2/八方旅人：大陸的霸者.jpg' ><br>201. 八方旅人：大陸的霸者</div>
+<div class='box'><img src='img2/魔法氣泡！！Quest.jpg' ><br>203. 魔法氣泡！！Quest</div>
+<div class='box'><img src='img2/迷你四驅車超速大賽.jpg' ><br>205. 迷你四驅車超速大賽</div>
+<div class='box'><img src='img2/王者天下：戰國七雄.jpg' ><br>207. 王者天下：戰國七雄</div>
+<div class='box'><img src='img2/乃木坂46 Rhythm Festival.jpg' ><br>208. 乃木坂46 Rhythm Festival</div>
+<div class='box'><img src='img2/FINAL FANTASY Record Keeper（有英文）.jpg' ><br>209. FINAL FANTASY Record Keeper（有英文）</div>
+<div class='box'><img src='img2/偶像大師POPLINKS.jpg' ><br>212. 偶像大師POPLINKS</div>
+<div class='box'><img src='img2/IDOLY PRIDE偶像榮耀.jpg' ><br>213. IDOLY PRIDE偶像榮耀</div>
+<div class='box'><img src='img2/暴走列伝 単車の虎.jpg' ><br>216. 暴走列伝 単車の虎</div>
+<div class='box'><img src='img2/偶像大師閃耀色彩.jpg' ><br>218. 偶像大師閃耀色彩</div>
+<div class='box'><img src='img2/Jリーグクラブチャンピオンシップ.jpg' ><br>219. Jリーグクラブチャンピオンシップ</div>
+<div class='box'><img src='img2/東方彈幕神樂.jpg' ><br>220. 東方彈幕神樂</div>
+<div class='box'><img src='img2/車站回憶！Our Rails.jpg' ><br>225. 車站回憶！Our Rails </div>
+<div class='box'><img src='img2/イケメン戦国◆時をかける恋 人気女性向け乙女・恋愛ゲーム.jpg' ><br>234. イケメン戦国◆時をかける恋 人気女性向け乙女・恋愛ゲーム</div>
+<div class='box'><img src='img2/機戰少女Alice.jpg' ><br>238. 機戰少女Alice</div>
+<div class='box'><img src='img2/ジョーカー～ギャングロード～.jpg' ><br>239. ジョーカー～ギャングロード～</div>
+<div class='box'><img src='img2/時空幻境鏡光傳奇.jpg' ><br>242. 時空幻境鏡光傳奇</div>
+<div class='box'><img src='img2/FIFA Mobile.jpg' ><br>243. FIFA Mobile</div>
+<div class='box'><img src='img2/D4DJ Groovy Mix（有英文）.jpg' ><br>248. D4DJ Groovy Mix（有英文）</div>
+<div class='box'><img src='img2/ピュアニスタ 大人も楽しめるアバターきせかえアプリ.jpg' ><br>263. ピュアニスタ 大人も楽しめるアバターきせかえアプリ</div>
+<div class='box'><img src='img2/波可龍迷宮.jpg' ><br>266. 波可龍迷宮</div>
+<div class='box'><img src='img2/麻雀格闘倶楽部Sp ｜ 究極のオンライン対戦 麻雀 ゲーム.jpg' ><br>268. 麻雀格闘倶楽部Sp ｜ 究極のオンライン対戦 麻雀 ゲーム</div>
+<div class='box'><img src='img2/喧嘩道-全國不良番付-.jpg' ><br>269. 喧嘩道-全國不良番付-</div>
+<div class='box'><img src='img2/大熱闘 ドラゴンスマッシュ.jpg' ><br>276. 大熱闘 ドラゴンスマッシュ</div>
+<div class='box'><img src='img2/Magic- The Gathering Arena（有英文.jpg' ><br>286. Magic: The Gathering Arena（有英文</div>
+<div class='box'><img src='img2/受讚頌者Lost Flag.jpg' ><br>294. 受讚頌者Lost Flag</div>
+<div class='box'><img src='img2/元素物語.jpg' ><br>299. 元素物語</div>
+<div class='box'><img src='img2/スヌーピー ドロップス -パズル：スヌーピー パズル.jpg' ><br>302. スヌーピー ドロップス -パズル：スヌーピー パズル</div>
+<div class='box'><img src='img2/五等分的新娘五胞胎無法將益智遊戲分成五等分.jpg' ><br>303. 五等分的新娘五胞胎無法將益智遊戲分成五等分</div>
+<div class='box'><img src='img2/DUEL MASTERS PLAYS.jpg' ><br>305. DUEL MASTERS PLAY'S</div>
+<div class='box'><img src='img2/人中之龍Online.jpg' ><br>308. 人中之龍Online</div>
+<div class='box'><img src='img2/みんゴル.jpg' ><br>311. みんゴル</div>
+<div class='box'><img src='img2/SCHOOLGIRL STRIKERS　～光輝旋律～.jpg' ><br>315. SCHOOLGIRL STRIKERS　～光輝旋律～</div>
+<div class='box'><img src='img2/惡魔執事與黑貓.jpg' ><br>316. 惡魔執事與黑貓</div>
+<div class='box'><img src='img2/八月的棒球甜心.jpg' ><br>320. 八月的棒球甜心</div>
+<div class='box'><img src='img2/PRO野球VS.jpg' ><br>321. PRO野球VS</div>
+<div class='box'><img src='img2/金色琴弦星光交響曲.jpg' ><br>326. 金色琴弦星光交響曲</div>
+<div class='box'><img src='img2/魔法紀錄魔法少女小圓外傳.jpg' ><br>327. 魔法紀錄魔法少女小圓外傳</div>
+<div class='box'><img src='img2/東方LostWord.jpg' ><br>334. 東方LostWord</div>
+<div class='box'><img src='img2/惡魔72.jpg' ><br>335. 惡魔72</div>
+<div class='box'><img src='img2/六本木サディスティックナイト.jpg' ><br>336. 六本木サディスティックナイト</div>
+<div class='box'><img src='img2/幻獸契約Cryptract.jpg' ><br>344. 幻獸契約Cryptract</div>
+<div class='box'><img src='img2/Crystal of Re-union.jpg' ><br>348. Crystal of Re:union</div>
+<div class='box'><img src='img2/Code Geass Genesic Re;CODE.jpg' ><br>351. Code Geass Genesic Re;CODE</div>
+<div class='box'><img src='img2/妖怪三國志竊國戰爭.jpg' ><br>353. 妖怪三國志竊國戰爭</div>
+<div class='box'><img src='img2/唱吧！超時空要塞手機DeCulture.jpg' ><br>354. 唱吧！超時空要塞手機DeCulture</div>
+<div class='box'><img src='img2/千年戰爭Aigis～一般版～.jpg' ><br>355. 千年戰爭Aigis～一般版～</div>
+<div class='box'><img src='img2/三国ドライブ.jpg' ><br>358. 三国ドライブ </div>
+<div class='box'><img src='img2/金肉人肌肉射擊.jpg' ><br>362. 金肉人肌肉射擊</div>
+<div class='box'><img src='img2/殺戮魅影.jpg' ><br>364. 殺戮魅影</div>
+<div class='box'><img src='img2/真・北斗無双.jpg' ><br>367. 真・北斗無双</div>
+<div class='box'><img src='img2/天下統一恋の乱Love Ballad.jpg' ><br>368. 天下統一恋の乱Love Ballad</div>
+<div class='box'><img src='img2/ダービースタリオン マスターズ.jpg' ><br>372. ダービースタリオン マスターズ</div>
+<div class='box'><img src='img2/Symphogear XD Unlimited.jpg' ><br>375. Symphogear XD Unlimited</div>
+<div class='box'><img src='img2/偶像大師SideM.jpg' ><br>376. 偶像大師SideM</div>
+<div class='box'><img src='img2/エイリアンのたまご.jpg' ><br>379. エイリアンのたまご</div>
+<div class='box'><img src='img2/Tales of Asteria.jpg' ><br>381. Tales of Asteria</div>
+<div class='box'><img src='img2/ぼくらの甲子園！ポケット　高校野球ゲーム.jpg' ><br>386. ぼくらの甲子園！ポケット　高校野球ゲーム</div>
+<div class='box'><img src='img2/ミリオンモンスター.jpg' ><br>387. ミリオンモンスター</div>
+<div class='box'><img src='img2/BLACK STAR -Theater Starless-.jpg' ><br>389. BLACK STAR -Theater Starless-</div>
+<div class='box'><img src='img2/StarHorsePocket　–競馬ゲーム-.jpg' ><br>396. StarHorsePocket　–競馬ゲーム-</div>
+<div class='box'><img src='img2/Techno-Roid UNISON HEART.jpg' ><br>397. Techno-Roid UNISON HEART</div>
+ `,
+ 
+ '台港服由中資代理':`<div style="color:hotpink;">
+<div class='box'><img src='img2/賽馬娘Pretty Derby.jpg' ><br>4. 賽馬娘Pretty Derby</div>
+<div class='box'><img src='img2/Fate-Grand Order.jpg' ><br>10. Fate/Grand Order</div>
+<div class='box'><img src='img2/世界計畫繽紛舞台！ feat. 初音未來.jpg' ><br>17. 世界計畫繽紛舞台！ feat. 初音未來</div>
+<div class='box'><img src='img2/勇者鬥惡龍怪物仙境SUPER LIGHT.jpg' ><br>95. 勇者鬥惡龍怪物仙境SUPER LIGHT</div>
+<div class='box'><img src='img2/BanG Dream! 少女樂團派對.jpg' ><br>123. BanG Dream! 少女樂團派對</div>
+<div class='box'><img src='img2/SINoALICE 死亡愛麗絲（有英文.jpg' ><br>135. SINoALICE 死亡愛麗絲（有英文</div>
+<div class='box'><img src='img2/Grand Summoners.jpg' ><br>170. Grand Summoners</div>
+<div class='box'><img src='img2/實況力量足球.jpg' ><br>173. 實況力量足球</div>
+<div class='box'><img src='img2/Re：從零開始的異世界生活Lost in Memories.jpg' ><br>189. Re：從零開始的異世界生活Lost in Memories</div>
+<div class='box'><img src='img2/A3!.jpg' ><br>210. A3!</div>
+<div class='box'><img src='img2/最後的克勞迪亞Last Cloudia.jpg' ><br>221. 最後的克勞迪亞Last Cloudia </div>
+<div class='box'><img src='img2/未來戰-異界事務所.jpg' ><br>235. 未來戰/異界事務所</div>
+<div class='box'><img src='img2/魔界戰記DISGAEA RPG.jpg' ><br>273. 魔界戰記DISGAEA RPG</div>
+<div class='box'><img src='img2/魔法禁書目錄幻想收束.jpg' ><br>293. 魔法禁書目錄幻想收束</div>
+</div>`,
+ 
+ '日服由中資代理':`<div style="color:hotpink;">
+<div class='box'><img src='img2/第七史詩.jpg' ><br>256. 第七史詩</div>
+</div>`,
+
+ '中資':`<div style="color:red;">
+<div>8. 荒野行動(NetEase Games)</div>
+<div>9. 原神(miHoYo Limited)</div>
+<div>15. あんさんぶるスターズ！！Music(Happy Elements K.K)</div>
+<div>24. パズル＆サバイバル(37GAMES)</div>
+<div>28. 放置少女〜百花繚乱の萌姫たち〜(Mamiko Nakao)</div>
+<div>31. マフィア・シティ-極道風雲(YOTTA GAMES LIMITED)</div>
+<div>38. 三國志 真戦(Qookka Games)</div>
+<div>41. Identity V(NetEase Games)</div>
+<div>42. Age of Z(CamelGames INC.)</div>
+<div>50. TikTok ティックトック(TikTok Pte. Ltd.)</div>
+<div>52. おねがい社長！(Hong Kong Just Ga...)</div>
+<div>55. ロードモバイル(IGG.COM)</div>
+<div>58. Rise of Kingdoms ―万国覚醒―(LILITH TECHNOLOGY...)</div>
+<div>61. ライフアフター(NetEase Games)</div>
+<div>66. 獅子の如く～戦国覇王戦記～(Six Waves Inc.)</div>
+<div>67. Call of Duty®： Mobile(Activision Publis...)</div>
+<div>76. ステート・オブ・サバイバル(KingsGroup Intern...)</div>
+<div>77. 商人放浪記(TOP INCREASE GLOB...)</div>
+<div>79. ブロスタ(Supercell)</div>
+<div>87. 成り上がり～華と武の戦国(YOOZOO （SINGAPORE...)</div>
+<div>93. ブルーアーカイブ(Yostar, Inc.)</div>
+<div>94. 雀魂 -じゃんたま-(Yostar, Inc.)</div>
+<div>105. トップウォー(Topwar Studio)</div>
+<div>106. 日替わり内室(37Games-japan)</div>
+<div>108. 魔剣伝説(4399TH)</div>
+<div>110. Sky 星を紡ぐ子どもたち(thatgamecompany)</div>
+<div>114. ザ・アンツ(StarUnion)</div>
+<div>130. PUBG MOBILE(PUBG Corporation)</div>
+<div>134. Project Makeover(Bubblegum Games LLC)</div>
+<div>138. エボニー - 王の帰還(TOP GAMES INC.)</div>
+<div>141. インフィニティ キングダム-諸王の戦争(YOOZOO （SINGAPORE...)</div>
+<div>144. アークナイツ(Yostar, Inc.)</div>
+<div>149. アズールレーン(Yostar, Inc.)</div>
+<div>154. 戦国布武【我が天下戦国編】(Hangzhou Jedi Tec...)</div>
+<div>155. ラグナロクオリジン(GungHo Online Ent...)</div>
+<div>156. ドラゴン＆ガールズ交響曲(CoolFactory Co.,Ltd.)</div>
+<div>157. ウォーキング・デッド：サバイバー(Galaxy Play Techn...)</div>
+<div>166. 新三國志：育成型戦略シミュレーションゲーム(HK HERO ENTERTAIN...)</div>
+<div>172. 天地の如く～激乱の三国志～(Six Waves Inc.)</div>
+<div>177. THE KING OF FIGHTERS '98UM OL(OURPALM INC.)</div>
+<div>182. コード：ドラゴンブラッド(Sixjoy Hong Kong ...)</div>
+<div>185. ファミリーファームの冒険(Century Games Pte...)</div>
+<div>186. クラッシュ・ロワイヤル (Clash Royale)(Supercell)</div>
+<div>192. 崩壊3rd(株式会社miHoYo)</div>
+<div>194. 大三国志(WINKING DIGITAL E...)</div>
+<div>196. パニシング：グレイレイヴン(HK HERO ENTERTAIN...)</div>
+<div>198. クラッシュ・オブ・クラン (Clash of Clans)(Supercell)</div>
+<div>202. 三国覇王戦記～乱世の系譜～(Six Waves Inc.)</div>
+<div>204. FUSHO-浮生-(Future Interactiv...)</div>
+<div>217. エリオスライジングヒーローズ(Happy Elements K.K)</div>
+<div>228. AFK アリーナ(LILITH TECHNOLOGY...)</div>
+<div>231. 我が野望(Chuang Cool Enter...)</div>
+<div>233. 戦艦帝国-228艘の実在戦艦を集めろ(CoolFactory Co.,Ltd.)</div>
+<div>240. ラストシェルター(LONG TECH NETWORK...)</div>
+<div>241. MU：アークエンジェル(Ujoy)</div>
+<div>244. モバイル·レジェンド： Bang Bang(moonton)</div>
+<div>245. シャイニングニキ(Papergames(Japan))</div>
+<div>247. イース6 オンライン(NovaStar-game)</div>
+<div>249. 超次元彼女： 神姫放置の幻想楽園(Sunny Inc.)</div>
+<div>250. 聖闘士星矢 ライジングコスモ(Tencent Games)</div>
+<div>253. アカシッククロニクル～黎明の黙示録(moonton)</div>
+<div>259. シノビマスター 閃乱カグラ NEW LINK(HONEY PARADE GAME...)</div>
+<div>260. 空の勇者たち(YOUNG & FUN NETWO...)</div>
+<div>261. 我が天下【世界配信一周年】(Fly Li)</div>
+<div>262. 剣魂～剣と絆の異世界冒険伝(4399 NET LIMITED)</div>
+<div>270. 少女廻戦(ONEMT)</div>
+<div>279. マッチングトン·マンション(Firecraft Studios)</div>
+<div>280. Art of War： Legions(Fastone Games)</div>
+<div>284. あんさんぶるスターズ！！Basic(Happy Elements K.K)</div>
+<div>285. アイアム皇帝(Clicktouch Co.,Ltd.)</div>
+<div>290. メルクストーリア - 癒術士と鈴のしらべ -(Happy Elements K.K)</div>
+<div>295. キング・オブ・アバロン： ドラゴン戦争(KoA)(FunPlus)</div>
+<div>296. ステラアルカナ-愛の光と運命の絆(YOOZOO （SINGAPORE...)</div>
+<div>297. フィギュアストーリー(Nuverse （Hong Kon...)</div>
+<div>322. 戦艦ファイナル -最後の戦い(Qingyi Wen)</div>
+<div>324. Pokémon UNITE(The Pokemon Company)</div>
+<div>328. ラグナロク マスターズ(GungHo Online Ent...)</div>
+<div>329. 三国天武～本格戦略バトル～(Six Waves Inc.)</div>
+<div>330. 白夜極光(PROXIMA BETA PTE....)</div>
+<div>331. フォーセイクンワールド：神魔転生(4399 NET LIMITED)</div>
+<div>332. アーテリーギア-機動戦姫-(BILIBILI CO.,LTD.)</div>
+<div>333. 夢職人と忘れじの黒い妖精(GCREST,Inc.)</div>
+<div>339. 剣と魔法のログレス いにしえの女神-オンラインRPG(Marvelous Inc.)</div>
+<div>340. WARPATH-武装都市-(Lilith Games)</div>
+<div>341. 千銃士：Rhodoknight(Marvelous Inc.)</div>
+<div>342. ミステリー探偵ジューン- 隠れた手がかり(wooga)</div>
+<div>343. パニリヤ・ザ・リバイバル(Rastar Mobile)</div>
+<div>346. クラッシュ オブ キングス-「城育成シミュレーションRPG」(ELEX Wireless)</div>
+<div>347. BuzzVideo（バズビデオ）(Bytedance Pte. Ltd)</div>
+<div>349. ウォー・アンド・ オーダー「War and Order」(Camel Games Inc.)</div>
+<div>350. ONE PUNCH MAN 一撃マジファイト(GREE, Inc.)</div>
+<div>363. 今三国志(Archosaur Games)</div>
+<div>365. ラングリッサー モバイル(ZlongGames)</div>
+<div>366. 謀りの姫：Pocket(Wish Interactive ...)</div>
+<div>370. パーフェクトワールド M(ZlongGames)</div>
+<div>371. ヘイ・デイ (Hay Day)(Supercell)</div>
+<div>378. 【戦艦】Warship Saga ウォーシップサーガ(SINCETIMES Co., Ltd.)</div>
+<div>383. 三国志名将伝(Playbest Limited)</div>
+<div>385. ラストピリオド - 終わりなき螺旋の物語 -(Happy Elements K.K)</div>
+<div>395. ラピスクロニクル -英雄王冠-(株式会社ファイブ...)</div>
+<div>398. 一騎当千エクストラバースト(Marvelous Inc.)</div>
+<div>400. 放置マフィア(FunPlus)</div>
+</div>`,
+
+});
+// 202201 
+data.push({'date':'202201',
+ '有台港服':`
+<div class='box'><img src='img2/怪物彈珠〈Monster Strike〉.jpg' ><br>1. 怪物彈珠〈Monster Strike〉</div>
+<div class='box'><img src='img2/Puzzle & Dragons.jpg' ><br>6. Puzzle & Dragons</div>
+<div class='box'><img src='img2/勇者鬥惡龍戰略指揮家.jpg' ><br>10. 勇者鬥惡龍戰略指揮家</div>
+<div class='box'><img src='img2/DRAGON BALL Z -七龍珠爆裂激戰-.jpg' ><br>15. DRAGON BALL Z -七龍珠爆裂激戰-</div>
+<div class='box'><img src='img2/Pokemon GO.jpg' ><br>19. Pokemon GO</div>
+<div class='box'><img src='img2/迪士尼扭曲仙境.jpg' ><br>22. 迪士尼扭曲仙境</div>
+<div class='box'><img src='img2/復活邪神Romancing SaGa Re;univerSe.jpg' ><br>26. 復活邪神Romancing SaGa Re;univerSe</div>
+<div class='box'><img src='img2/關於我轉生變成史萊姆這檔事魔王與龍的建國譚.jpg' ><br>29. 關於我轉生變成史萊姆這檔事魔王與龍的建國譚</div>
+<div class='box'><img src='img2/七龍珠激戰傳說.jpg' ><br>30. 七龍珠激戰傳說</div>
+<div class='box'><img src='img2/LINE 航海王：秘寶尋航.jpg' ><br>33. LINE 航海王：秘寶尋航</div>
+<div class='box'><img src='img2/航海王Bounty Rush.jpg' ><br>35. 航海王Bounty Rush</div>
+<div class='box'><img src='img2/遊戲王決鬥聯盟.jpg' ><br>39. 遊戲王決鬥聯盟</div>
+<div class='box'><img src='img2/貓咪大戰爭.jpg' ><br>40. 貓咪大戰爭</div>
+<div class='box'><img src='img2/三國志霸道.jpg' ><br>44. 三國志霸道</div>
+<div class='box'><img src='img2/世界足球競賽2018.jpg' ><br>48. 世界足球競賽2018</div>
+<div class='box'><img src='img2/超異域公主連結 Re-Dive.jpg' ><br>50. 超異域公主連結 Re:Dive</div>
+<div class='box'><img src='img2/空帕斯：陣地攻防戰.jpg' ><br>51. 空帕斯：陣地攻防戰</div>
+<div class='box'><img src='img2/Toon Blast.jpg' ><br>52. Toon Blast</div>
+<div class='box'><img src='img2/Gran Saga.jpg' ><br>53. Gran Saga</div>
+<div class='box'><img src='img2/FFBE WAR OF THE VISIONS.jpg' ><br>61. FFBE WAR OF THE VISIONS</div>
+<div class='box'><img src='img2/IDOLiSH7-偶像星願-.jpg' ><br>72. IDOLiSH7-偶像星願-</div>
+<div class='box'><img src='img2/白貓Project.jpg' ><br>75. 白貓Project</div>
+<div class='box'><img src='img2/寵物島Livly Island.jpg' ><br>77. 寵物島Livly Island</div>
+<div class='box'><img src='img2/Another Eden：穿越時空的貓.jpg' ><br>80. Another Eden：穿越時空的貓</div>
+<div class='box'><img src='img2/Hero Wars.jpg' ><br>83. Hero Wars</div>
+<div class='box'><img src='img2/寶可夢大師EX（Pokémon Masters EX）.jpg' ><br>86. 寶可夢大師EX（Pokémon Masters EX）</div>
+<div class='box'><img src='img2/北斗之拳傳承者再臨.jpg' ><br>94. 北斗之拳傳承者再臨</div>
+<div class='box'><img src='img2/聖火降魔錄英雄雲集.jpg' ><br>98. 聖火降魔錄英雄雲集</div>
+<div class='box'><img src='img2/亙古幻想.jpg' ><br>101. 亙古幻想</div>
+<div class='box'><img src='img2/JUMPUTI HEROES 英雄氣泡.jpg' ><br>111. JUMPUTI HEROES 英雄氣泡</div>
+<div class='box'><img src='img2/LINE POP2.jpg' ><br>114. LINE POP2</div>
+<div class='box'><img src='img2/闇影詩章Shadowverse.jpg' ><br>120. 闇影詩章Shadowverse</div>
+<div class='box'><img src='img2/足球小將翼：夢幻隊伍.jpg' ><br>129. 足球小將翼：夢幻隊伍</div>
+<div class='box'><img src='img2/Royal Match.jpg' ><br>144. Royal Match</div>
+<div class='box'><img src='img2/SEGA 新創造球會ROAD to the WORLD.jpg' ><br>149. SEGA 新創造球會ROAD to the WORLD</div>
+<div class='box'><img src='img2/LINE BUBBLE 2.jpg' ><br>150. LINE BUBBLE 2</div>
+<div class='box'><img src='img2/魔靈召喚.jpg' ><br>155. 魔靈召喚</div>
+<div class='box'><img src='img2/D×2 真・女神轉生 Liberation.jpg' ><br>159. D×2 真・女神轉生 Liberation</div>
+<div class='box'><img src='img2/勇者鬥惡龍 達伊的大冒險　燃魂羈絆.jpg' ><br>162. 勇者鬥惡龍 達伊的大冒險　燃魂羈絆</div>
+<div class='box'><img src='img2/動物森友會口袋露營廣場.jpg' ><br>164. 動物森友會口袋露營廣場</div>
+<div class='box'><img src='img2/FINAL FANTASY BRAVE EXVIUS.jpg' ><br>180. FINAL FANTASY BRAVE EXVIUS</div>
+<div class='box'><img src='img2/募戀英雄.jpg' ><br>182. 募戀英雄</div>
+<div class='box'><img src='img2/Yu-Gi-Oh! Master Duel.jpg' ><br>185. Yu-Gi-Oh! Master Duel</div>
+<div class='box'><img src='img2/BLEACH Brave Souls.jpg' ><br>194. BLEACH Brave Souls</div>
+<div class='box'><img src='img2/歌之王子殿下 Shining Live.jpg' ><br>205. 歌之王子殿下 Shining Live</div>
+<div class='box'><img src='img2/Empires & Puzzles- RPG Quest 帝國拼圖.jpg' ><br>209. Empires & Puzzles: RPG Quest 帝國拼圖</div>
+<div class='box'><img src='img2/LoveLive！學園偶像祭ALL STARS.jpg' ><br>211. LoveLive！學園偶像祭ALL STARS</div>
+<div class='box'><img src='img2/迪士尼 我的小娃娃.jpg' ><br>214. 迪士尼 我的小娃娃</div>
+<div class='box'><img src='img2/超級機器人大戰DD.jpg' ><br>220. 超級機器人大戰DD</div>
+<div class='box'><img src='img2/瑪利歐賽車巡迴賽.jpg' ><br>223. 瑪利歐賽車巡迴賽</div>
+<div class='box'><img src='img2/NieR Re[in]carnation.jpg' ><br>225. NieR Re[in]carnation</div>
+<div class='box'><img src='img2/為美好的世界獻上祝福！Fantastic Days.jpg' ><br>229. 為美好的世界獻上祝福！Fantastic Days </div>
+<div class='box'><img src='img2/Crash Fever.jpg' ><br>230. Crash Fever</div>
+<div class='box'><img src='img2/乃木恋～那天在坂道下，我墜入了情網～.jpg' ><br>247. 乃木恋～那天在坂道下，我墜入了情網～</div>
+<div class='box'><img src='img2/問答RPG 魔法使與黑貓維茲.jpg' ><br>248. 問答RPG 魔法使與黑貓維茲</div>
+<div class='box'><img src='img2/Dissidia Final Fantasy Opera Omnia.jpg' ><br>251. Dissidia Final Fantasy Opera Omnia </div>
+<div class='box'><img src='img2/Love Live!School idol festival.jpg' ><br>253. Love Live!School idol festival</div>
+<div class='box'><img src='img2/太空戰士15：新帝國.jpg' ><br>255. 太空戰士15：新帝國 </div>
+<div class='box'><img src='img2/GUNDAM BREAKER：鋼彈創壞者.jpg' ><br>260. GUNDAM BREAKER：鋼彈創壞者</div>
+<div class='box'><img src='img2/Family Island.jpg' ><br>261. Family Island</div>
+<div class='box'><img src='img2/夢王國與沉睡中的 100 位王子殿下.jpg' ><br>262. 夢王國與沉睡中的 100 位王子殿下</div>
+<div class='box'><img src='img2/楓之谷M.jpg' ><br>263. 楓之谷M</div>
+<div class='box'><img src='img2/神域召喚.jpg' ><br>267. 神域召喚</div>
+<div class='box'><img src='img2/彈射世界.jpg' ><br>271. 彈射世界</div>
+<div class='box'><img src='img2/MY HERO ULTRA IMPACT.jpg' ><br>274. MY HERO ULTRA IMPACT</div>
+<div class='box'><img src='img2/Minecraft.jpg' ><br>280. Minecraft</div>
+<div class='box'><img src='img2/Toy Blast.jpg' ><br>283. Toy Blast </div>
+<div class='box'><img src='img2/在地下城尋求邂逅是否搞錯了什麼～記憶憧憬.jpg' ><br>292. 在地下城尋求邂逅是否搞錯了什麼～記憶憧憬</div>
+<div class='box'><img src='img2/Pikmin Bloom.jpg' ><br>294. Pikmin Bloom</div>
+<div class='box'><img src='img2/Unison League.jpg' ><br>299. Unison League</div>
+<div class='box'><img src='img2/刀劍神域關鍵鬥士.jpg' ><br>303. 刀劍神域關鍵鬥士</div>
+<div class='box'><img src='img2/Disney POP TOWN.jpg' ><br>307. Disney POP TOWN</div>
+<div class='box'><img src='img2/LINE 波兔小鎮.jpg' ><br>309. LINE 波兔小鎮</div>
+<div class='box'><img src='img2/黑色沙漠MOBILE.jpg' ><br>319. 黑色沙漠MOBILE</div>
+<div class='box'><img src='img2/LINE- 鋼彈大亂鬥.jpg' ><br>323. LINE: 鋼彈大亂鬥</div>
+<div class='box'><img src='img2/刀劍神域 Unleash Blading.jpg' ><br>326. 刀劍神域 Unleash Blading</div>
+<div class='box'><img src='img2/聖鬥士星矢小宇宙幻想傳.jpg' ><br>327. 聖鬥士星矢小宇宙幻想傳</div>
+<div class='box'><img src='img2/ROBLOX.jpg' ><br>330. ROBLOX</div>
+<div class='box'><img src='img2/薑餅人王國.jpg' ><br>332. 薑餅人王國</div>
+<div class='box'><img src='img2/Vanguard ZERO.jpg' ><br>333. Vanguard ZERO</div>
+<div class='box'><img src='img2/LINE Rangers 銀河特攻隊.jpg' ><br>350. LINE Rangers 銀河特攻隊</div>
+<div class='box'><img src='img2/美男王子 - 美女與野獸的最後之戀.jpg' ><br>368. 美男王子 - 美女與野獸的最後之戀</div>
+<div class='box'><img src='img2/V4.jpg' ><br>372. V4</div>
+<div class='box'><img src='img2/召喚圖板Summons Board.jpg' ><br>374. 召喚圖板Summons Board</div>
+<div class='box'><img src='img2/ROCKMAN X DiVE.jpg' ><br>381. ROCKMAN X DiVE</div>
+<div class='box'><img src='img2/跑跑薑餅人：烤箱大逃亡.jpg' ><br>383. 跑跑薑餅人：烤箱大逃亡</div>
+<div class='box'><img src='img2/Obey Me!.jpg' ><br>389. Obey Me!</div>
+<div class='box'><img src='img2/決勝 高球.jpg' ><br>391. 決勝 高球</div>
+<div class='box'><img src='img2/天堂M.jpg' ><br>394. 天堂M</div>
+<div class='box'><img src='img2/MARVEL Strike Force.jpg' ><br>398. MARVEL Strike Force</div>
+`,
+
+ '沒有台港服':`
+<div class='box'><img src='img2/職棒野球魂A.jpg' ><br>3. 職棒野球魂A</div>
+<div class='box'><img src='img2/勇者鬥惡龍WALK.jpg' ><br>12. 勇者鬥惡龍WALK</div>
+<div class='box'><img src='img2/碧藍幻想（有英文）.jpg' ><br>25. 碧藍幻想（有英文）</div>
+<div class='box'><img src='img2/實況野球.jpg' ><br>27. 實況野球</div>
+<div class='box'><img src='img2/妖怪手錶Puni Puni.jpg' ><br>36. 妖怪手錶Puni Puni</div>
+<div class='box'><img src='img2/機動戰士鋼彈U.C. ENGAGE.jpg' ><br>55. 機動戰士鋼彈U.C. ENGAGE</div>
+<div class='box'><img src='img2/偶像大師灰姑娘女孩星光舞台.jpg' ><br>57. 偶像大師灰姑娘女孩星光舞台</div>
+<div class='box'><img src='img2/戰國炎舞.jpg' ><br>62. 戰國炎舞</div>
+<div class='box'><img src='img2/PES CARD COLLECTION.jpg' ><br>64. PES CARD COLLECTION</div>
+<div class='box'><img src='img2/星之勇者鬥惡龍.jpg' ><br>65. 星之勇者鬥惡龍</div>
+<div class='box'><img src='img2/Ragnador 妖怪皇帝與終焉的夜叉姬(有中文？）.jpg' ><br>81. Ragnador 妖怪皇帝與終焉的夜叉姬（有中文？）</div>
+<div class='box'><img src='img2/逆轉奧賽羅尼亞.jpg' ><br>82. 逆轉奧賽羅尼亞</div>
+<div class='box'><img src='img2/口袋殖民地.jpg' ><br>87. 口袋殖民地</div>
+<div class='box'><img src='img2/勇者鬥惡龍擦擦樂.jpg' ><br>91. 勇者鬥惡龍擦擦樂</div>
+<div class='box'><img src='img2/言靈戰士.jpg' ><br>92. 言靈戰士</div>
+<div class='box'><img src='img2/NET麻雀 MJ.jpg' ><br>103. NET麻雀 MJ </div>
+<div class='box'><img src='img2/乃木坂般的碎形.jpg' ><br>112. 乃木坂般的碎形</div>
+<div class='box'><img src='img2/城與龍.jpg' ><br>113. 城與龍</div>
+<div class='box'><img src='img2/ピグパーティ.jpg' ><br>116. ピグパーティ </div>
+<div class='box'><img src='img2/刀劍亂舞-ONLINE- Pocket.jpg' ><br>122. 刀劍亂舞-ONLINE- Pocket</div>
+<div class='box'><img src='img2/Assault Lily Last Bullet.jpg' ><br>128. Assault Lily Last Bullet</div>
+<div class='box'><img src='img2/王者天下 亂 天下統一之道.jpg' ><br>131. 王者天下 亂 天下統一之道</div>
+<div class='box'><img src='img2/航海王萬千風暴.jpg' ><br>133. 航海王萬千風暴</div>
+<div class='box'><img src='img2/偶像大師SideM 明日之星.jpg' ><br>134. 偶像大師SideM 明日之星</div>
+<div class='box'><img src='img2/八方旅人：大陸的霸者.jpg' ><br>136. 八方旅人：大陸的霸者</div>
+<div class='box'><img src='img2/FINAL FANTASY Record Keeper（有英文）.jpg' ><br>138. FINAL FANTASY Record Keeper（有英文）</div>
+<div class='box'><img src='img2/魔法使的約定.jpg' ><br>141. 魔法使的約定</div>
+<div class='box'><img src='img2/魔法氣泡！！Quest.jpg' ><br>156. 魔法氣泡！！Quest</div>
+<div class='box'><img src='img2/偶像大師百萬人演唱會！劇場時光.jpg' ><br>157. 偶像大師百萬人演唱會！劇場時光</div>
+<div class='box'><img src='img2/通靈童子發奮丘戰記.jpg' ><br>158. 通靈童子發奮丘戰記</div>
+<div class='box'><img src='img2/魔法紀錄魔法少女小圓外傳.jpg' ><br>160. 魔法紀錄魔法少女小圓外傳</div>
+<div class='box'><img src='img2/Drift Spirits.jpg' ><br>165. Drift Spirits</div>
+<div class='box'><img src='img2/東方LostWord.jpg' ><br>170. 東方LostWord</div>
+<div class='box'><img src='img2/IDOLY PRIDE偶像榮耀.jpg' ><br>172. IDOLY PRIDE偶像榮耀</div>
+<div class='box'><img src='img2/ポーカーチェイス.jpg' ><br>174. ポーカーチェイス</div>
+<div class='box'><img src='img2/迷你四驅車超速大賽.jpg' ><br>176. 迷你四驅車超速大賽</div>
+<div class='box'><img src='img2/Jリーグクラブチャンピオンシップ.jpg' ><br>179. Jリーグクラブチャンピオンシップ</div>
+<div class='box'><img src='img2/為了誰的鍊金術師.jpg' ><br>187. 為了誰的鍊金術師</div>
+<div class='box'><img src='img2/受讚頌者Lost Flag.jpg' ><br>188. 受讚頌者Lost Flag</div>
+<div class='box'><img src='img2/乃木坂46 Rhythm Festival.jpg' ><br>189. 乃木坂46 Rhythm Festival</div>
+<div class='box'><img src='img2/ドラゴンクエストⅩ　冒険者のおでかけ超便利ツール.jpg' ><br>196. ドラゴンクエストⅩ　冒険者のおでかけ超便利ツール </div>
+<div class='box'><img src='img2/波可龍迷宮.jpg' ><br>198. 波可龍迷宮</div>
+<div class='box'><img src='img2/ぼくとドラゴン 仲間とギルドでリアルタイムバトル.jpg' ><br>200. ぼくとドラゴン 仲間とギルドでリアルタイムバトル</div>
+<div class='box'><img src='img2/惡魔72.jpg' ><br>206. 惡魔72</div>
+<div class='box'><img src='img2/元素物語.jpg' ><br>213. 元素物語</div>
+<div class='box'><img src='img2/Disney Tsum Tsum Land.jpg' ><br>216. Disney Tsum Tsum Land</div>
+<div class='box'><img src='img2/千年戰爭Aigis～一般版～.jpg' ><br>217. 千年戰爭Aigis～一般版～</div>
+<div class='box'><img src='img2/DUEL MASTERS PLAYS.jpg' ><br>219. DUEL MASTERS PLAY'S</div>
+<div class='box'><img src='img2/新網球王子RisingBeat.jpg' ><br>232. 新網球王子RisingBeat </div>
+<div class='box'><img src='img2/機戰少女Alice.jpg' ><br>233. 機戰少女Alice</div>
+<div class='box'><img src='img2/偶像大師閃耀色彩.jpg' ><br>237. 偶像大師閃耀色彩</div>
+<div class='box'><img src='img2/SCHOOLGIRL STRIKERS　～光輝旋律～.jpg' ><br>238. SCHOOLGIRL STRIKERS　～光輝旋律～</div>
+<div class='box'><img src='img2/車站回憶！Our Rails.jpg' ><br>240. 車站回憶！Our Rails </div>
+<div class='box'><img src='img2/第一神拳格鬥之魂.jpg' ><br>242. 第一神拳格鬥之魂</div>
+<div class='box'><img src='img2/FIFA Mobile.jpg' ><br>243. FIFA Mobile</div>
+<div class='box'><img src='img2/暴走列伝 単車の虎.jpg' ><br>244. 暴走列伝 単車の虎</div>
+<div class='box'><img src='img2/時空幻境鏡光傳奇.jpg' ><br>257. 時空幻境鏡光傳奇</div>
+<div class='box'><img src='img2/イケメン戦国◆時をかける恋 人気女性向け乙女・恋愛ゲーム.jpg' ><br>265. イケメン戦国◆時をかける恋 人気女性向け乙女・恋愛ゲーム</div>
+<div class='box'><img src='img2/ジョーカー～ギャングロード～.jpg' ><br>270. ジョーカー～ギャングロード～</div>
+<div class='box'><img src='img2/ポケコロツイン.jpg' ><br>272. ポケコロツイン</div>
+<div class='box'><img src='img2/大熱闘 ドラゴンスマッシュ.jpg' ><br>281. 大熱闘 ドラゴンスマッシュ</div>
+<div class='box'><img src='img2/麻雀格闘倶楽部Sp ｜ 究極のオンライン対戦 麻雀 ゲーム.jpg' ><br>286. 麻雀格闘倶楽部Sp ｜ 究極のオンライン対戦 麻雀 ゲーム</div>
+<div class='box'><img src='img2/五等分的新娘五胞胎無法將益智遊戲分成五等分.jpg' ><br>288. 五等分的新娘五胞胎無法將益智遊戲分成五等分</div>
+<div class='box'><img src='img2/喧嘩道-全國不良番付-.jpg' ><br>295. 喧嘩道-全國不良番付-</div>
+<div class='box'><img src='img2/みんゴル.jpg' ><br>300. みんゴル</div>
+<div class='box'><img src='img2/妖怪三國志竊國戰爭.jpg' ><br>312. 妖怪三國志竊國戰爭</div>
+<div class='box'><img src='img2/唱吧！超時空要塞手機DeCulture.jpg' ><br>313. 唱吧！超時空要塞手機DeCulture</div>
+<div class='box'><img src='img2/殺戮魅影.jpg' ><br>314. 殺戮魅影</div>
+<div class='box'><img src='img2/金肉人肌肉射擊.jpg' ><br>315. 金肉人肌肉射擊</div>
+<div class='box'><img src='img2/PRO野球VS.jpg' ><br>318. PRO野球VS</div>
+<div class='box'><img src='img2/火影忍者收藏疾風亂舞.jpg' ><br>321. 火影忍者收藏疾風亂舞</div>
+<div class='box'><img src='img2/D4DJ Groovy Mix（有英文）.jpg' ><br>324. D4DJ Groovy Mix（有英文）</div>
+<div class='box'><img src='img2/東方彈幕神樂.jpg' ><br>325. 東方彈幕神樂</div>
+<div class='box'><img src='img2/WIND BOYS！.jpg' ><br>337. WIND BOYS！</div>
+<div class='box'><img src='img2/六本木サディスティックナイト.jpg' ><br>338. 六本木サディスティックナイト</div>
+<div class='box'><img src='img2/ダービースタリオン マスターズ.jpg' ><br>340. ダービースタリオン マスターズ</div>
+<div class='box'><img src='img2/StarHorsePocket　–競馬ゲーム-.jpg' ><br>346. StarHorsePocket　–競馬ゲーム-</div>
+<div class='box'><img src='img2/王者天下：戰國七雄.jpg' ><br>349. 王者天下：戰國七雄</div>
+<div class='box'><img src='img2/スヌーピー ドロップス -パズル：スヌーピー パズル.jpg' ><br>351. スヌーピー ドロップス -パズル：スヌーピー パズル</div>
+<div class='box'><img src='img2/Crystal of Re-union.jpg' ><br>352. Crystal of Re:union</div>
+<div class='box'><img src='img2/ディズニー ミュージックパレード.jpg' ><br>353. ディズニー ミュージックパレード </div>
+<div class='box'><img src='img2/金色琴弦星光交響曲.jpg' ><br>354. 金色琴弦星光交響曲</div>
+<div class='box'><img src='img2/ガンダムエリアウォーズ.jpg' ><br>355. ガンダムエリアウォーズ</div>
+<div class='box'><img src='img2/Code Geass Genesic Re;CODE.jpg' ><br>360. Code Geass Genesic Re;CODE</div>
+<div class='box'><img src='img2/幻獸契約Cryptract.jpg' ><br>362. 幻獸契約Cryptract</div>
+<div class='box'><img src='img2/三国ドライブ.jpg' ><br>364. 三国ドライブ </div>
+<div class='box'><img src='img2/白貓tennis.jpg' ><br>366. 白貓tennis</div>
+<div class='box'><img src='img2/Tales of Asteria.jpg' ><br>370. Tales of Asteria</div>
+<div class='box'><img src='img2/龍族撲克.jpg' ><br>371. 龍族撲克</div>
+<div class='box'><img src='img2/八月的棒球甜心.jpg' ><br>373. 八月的棒球甜心</div>
+<div class='box'><img src='img2/神姫PROJECT A.jpg' ><br>375. 神姫PROJECT A</div>
+<div class='box'><img src='img2/ミリオンモンスター.jpg' ><br>379. ミリオンモンスター</div>
+<div class='box'><img src='img2/密特拉之星Mitrasphere.jpg' ><br>380. 密特拉之星Mitrasphere</div>
+<div class='box'><img src='img2/BLACK STAR -Theater Starless-.jpg' ><br>382. BLACK STAR -Theater Starless-</div>
+<div class='box'><img src='img2/天下統一恋の乱Love Ballad.jpg' ><br>384. 天下統一恋の乱Love Ballad</div>
+<div class='box'><img src='img2/ピュアニスタ 大人も楽しめるアバターきせかえアプリ.jpg' ><br>385. ピュアニスタ 大人も楽しめるアバターきせかえアプリ</div>
+<div class='box'><img src='img2/人中之龍Online.jpg' ><br>386. 人中之龍Online</div>
+<div class='box'><img src='img2/プロ野球PRIDE.jpg' ><br>388. プロ野球PRIDE</div>
+<div class='box'><img src='img2/Symphogear XD Unlimited.jpg' ><br>390. Symphogear XD Unlimited</div>
+<div class='box'><img src='img2/ぼくらの甲子園！ポケット　高校野球ゲーム.jpg' ><br>396. ぼくらの甲子園！ポケット　高校野球ゲーム</div>
+<div class='box'><img src='img2/SHOW BY ROCK!! Fes A Live.jpg' ><br>397. SHOW BY ROCK!! Fes A Live</div>
+`,
+
+ '台港服由中資代理':`<div style="color:hotpink;">
+<div class='box'><img src='img2/Fate-Grand Order.jpg' ><br>2. Fate/Grand Order</div>
+<div class='box'><img src='img2/賽馬娘Pretty Derby.jpg' ><br>4. 賽馬娘Pretty Derby</div>
+<div class='box'><img src='img2/世界計畫繽紛舞台！ feat. 初音未來.jpg' ><br>13. 世界計畫繽紛舞台！ feat. 初音未來</div>
+<div class='box'><img src='img2/BanG Dream! 少女樂團派對.jpg' ><br>90. BanG Dream! 少女樂團派對</div>
+<div class='box'><img src='img2/勇者鬥惡龍怪物仙境SUPER LIGHT.jpg' ><br>119. 勇者鬥惡龍怪物仙境SUPER LIGHT</div>
+<div class='box'><img src='img2/SINoALICE 死亡愛麗絲（有英文.jpg' ><br>124. SINoALICE 死亡愛麗絲（有英文</div>
+<div class='box'><img src='img2/實況力量足球.jpg' ><br>148. 實況力量足球</div>
+<div class='box'><img src='img2/A3!.jpg' ><br>151. A3!</div>
+<div class='box'><img src='img2/Re：從零開始的異世界生活Lost in Memories.jpg' ><br>175. Re：從零開始的異世界生活Lost in Memories</div>
+<div class='box'><img src='img2/魔法禁書目錄幻想收束.jpg' ><br>181. 魔法禁書目錄幻想收束</div>
+<div class='box'><img src='img2/最後的克勞迪亞Last Cloudia.jpg' ><br>191. 最後的克勞迪亞Last Cloudia </div>
+<div class='box'><img src='img2/未來戰-異界事務所.jpg' ><br>212. 未來戰/異界事務所</div>
+<div class='box'><img src='img2/Grand Summoners.jpg' ><br>250. Grand Summoners</div>
+<div class='box'><img src='img2/魔界戰記DISGAEA RPG.jpg' ><br>329. 魔界戰記DISGAEA RPG</div>
+</div>`,
+
+ '日服由中資代理':`<div style="color:hotpink;">
+<div class='box'><img src='img2/第七史詩.jpg' ><br>316. 第七史詩</div>
+</div>`,
+
+ '中資':`<div style="color:red;">
+<div>7. 原神(miHoYo Limited)</div>
+<div>8. 荒野行動(NetEase Games)</div>
+<div>14. あんさんぶるスターズ！！Music(Happy Elements K.K)</div>
+<div>20. アークナイツ(Yostar, Inc.)</div>
+<div>24. 放置少女〜百花繚乱の萌姫たち〜(Mamiko Nakao)</div>
+<div>28. パズル＆サバイバル(37GAMES)</div>
+<div>31. 三國志 真戦(Qookka Games)</div>
+<div>37. Identity V(NetEase Games)</div>
+<div>38. マフィア・シティ-極道風雲(YOTTA GAMES LIMITED)</div>
+<div>45. Age of Z(CamelGames INC.)</div>
+<div>63. Call of Duty®： Mobile(Activision Publis...)</div>
+<div>67. Rise of Kingdoms ―万国覚醒―(LILITH TECHNOLOGY...)</div>
+<div>70. おねがい社長！(Hong Kong Just Ga...)</div>
+<div>73. ロードモバイル(IGG.COM)</div>
+<div>74. TikTok ティックトック(TikTok Pte. Ltd.)</div>
+<div>76. 獅子の如く～戦国覇王戦記～(Six Waves Inc.)</div>
+<div>79. 雀魂 -じゃんたま-(Yostar, Inc.)</div>
+<div>85. ブロスタ(Supercell)</div>
+<div>89. ライフアフター(NetEase Games)</div>
+<div>93. ステート・オブ・サバイバル(KingsGroup Intern...)</div>
+<div>95. Sky 星を紡ぐ子どもたち(thatgamecompany)</div>
+<div>97. 魔剣伝説(4399TH)</div>
+<div>99. PUBG MOBILE(PUBG Corporation)</div>
+<div>104. アズールレーン(Yostar, Inc.)</div>
+<div>105. 商人放浪記(TOP INCREASE GLOB...)</div>
+<div>110. ブルーアーカイブ(Yostar, Inc.)</div>
+<div>115. エボニー - 王の帰還(TOP GAMES INC.)</div>
+<div>117. 新三國志：育成型戦略シミュレーションゲーム(HK HERO ENTERTAIN...)</div>
+<div>121. 日替わり内室(37Games-japan)</div>
+<div>123. 成り上がり～華と武の戦国(YOOZOO （SINGAPORE...)</div>
+<div>125. 剣と魔法のログレス いにしえの女神-オンラインRPG(Marvelous Inc.)</div>
+<div>126. シャイニングニキ(Papergames(Japan))</div>
+<div>137. ザ・アンツ(StarUnion)</div>
+<div>143. トップウォー(Topwar Studio)</div>
+<div>145. 戦国布武【我が天下戦国編】(Hangzhou Jedi Tec...)</div>
+<div>147. ラグナロクオリジン(GungHo Online Ent...)</div>
+<div>152. Project Makeover(Bubblegum Games LLC)</div>
+<div>153. パニシング：グレイレイヴン(HK HERO ENTERTAIN...)</div>
+<div>166. ドラゴン＆ガールズ交響曲(CoolFactory Co.,Ltd.)</div>
+<div>167. 聖闘士星矢 ライジングコスモ(Tencent Games)</div>
+<div>186. 三国覇王戦記～乱世の系譜～(Six Waves Inc.)</div>
+<div>190. 崩壊3rd(株式会社miHoYo)</div>
+<div>192. ウォーキング・デッド：サバイバー(Galaxy Play Techn...)</div>
+<div>195. アーテリーギア-機動戦姫-(BILIBILI CO.,LTD.)</div>
+<div>202. クラッシュ・オブ・クラン (Clash of Clans)(Supercell)</div>
+<div>203. シノビマスター 閃乱カグラ NEW LINK(HONEY PARADE GAME...)</div>
+<div>204. 大三国志(WINKING DIGITAL E...)</div>
+<div>207. 天地の如く～激乱の三国志～(Six Waves Inc.)</div>
+<div>208. 白夜極光(PROXIMA BETA PTE....)</div>
+<div>210. AFK アリーナ(LILITH TECHNOLOGY...)</div>
+<div>221. コード：ドラゴンブラッド(Sixjoy Hong Kong ...)</div>
+<div>222. ファミリーファームの冒険(Century Games Pte...)</div>
+<div>224. クラッシュ・ロワイヤル (Clash Royale)(Supercell)</div>
+<div>226. THE KING OF FIGHTERS '98UM OL(OURPALM INC.)</div>
+<div>231. FUSHO-浮生-(Future Interactiv...)</div>
+<div>235. 戦艦帝国-228艘の実在戦艦を集めろ(CoolFactory Co.,Ltd.)</div>
+<div>236. ラグナロク マスターズ(GungHo Online Ent...)</div>
+<div>239. エリオスライジングヒーローズ(Happy Elements K.K)</div>
+<div>241. あんさんぶるスターズ！！Basic(Happy Elements K.K)</div>
+<div>249. モバイル·レジェンド： Bang Bang(moonton)</div>
+<div>252. 超次元彼女： 神姫放置の幻想楽園(Sunny Inc.)</div>
+<div>254. MU：アークエンジェル(Ujoy)</div>
+<div>256. フィギュアストーリー(Nuverse （Hong Kon...)</div>
+<div>258. アカシッククロニクル～黎明の黙示録(moonton)</div>
+<div>259. メルクストーリア - 癒術士と鈴のしらべ -(Happy Elements K.K)</div>
+<div>266. 我が天下【世界配信一周年】(Fly Li)</div>
+<div>268. 我が野望(Chuang Cool Enter...)</div>
+<div>269. 少女廻戦(ONEMT)</div>
+<div>275. ラストシェルター(LONG TECH NETWORK...)</div>
+<div>278. 剣魂～剣と絆の異世界冒険伝(4399 NET LIMITED)</div>
+<div>284. シティダンク2(Cookies Inc.)</div>
+<div>291. イース6 オンライン(NovaStar-game)</div>
+<div>297. パニリヤ・ザ・リバイバル(Rastar Mobile)</div>
+<div>298. Art of War： Legions(Fastone Games)</div>
+<div>304. フォーセイクンワールド：神魔転生(4399 NET LIMITED)</div>
+<div>306. アイアム皇帝(Clicktouch Co.,Ltd.)</div>
+<div>308. キング・オブ・アバロン： ドラゴン戦争(KoA)(FunPlus)</div>
+<div>311. ステラアルカナ-愛の光と運命の絆(YOOZOO （SINGAPORE...)</div>
+<div>317. マッチングトン·マンション(Firecraft Studios)</div>
+<div>328. 今三国志(Archosaur Games)</div>
+<div>334. クラッシュ オブ キングス-「城育成シミュレーションRPG」(ELEX Wireless)</div>
+<div>339. ONE PUNCH MAN 一撃マジファイト(GREE, Inc.)</div>
+<div>342. ミステリー探偵ジューン- 隠れた手がかり(wooga)</div>
+<div>344. ウォー・アンド・ オーダー「War and Order」(Camel Games Inc.)</div>
+<div>345. ラングリッサー モバイル(ZlongGames)</div>
+<div>347. WARPATH-武装都市-(Lilith Games)</div>
+<div>356. ラピスクロニクル -英雄王冠-(株式会社ファイブ...)</div>
+<div>357. ラストピリオド - 終わりなき螺旋の物語 -(Happy Elements K.K)</div>
+<div>358. 戦艦ファイナル -最後の戦い(Qingyi Wen)</div>
+<div>359. 覇王の天下 - 戦略シミュレーション(CoolFactory Co.,Ltd.)</div>
+<div>361. ブレイブソード×ブレイズソウル(Grimoire)</div>
+<div>363. 謀りの姫：Pocket(Wish Interactive ...)</div>
+<div>365. 千銃士：Rhodoknight(Marvelous Inc.)</div>
+<div>369. ラピスリライツ 〜この世界のアイドルは魔法が使える〜(KLab Inc.)</div>
+<div>378. Pokémon UNITE(The Pokemon Company)</div>
+<div>393. パーフェクトワールド M(ZlongGames)</div>
+<div>395. レッド：プライドオブエデン(YOOZOO （SINGAPORE...)</div>
+<div>399. ヘイ・デイ (Hay Day)(Supercell)</div>
+</div>`,
+});
+// 202112 
+data.push({'date':'202112',
+ '有台港服':`
+<div class='box'><img src='img2/怪物彈珠〈Monster Strike〉.jpg' ><br>4. 怪物彈珠〈Monster Strike〉</div>
+<div class='box'><img src='img2/Puzzle & Dragons.jpg' ><br>6. Puzzle & Dragons</div>
+<div class='box'><img src='img2/Pokemon GO.jpg' ><br>7. Pokemon GO</div>
+<div class='box'><img src='img2/DRAGON BALL Z -七龍珠爆裂激戰-.jpg' ><br>12. DRAGON BALL Z -七龍珠爆裂激戰-</div>
+<div class='box'><img src='img2/復活邪神Romancing SaGa Re;univerSe.jpg' ><br>18. 復活邪神Romancing SaGa Re;univerSe</div>
+<div class='box'><img src='img2/航海王Bounty Rush.jpg' ><br>20. 航海王Bounty Rush</div>
+<div class='box'><img src='img2/關於我轉生變成史萊姆這檔事魔王與龍的建國譚.jpg' ><br>21. 關於我轉生變成史萊姆這檔事魔王與龍的建國譚</div>
+<div class='box'><img src='img2/勇者鬥惡龍戰略指揮家.jpg' ><br>23. 勇者鬥惡龍戰略指揮家</div>
+<div class='box'><img src='img2/七龍珠激戰傳說.jpg' ><br>27. 七龍珠激戰傳說</div>
+<div class='box'><img src='img2/空帕斯：陣地攻防戰.jpg' ><br>29. 空帕斯：陣地攻防戰</div>
+<div class='box'><img src='img2/迪士尼扭曲仙境.jpg' ><br>34. 迪士尼扭曲仙境</div>
+<div class='box'><img src='img2/貓咪大戰爭.jpg' ><br>38. 貓咪大戰爭</div>
+<div class='box'><img src='img2/Toon Blast.jpg' ><br>46. Toon Blast</div>
+<div class='box'><img src='img2/Gran Saga.jpg' ><br>47. Gran Saga</div>
+<div class='box'><img src='img2/LINE 航海王：秘寶尋航.jpg' ><br>48. LINE 航海王：秘寶尋航</div>
+<div class='box'><img src='img2/三國志霸道.jpg' ><br>54. 三國志霸道</div>
+<div class='box'><img src='img2/世界足球競賽2018.jpg' ><br>60. 世界足球競賽2018</div>
+<div class='box'><img src='img2/白貓Project.jpg' ><br>72. 白貓Project</div>
+<div class='box'><img src='img2/Hero Wars.jpg' ><br>74. Hero Wars</div>
+<div class='box'><img src='img2/闇影詩章Shadowverse.jpg' ><br>75. 闇影詩章Shadowverse</div>
+<div class='box'><img src='img2/FFBE WAR OF THE VISIONS.jpg' ><br>78. FFBE WAR OF THE VISIONS</div>
+<div class='box'><img src='img2/Another Eden：穿越時空的貓.jpg' ><br>79. Another Eden：穿越時空的貓</div>
+<div class='box'><img src='img2/寶可夢大師EX（Pokémon Masters EX）.jpg' ><br>81. 寶可夢大師EX（Pokémon Masters EX）</div>
+<div class='box'><img src='img2/亙古幻想.jpg' ><br>87. 亙古幻想</div>
+<div class='box'><img src='img2/北斗之拳傳承者再臨.jpg' ><br>103. 北斗之拳傳承者再臨</div>
+<div class='box'><img src='img2/SEGA 新創造球會ROAD to the WORLD.jpg' ><br>108. SEGA 新創造球會ROAD to the WORLD</div>
+<div class='box'><img src='img2/JUMPUTI HEROES 英雄氣泡.jpg' ><br>112. JUMPUTI HEROES 英雄氣泡</div>
+<div class='box'><img src='img2/聖火降魔錄英雄雲集.jpg' ><br>114. 聖火降魔錄英雄雲集</div>
+<div class='box'><img src='img2/LINE POP2.jpg' ><br>119. LINE POP2</div>
+<div class='box'><img src='img2/遊戲王決鬥聯盟.jpg' ><br>121. 遊戲王決鬥聯盟</div>
+<div class='box'><img src='img2/LINE BUBBLE 2.jpg' ><br>123. LINE BUBBLE 2</div>
+<div class='box'><img src='img2/Royal Match.jpg' ><br>128. Royal Match</div>
+<div class='box'><img src='img2/魔靈召喚.jpg' ><br>136. 魔靈召喚</div>
+<div class='box'><img src='img2/寵物島Livly Island.jpg' ><br>138. 寵物島Livly Island</div>
+<div class='box'><img src='img2/動物森友會口袋露營廣場.jpg' ><br>142. 動物森友會口袋露營廣場</div>
+<div class='box'><img src='img2/足球小將翼：夢幻隊伍.jpg' ><br>143. 足球小將翼：夢幻隊伍</div>
+<div class='box'><img src='img2/Empires & Puzzles- RPG Quest 帝國拼圖.jpg' ><br>144. Empires & Puzzles: RPG Quest 帝國拼圖</div>
+<div class='box'><img src='img2/LoveLive！學園偶像祭ALL STARS.jpg' ><br>156. LoveLive！學園偶像祭ALL STARS</div>
+<div class='box'><img src='img2/超異域公主連結 Re-Dive.jpg' ><br>158. 超異域公主連結 Re:Dive</div>
+<div class='box'><img src='img2/勇者鬥惡龍 達伊的大冒險　燃魂羈絆.jpg' ><br>159. 勇者鬥惡龍 達伊的大冒險　燃魂羈絆</div>
+<div class='box'><img src='img2/IDOLiSH7-偶像星願-.jpg' ><br>166. IDOLiSH7-偶像星願-</div>
+<div class='box'><img src='img2/乃木恋～那天在坂道下，我墜入了情網～.jpg' ><br>189. 乃木恋～那天在坂道下，我墜入了情網～</div>
+<div class='box'><img src='img2/瑪利歐賽車巡迴賽.jpg' ><br>195. 瑪利歐賽車巡迴賽</div>
+<div class='box'><img src='img2/MY HERO ULTRA IMPACT.jpg' ><br>203. MY HERO ULTRA IMPACT</div>
+<div class='box'><img src='img2/Dissidia Final Fantasy Opera Omnia.jpg' ><br>214. Dissidia Final Fantasy Opera Omnia </div>
+<div class='box'><img src='img2/BLEACH Brave Souls.jpg' ><br>216. BLEACH Brave Souls</div>
+<div class='box'><img src='img2/天堂M.jpg' ><br>218. 天堂M</div>
+<div class='box'><img src='img2/刀劍神域 Unleash Blading.jpg' ><br>222. 刀劍神域 Unleash Blading</div>
+<div class='box'><img src='img2/為美好的世界獻上祝福！Fantastic Days.jpg' ><br>236. 為美好的世界獻上祝福！Fantastic Days </div>
+<div class='box'><img src='img2/GUNDAM BREAKER：鋼彈創壞者.jpg' ><br>238. GUNDAM BREAKER：鋼彈創壞者</div>
+<div class='box'><img src='img2/迪士尼 我的小娃娃.jpg' ><br>246. 迪士尼 我的小娃娃</div>
+<div class='box'><img src='img2/超級機器人大戰DD.jpg' ><br>247. 超級機器人大戰DD</div>
+<div class='box'><img src='img2/Unison League.jpg' ><br>251. Unison League</div>
+<div class='box'><img src='img2/Pikmin Bloom.jpg' ><br>254. Pikmin Bloom</div>
+<div class='box'><img src='img2/Family Island.jpg' ><br>256. Family Island</div>
+<div class='box'><img src='img2/D×2 真・女神轉生 Liberation.jpg' ><br>257. D×2 真・女神轉生 Liberation</div>
+<div class='box'><img src='img2/聖鬥士星矢小宇宙幻想傳.jpg' ><br>267. 聖鬥士星矢小宇宙幻想傳</div>
+<div class='box'><img src='img2/FINAL FANTASY BRAVE EXVIUS.jpg' ><br>270. FINAL FANTASY BRAVE EXVIUS</div>
+<div class='box'><img src='img2/在地下城尋求邂逅是否搞錯了什麼～記憶憧憬.jpg' ><br>271. 在地下城尋求邂逅是否搞錯了什麼～記憶憧憬</div>
+<div class='box'><img src='img2/Toy Blast.jpg' ><br>275. Toy Blast </div>
+<div class='box'><img src='img2/彈射世界.jpg' ><br>277. 彈射世界</div>
+<div class='box'><img src='img2/三麗鷗明星的微笑小鎮 - Hello Sweet Days.jpg' ><br>282. 三麗鷗明星的微笑小鎮 : Hello Sweet Days</div>
+<div class='box'><img src='img2/Love Live!School idol festival.jpg' ><br>284. Love Live!School idol festival</div>
+<div class='box'><img src='img2/太空戰士15：新帝國.jpg' ><br>286. 太空戰士15：新帝國 </div>
+<div class='box'><img src='img2/刀劍神域關鍵鬥士.jpg' ><br>287. 刀劍神域關鍵鬥士</div>
+<div class='box'><img src='img2/薑餅人王國.jpg' ><br>288. 薑餅人王國</div>
+<div class='box'><img src='img2/歌之王子殿下 Shining Live.jpg' ><br>292. 歌之王子殿下 Shining Live</div>
+<div class='box'><img src='img2/Crash Fever.jpg' ><br>296. Crash Fever</div>
+<div class='box'><img src='img2/Minecraft.jpg' ><br>297. Minecraft</div>
+<div class='box'><img src='img2/Obey Me!.jpg' ><br>300. Obey Me!</div>
+<div class='box'><img src='img2/Disney POP TOWN.jpg' ><br>307. Disney POP TOWN</div>
+<div class='box'><img src='img2/募戀英雄.jpg' ><br>308. 募戀英雄</div>
+<div class='box'><img src='img2/召喚圖板Summons Board.jpg' ><br>317. 召喚圖板Summons Board</div>
+<div class='box'><img src='img2/黑色沙漠MOBILE.jpg' ><br>321. 黑色沙漠MOBILE</div>
+<div class='box'><img src='img2/NieR Re[in]carnation.jpg' ><br>327. NieR Re[in]carnation</div>
+<div class='box'><img src='img2/LINE 波兔小鎮.jpg' ><br>328. LINE 波兔小鎮</div>
+<div class='box'><img src='img2/夢王國與沉睡中的 100 位王子殿下.jpg' ><br>334. 夢王國與沉睡中的 100 位王子殿下</div>
+<div class='box'><img src='img2/楓之谷M.jpg' ><br>343. 楓之谷M</div>
+<div class='box'><img src='img2/Vanguard ZERO.jpg' ><br>349. Vanguard ZERO</div>
+<div class='box'><img src='img2/決勝 高球.jpg' ><br>358. 決勝 高球</div>
+<div class='box'><img src='img2/V4.jpg' ><br>359. V4</div>
+<div class='box'><img src='img2/神域召喚.jpg' ><br>360. 神域召喚</div>
+<div class='box'><img src='img2/Huuuge娛樂城.jpg' ><br>366. Huuuge娛樂城</div>
+<div class='box'><img src='img2/Mighty Party.jpg' ><br>369. Mighty Party</div>
+<div class='box'><img src='img2/少女歌劇Revue Starlight -Re LIVE-.jpg' ><br>370. 少女歌劇Revue Starlight -Re LIVE-</div>
+<div class='box'><img src='img2/LINE- 鋼彈大亂鬥.jpg' ><br>371. LINE: 鋼彈大亂鬥</div>
+<div class='box'><img src='img2/美男王子 - 美女與野獸的最後之戀.jpg' ><br>378. 美男王子 - 美女與野獸的最後之戀</div>
+<div class='box'><img src='img2/Golf Rival.jpg' ><br>388. Golf Rival</div>
+<div class='box'><img src='img2/加勒比海盜- 戰爭之潮.jpg' ><br>391. 加勒比海盜: 戰爭之潮</div>
+<div class='box'><img src='img2/LINE Rangers 銀河特攻隊.jpg' ><br>392. LINE Rangers 銀河特攻隊</div>
+<div class='box'><img src='img2/FFVII THE FIRST SOLDIER.jpg' ><br>396. FFVII THE FIRST SOLDIER</div>
+<div class='box'><img src='img2/ROBLOX.jpg' ><br>397. ROBLOX</div>
+<div class='box'><img src='img2/Mech Arena.jpg' ><br>399. Mech Arena</div>
+`,
+
+ '沒有台港服':`
+<div class='box'><img src='img2/職棒野球魂A.jpg' ><br>2. 職棒野球魂A</div>
+<div class='box'><img src='img2/勇者鬥惡龍WALK.jpg' ><br>10. 勇者鬥惡龍WALK</div>
+<div class='box'><img src='img2/實況野球.jpg' ><br>25. 實況野球</div>
+<div class='box'><img src='img2/妖怪手錶Puni Puni.jpg' ><br>37. 妖怪手錶Puni Puni</div>
+<div class='box'><img src='img2/勇者鬥惡龍擦擦樂.jpg' ><br>49. 勇者鬥惡龍擦擦樂</div>
+<div class='box'><img src='img2/機動戰士鋼彈U.C. ENGAGE.jpg' ><br>50. 機動戰士鋼彈U.C. ENGAGE</div>
+<div class='box'><img src='img2/偶像大師灰姑娘女孩星光舞台.jpg' ><br>52. 偶像大師灰姑娘女孩星光舞台</div>
+<div class='box'><img src='img2/碧藍幻想（有英文）.jpg' ><br>61. 碧藍幻想（有英文）</div>
+<div class='box'><img src='img2/戰國炎舞.jpg' ><br>67. 戰國炎舞</div>
+<div class='box'><img src='img2/口袋殖民地.jpg' ><br>73. 口袋殖民地</div>
+<div class='box'><img src='img2/城與龍.jpg' ><br>89. 城與龍</div>
+<div class='box'><img src='img2/Ragnador 妖怪皇帝與終焉的夜叉姬(有中文？）.jpg' ><br>97. Ragnador 妖怪皇帝與終焉的夜叉姬（有中文？）</div>
+<div class='box'><img src='img2/NET麻雀 MJ.jpg' ><br>106. NET麻雀 MJ </div>
+<div class='box'><img src='img2/乃木坂般的碎形.jpg' ><br>124. 乃木坂般的碎形</div>
+<div class='box'><img src='img2/ピグパーティ.jpg' ><br>130. ピグパーティ </div>
+<div class='box'><img src='img2/通靈童子發奮丘戰記.jpg' ><br>131. 通靈童子發奮丘戰記</div>
+<div class='box'><img src='img2/航海王萬千風暴.jpg' ><br>132. 航海王萬千風暴</div>
+<div class='box'><img src='img2/星之勇者鬥惡龍.jpg' ><br>137. 星之勇者鬥惡龍</div>
+<div class='box'><img src='img2/PES CARD COLLECTION.jpg' ><br>140. PES CARD COLLECTION</div>
+<div class='box'><img src='img2/言靈戰士.jpg' ><br>147. 言靈戰士</div>
+<div class='box'><img src='img2/DUEL MASTERS PLAYS.jpg' ><br>149. DUEL MASTERS PLAY'S</div>
+<div class='box'><img src='img2/王者天下 亂 天下統一之道.jpg' ><br>152. 王者天下 亂 天下統一之道</div>
+<div class='box'><img src='img2/Drift Spirits.jpg' ><br>154. Drift Spirits</div>
+<div class='box'><img src='img2/魔法使的約定.jpg' ><br>157. 魔法使的約定</div>
+<div class='box'><img src='img2/Assault Lily Last Bullet.jpg' ><br>160. Assault Lily Last Bullet</div>
+<div class='box'><img src='img2/IDOLY PRIDE偶像榮耀.jpg' ><br>164. IDOLY PRIDE偶像榮耀</div>
+<div class='box'><img src='img2/逆轉奧賽羅尼亞.jpg' ><br>169. 逆轉奧賽羅尼亞</div>
+<div class='box'><img src='img2/偶像大師百萬人演唱會！劇場時光.jpg' ><br>170. 偶像大師百萬人演唱會！劇場時光</div>
+<div class='box'><img src='img2/ぼくとドラゴン 仲間とギルドでリアルタイムバトル.jpg' ><br>172. ぼくとドラゴン 仲間とギルドでリアルタイムバトル</div>
+<div class='box'><img src='img2/受讚頌者Lost Flag.jpg' ><br>175. 受讚頌者Lost Flag</div>
+<div class='box'><img src='img2/惡魔72.jpg' ><br>179. 惡魔72</div>
+<div class='box'><img src='img2/ポケコロツイン.jpg' ><br>180. ポケコロツイン</div>
+<div class='box'><img src='img2/新網球王子RisingBeat.jpg' ><br>181. 新網球王子RisingBeat </div>
+<div class='box'><img src='img2/八方旅人：大陸的霸者.jpg' ><br>184. 八方旅人：大陸的霸者</div>
+<div class='box'><img src='img2/魔法氣泡！！Quest.jpg' ><br>188. 魔法氣泡！！Quest</div>
+<div class='box'><img src='img2/偶像大師閃耀色彩.jpg' ><br>191. 偶像大師閃耀色彩</div>
+<div class='box'><img src='img2/FINAL FANTASY Record Keeper（有英文）.jpg' ><br>194. FINAL FANTASY Record Keeper（有英文）</div>
+<div class='box'><img src='img2/車站回憶！Our Rails.jpg' ><br>197. 車站回憶！Our Rails </div>
+<div class='box'><img src='img2/乃木坂46 Rhythm Festival.jpg' ><br>204. 乃木坂46 Rhythm Festival</div>
+<div class='box'><img src='img2/偶像大師SideM 明日之星.jpg' ><br>206. 偶像大師SideM 明日之星</div>
+<div class='box'><img src='img2/暴走列伝 単車の虎.jpg' ><br>208. 暴走列伝 単車の虎</div>
+<div class='box'><img src='img2/波可龍迷宮.jpg' ><br>213. 波可龍迷宮</div>
+<div class='box'><img src='img2/刀劍亂舞-ONLINE- Pocket.jpg' ><br>221. 刀劍亂舞-ONLINE- Pocket</div>
+<div class='box'><img src='img2/Disney Tsum Tsum Land.jpg' ><br>224. Disney Tsum Tsum Land</div>
+<div class='box'><img src='img2/ドラゴンクエストⅩ　冒険者のおでかけ超便利ツール.jpg' ><br>225. ドラゴンクエストⅩ　冒険者のおでかけ超便利ツール </div>
+<div class='box'><img src='img2/Code Geass Genesic Re;CODE.jpg' ><br>226. Code Geass Genesic Re;CODE</div>
+<div class='box'><img src='img2/FIFA Mobile.jpg' ><br>228. FIFA Mobile</div>
+<div class='box'><img src='img2/元素物語.jpg' ><br>234. 元素物語</div>
+<div class='box'><img src='img2/時空幻境鏡光傳奇.jpg' ><br>237. 時空幻境鏡光傳奇</div>
+<div class='box'><img src='img2/迷你四驅車超速大賽.jpg' ><br>240. 迷你四驅車超速大賽</div>
+<div class='box'><img src='img2/為了誰的鍊金術師.jpg' ><br>242. 為了誰的鍊金術師</div>
+<div class='box'><img src='img2/第一神拳格鬥之魂.jpg' ><br>243. 第一神拳格鬥之魂</div>
+<div class='box'><img src='img2/Jリーグクラブチャンピオンシップ.jpg' ><br>252. Jリーグクラブチャンピオンシップ</div>
+<div class='box'><img src='img2/みんゴル.jpg' ><br>255. みんゴル</div>
+<div class='box'><img src='img2/王者天下：戰國七雄.jpg' ><br>258. 王者天下：戰國七雄</div>
+<div class='box'><img src='img2/麻雀格闘倶楽部Sp ｜ 究極のオンライン対戦 麻雀 ゲーム.jpg' ><br>265. 麻雀格闘倶楽部Sp ｜ 究極のオンライン対戦 麻雀 ゲーム</div>
+<div class='box'><img src='img2/魔法紀錄魔法少女小圓外傳.jpg' ><br>274. 魔法紀錄魔法少女小圓外傳</div>
+<div class='box'><img src='img2/千年戰爭Aigis～一般版～.jpg' ><br>280. 千年戰爭Aigis～一般版～</div>
+<div class='box'><img src='img2/喧嘩道-全國不良番付-.jpg' ><br>283. 喧嘩道-全國不良番付-</div>
+<div class='box'><img src='img2/人中之龍Online.jpg' ><br>289. 人中之龍Online</div>
+<div class='box'><img src='img2/D4DJ Groovy Mix（有英文）.jpg' ><br>301. D4DJ Groovy Mix（有英文）</div>
+<div class='box'><img src='img2/ディズニー ミュージックパレード.jpg' ><br>302. ディズニー ミュージックパレード </div>
+<div class='box'><img src='img2/東方LostWord.jpg' ><br>305. 東方LostWord</div>
+<div class='box'><img src='img2/大熱闘 ドラゴンスマッシュ.jpg' ><br>310. 大熱闘 ドラゴンスマッシュ</div>
+<div class='box'><img src='img2/イケメン戦国◆時をかける恋 人気女性向け乙女・恋愛ゲーム.jpg' ><br>311. イケメン戦国◆時をかける恋 人気女性向け乙女・恋愛ゲーム</div>
+<div class='box'><img src='img2/金色琴弦星光交響曲.jpg' ><br>314. 金色琴弦星光交響曲</div>
+<div class='box'><img src='img2/幻獸契約Cryptract.jpg' ><br>319. 幻獸契約Cryptract</div>
+<div class='box'><img src='img2/Kirara Fantasia.jpg' ><br>320. Kirara Fantasia</div>
+<div class='box'><img src='img2/東方彈幕神樂.jpg' ><br>322. 東方彈幕神樂</div>
+<div class='box'><img src='img2/Legeclo！～傳奇四葉草～.jpg' ><br>324. Legeclo！～傳奇四葉草～</div>
+<div class='box'><img src='img2/天下統一恋の乱Love Ballad.jpg' ><br>325. 天下統一恋の乱Love Ballad</div>
+<div class='box'><img src='img2/ぼくらの甲子園！ポケット　高校野球ゲーム.jpg' ><br>326. ぼくらの甲子園！ポケット　高校野球ゲーム</div>
+<div class='box'><img src='img2/TRAHA.jpg' ><br>332. TRAHA</div>
+<div class='box'><img src='img2/SCHOOLGIRL STRIKERS　～光輝旋律～.jpg' ><br>338. SCHOOLGIRL STRIKERS　～光輝旋律～</div>
+<div class='box'><img src='img2/龍族撲克.jpg' ><br>344. 龍族撲克</div>
+<div class='box'><img src='img2/機戰少女Alice.jpg' ><br>345. 機戰少女Alice</div>
+<div class='box'><img src='img2/六本木サディスティックナイト.jpg' ><br>346. 六本木サディスティックナイト</div>
+<div class='box'><img src='img2/PRO野球VS.jpg' ><br>347. PRO野球VS</div>
+<div class='box'><img src='img2/真・北斗無双.jpg' ><br>351. 真・北斗無双</div>
+<div class='box'><img src='img2/五等分的新娘五胞胎無法將益智遊戲分成五等分.jpg' ><br>355. 五等分的新娘五胞胎無法將益智遊戲分成五等分</div>
+<div class='box'><img src='img2/ダービースタリオン マスターズ.jpg' ><br>356. ダービースタリオン マスターズ</div>
+<div class='box'><img src='img2/ピュアニスタ 大人も楽しめるアバターきせかえアプリ.jpg' ><br>357. ピュアニスタ 大人も楽しめるアバターきせかえアプリ</div>
+<div class='box'><img src='img2/Symphogear XD Unlimited.jpg' ><br>361. Symphogear XD Unlimited</div>
+<div class='box'><img src='img2/WIND BOYS！.jpg' ><br>362. WIND BOYS！</div>
+<div class='box'><img src='img2/Crystal of Re-union.jpg' ><br>365. Crystal of Re:union</div>
+<div class='box'><img src='img2/スヌーピー ドロップス -パズル：スヌーピー パズル.jpg' ><br>367. スヌーピー ドロップス -パズル：スヌーピー パズル</div>
+<div class='box'><img src='img2/ジョーカー～ギャングロード～.jpg' ><br>368. ジョーカー～ギャングロード～</div>
+<div class='box'><img src='img2/殺戮魅影.jpg' ><br>372. 殺戮魅影</div>
+<div class='box'><img src='img2/火影忍者收藏疾風亂舞.jpg' ><br>374. 火影忍者收藏疾風亂舞</div>
+<div class='box'><img src='img2/ミリオンモンスター.jpg' ><br>377. ミリオンモンスター</div>
+<div class='box'><img src='img2/Tales of Asteria.jpg' ><br>379. Tales of Asteria</div>
+<div class='box'><img src='img2/BLACK STAR -Theater Starless-.jpg' ><br>382. BLACK STAR -Theater Starless-</div>
+<div class='box'><img src='img2/白貓tennis.jpg' ><br>384. 白貓tennis</div>
+<div class='box'><img src='img2/神姫PROJECT A.jpg' ><br>393. 神姫PROJECT A</div>
+<div class='box'><img src='img2/八月的棒球甜心.jpg' ><br>395. 八月的棒球甜心</div>
+<div class='box'><img src='img2/三国ドライブ.jpg' ><br>398. 三国ドライブ </div>
+`,
+
+ '台港服由中資代理':`<div style="color:hotpink;">
+<div class='box'><img src='img2/賽馬娘Pretty Derby.jpg' ><br>1. 賽馬娘Pretty Derby</div>
+<div class='box'><img src='img2/Fate-Grand Order.jpg' ><br>5. Fate/Grand Order</div>
+<div class='box'><img src='img2/世界計畫繽紛舞台！ feat. 初音未來.jpg' ><br>17. 世界計畫繽紛舞台！ feat. 初音未來</div>
+<div class='box'><img src='img2/SINoALICE 死亡愛麗絲（有英文.jpg' ><br>107. SINoALICE 死亡愛麗絲（有英文</div>
+<div class='box'><img src='img2/BanG Dream! 少女樂團派對.jpg' ><br>134. BanG Dream! 少女樂團派對</div>
+<div class='box'><img src='img2/實況力量足球.jpg' ><br>163. 實況力量足球</div>
+<div class='box'><img src='img2/A3!.jpg' ><br>192. A3!</div>
+<div class='box'><img src='img2/Re：從零開始的異世界生活Lost in Memories.jpg' ><br>210. Re：從零開始的異世界生活Lost in Memories</div>
+<div class='box'><img src='img2/最後的克勞迪亞Last Cloudia.jpg' ><br>211. 最後的克勞迪亞Last Cloudia </div>
+<div class='box'><img src='img2/勇者鬥惡龍怪物仙境SUPER LIGHT.jpg' ><br>241. 勇者鬥惡龍怪物仙境SUPER LIGHT</div>
+<div class='box'><img src='img2/Grand Summoners.jpg' ><br>299. Grand Summoners</div>
+<div class='box'><img src='img2/魔界戰記DISGAEA RPG.jpg' ><br>318. 魔界戰記DISGAEA RPG</div>
+<div class='box'><img src='img2/鎖鏈戰記.jpg' ><br>339. 鎖鏈戰記</div>
+<div class='box'><img src='img2/魔法禁書目錄幻想收束.jpg' ><br>341. 魔法禁書目錄幻想收束</div>
+<div class='box'><img src='img2/未來戰-異界事務所.jpg' ><br>352. 未來戰/異界事務所</div>
+</div>`,
+
+ '日服由中資代理':`<div style="color:hotpink;">
+<div class='box'><img src='img2/第七史詩.jpg' ><br>244. 第七史詩</div>
+</div>`,
+
+ '中資':`<div style="color:red;">
+<div>9. 荒野行動(NetEase Games)</div>
+<div>14. 原神(miHoYo Limited)</div>
+<div>16. あんさんぶるスターズ！！Music(Happy Elements K.K)</div>
+<div>24. パズル＆サバイバル(37GAMES)</div>
+<div>26. マフィア・シティ-極道風雲(YOTTA GAMES LIMITED)</div>
+<div>28. 放置少女〜百花繚乱の萌姫たち〜(Mamiko Nakao)</div>
+<div>31. 三國志 真戦(Qookka Games)</div>
+<div>32. Identity V(NetEase Games)</div>
+<div>40. Age of Z(CamelGames INC.)</div>
+<div>56. Rise of Kingdoms ―万国覚醒―(LILITH TECHNOLOGY...)</div>
+<div>62. Call of Duty®： Mobile(Activision Publis...)</div>
+<div>64. ロードモバイル(IGG.COM)</div>
+<div>65. ライフアフター(NetEase Games)</div>
+<div>66. おねがい社長！(Hong Kong Just Ga...)</div>
+<div>70. TikTok ティックトック(TikTok Pte. Ltd.)</div>
+<div>71. 獅子の如く～戦国覇王戦記～(Six Waves Inc.)</div>
+<div>76. ステート・オブ・サバイバル(KingsGroup Intern...)</div>
+<div>80. 日替わり内室(37Games-japan)</div>
+<div>82. 商人放浪記(TOP INCREASE GLOB...)</div>
+<div>83. PUBG MOBILE(PUBG Corporation)</div>
+<div>91. パニシング：グレイレイヴン(HK HERO ENTERTAIN...)</div>
+<div>93. クラッシュ・ロワイヤル (Clash Royale)(Supercell)</div>
+<div>95. ブロスタ(Supercell)</div>
+<div>100. 雀魂 -じゃんたま-(Yostar, Inc.)</div>
+<div>101. Sky 星を紡ぐ子どもたち(thatgamecompany)</div>
+<div>105. 成り上がり～華と武の戦国(YOOZOO （SINGAPORE...)</div>
+<div>111. 魔剣伝説(4399TH)</div>
+<div>116. ラグナロクオリジン(GungHo Online Ent...)</div>
+<div>117. エボニー - 王の帰還(TOP GAMES INC.)</div>
+<div>120. アークナイツ(Yostar, Inc.)</div>
+<div>122. トップウォー(Topwar Studio)</div>
+<div>125. ザ・アンツ(StarUnion)</div>
+<div>126. 新三國志：育成型戦略シミュレーションゲーム(HK HERO ENTERTAIN...)</div>
+<div>129. ウォーキング・デッド：サバイバー(Galaxy Play Techn...)</div>
+<div>141. Project Makeover(Bubblegum Games LLC)</div>
+<div>151. 剣と魔法のログレス いにしえの女神-オンラインRPG(Marvelous Inc.)</div>
+<div>153. アズールレーン(Yostar, Inc.)</div>
+<div>155. 三国覇王戦記～乱世の系譜～(Six Waves Inc.)</div>
+<div>162. ドラゴン＆ガールズ交響曲(CoolFactory Co.,Ltd.)</div>
+<div>167. 戦国布武【我が天下戦国編】(Hangzhou Jedi Tec...)</div>
+<div>174. 天地の如く～激乱の三国志～(Six Waves Inc.)</div>
+<div>177. アーテリーギア-機動戦姫-(BILIBILI CO.,LTD.)</div>
+<div>182. 聖闘士星矢 ライジングコスモ(Tencent Games)</div>
+<div>185. コード：ドラゴンブラッド(Sixjoy Hong Kong ...)</div>
+<div>186. クラッシュ・オブ・クラン (Clash of Clans)(Supercell)</div>
+<div>187. 大三国志(WINKING DIGITAL E...)</div>
+<div>193. THE KING OF FIGHTERS '98UM OL(OURPALM INC.)</div>
+<div>198. シティダンク2(Cookies Inc.)</div>
+<div>199. 千銃士：Rhodoknight(Marvelous Inc.)</div>
+<div>200. ファミリーファームの冒険(Century Games Pte...)</div>
+<div>201. 我が野望(Chuang Cool Enter...)</div>
+<div>205. ブルーアーカイブ(Yostar, Inc.)</div>
+<div>207. 崩壊3rd(株式会社miHoYo)</div>
+<div>209. 戦艦帝国-228艘の実在戦艦を集めろ(CoolFactory Co.,Ltd.)</div>
+<div>212. MU：アークエンジェル(Ujoy)</div>
+<div>215. シャイニングニキ(Papergames(Japan))</div>
+<div>217. AFK アリーナ(LILITH TECHNOLOGY...)</div>
+<div>220. モバイル·レジェンド： Bang Bang(moonton)</div>
+<div>229. 白夜極光(PROXIMA BETA PTE....)</div>
+<div>231. 少女廻戦(ONEMT)</div>
+<div>232. フィギュアストーリー(Nuverse （Hong Kon...)</div>
+<div>235. シノビマスター 閃乱カグラ NEW LINK(HONEY PARADE GAME...)</div>
+<div>245. FUSHO-浮生-(Future Interactiv...)</div>
+<div>248. パニリヤ・ザ・リバイバル(Rastar Mobile)</div>
+<div>253. ラストシェルター(LONG TECH NETWORK...)</div>
+<div>259. 超次元彼女： 神姫放置の幻想楽園(Sunny Inc.)</div>
+<div>261. ラグナロク マスターズ(GungHo Online Ent...)</div>
+<div>263. Pokémon UNITE(The Pokemon Company)</div>
+<div>264. ステラアルカナ-愛の光と運命の絆(YOOZOO （SINGAPORE...)</div>
+<div>266. ラピスクロニクル -英雄王冠-(株式会社ファイブ...)</div>
+<div>268. アカシッククロニクル～黎明の黙示録(moonton)</div>
+<div>269. イース6 オンライン(NovaStar-game)</div>
+<div>272. Art of War： Legions(Fastone Games)</div>
+<div>276. ラングリッサー モバイル(ZlongGames)</div>
+<div>279. フォーセイクンワールド：神魔転生(4399 NET LIMITED)</div>
+<div>290. あんさんぶるスターズ！！Basic(Happy Elements K.K)</div>
+<div>291. 我が天下【世界配信一周年】(Fly Li)</div>
+<div>293. アイアム皇帝(Clicktouch Co.,Ltd.)</div>
+<div>295. 剣魂～剣と絆の異世界冒険伝(4399 NET LIMITED)</div>
+<div>304. マッチングトン·マンション(Firecraft Studios)</div>
+<div>309. キング・オブ・アバロン： ドラゴン戦争(KoA)(FunPlus)</div>
+<div>312. クラッシュ オブ キングス-「城育成シミュレーションRPG」(ELEX Wireless)</div>
+<div>315. ウォー・アンド・ オーダー「War and Order」(Camel Games Inc.)</div>
+<div>316. WARPATH-武装都市-(Lilith Games)</div>
+<div>329. ONE PUNCH MAN 一撃マジファイト(GREE, Inc.)</div>
+<div>340. ミステリー探偵ジューン- 隠れた手がかり(wooga)</div>
+<div>350. 陰陽師 - 本格幻想RPG(NetEase Games)</div>
+<div>353. 戦艦ファイナル -最後の戦い(Qingyi Wen)</div>
+<div>354. 天姫契約～ファイナルプリンセス～(4399 NET LIMITED)</div>
+<div>363. エリオスライジングヒーローズ(Happy Elements K.K)</div>
+<div>364. 三国志名将伝(Playbest Limited)</div>
+<div>375. 三国天武～本格戦略バトル～(Six Waves Inc.)</div>
+<div>376. 今三国志(Archosaur Games)</div>
+<div>380. ヘイ・デイ (Hay Day)(Supercell)</div>
+<div>383. 謀りの姫：Pocket(Wish Interactive ...)</div>
+<div>385. ミラクルニキ-お着替えコーデRPG(Nikki Games)</div>
+<div>387. パーフェクトワールド M(ZlongGames)</div>
+<div>389. ポンボール(HABBY)</div>
+<div>390. フェアリースフィア(BILIBILI CO.,LTD.)</div>
+<div>394. 美女と栄光～戦場にキスの花束を～(TAP4FUN （HONGKONG...)</div>
+<div>400. メルクストーリア - 癒術士と鈴のしらべ -(Happy Elements K.K)</div>
+</div>`,
+});
+
+for(var i=0; i<data.length;i++){
+	let option = document.createElement("option");
+	option.text = data[i].date;
+	option.value= [i];
+	date_select.add(option);
+}
+
+function search(){
+show_game.innerHTML = data[date_select.value][type_select.value];
+}
+
+search();
+</script>
+
+
+</body>
+</html>
