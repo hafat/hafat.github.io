@@ -198,6 +198,24 @@ if(window.location.href.search("gnn.gamer.com.tw/index.php")!=-1){
 `動物朋友：王國`,
 `新劍俠世界3 ||劍俠世界3`,
 `節奏快打||Rhythm Fighter`,
+`錢力的遊戲`,
+`足球大師2 - 傳奇球會||ベストイレブン-champions-club||Football Master 2-Soccer Star`,
+`鋼鐵華爾茲||鋼鉄のワルツ MetalWaltz||Panzer Waltz || Metal Waltz || Metall Mädchen`,
+`黑狐行動||オペレーション・ブラックアークM||Operation Black Arc M`,
+`中國式家長||Chinese Parents`,
+`血魔伊甸園 M on WEMIX||Dark Eden M on WEMIX`,
+`天元突破紅蓮螺巖`,
+`神鑰||key of deity`,
+`新生計劃`,
+`默途||Monobot`,
+`絕區零||ゼンレスゾーンゼロ||Zenless Zone Zero`,
+`神界奇傳～八百萬神的幻想譚～||神界奇伝～八百万神の幻想譚～`,
+`戰國尋芳錄`,
+`秦時明月：滄海`,
+`劈山大師||Tap-Tap Master`,
+`斗羅大陸：武魂覺醒`,
+`幻想名將傳||SANGOKU FANTASY`,
+
 
 	];
 	
@@ -220,6 +238,11 @@ if(window.location.href.search("gnn.gamer.com.tw/index.php")!=-1){
 `花之守護少女`,
 `未來之役 M`,
 `魔獸》系列`,
+`Rocket Bot Royale`,
+`水果超可愛！～創生大樹與水果少女～`,
+
+
+
 
 	];
 	
