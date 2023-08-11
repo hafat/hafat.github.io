@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>中資遊戲因政治原因而影響玩家的事件</title>
+</head>
+<body>
+
+
+
+<table width='100%' cellpadding="0" cellspacing="0" border="1"><tbody>  
+ <tr> <td>時間</td><td>事件</td> <td>Link</td> </tr>
+<tr><td>14-09-2019</td><td>台港服《第二銀河》 因「HK」字詞 解散公會，玩家帳號被託管</td><td><a href=' https://forum.gamer.com.tw/Co.php?bsn=36812&sn=634'> https://forum.gamer.com.tw/Co.php?bsn=36812&sn=634</a></td></tr>
+<tr><td>04-04-2020</td><td>台服《劍俠情緣 3 Online》  因「好的 中國武漢肺炎」字詞 封鎖玩家</td><td><a href=' https://forum.gamer.com.tw/Co.php?bsn=16357&sn=206151'> https://forum.gamer.com.tw/Co.php?bsn=16357&sn=206151</a></td></tr>
+<tr><td>03-04-2021</td><td>台服《崩壞 3rd》  因「武漢肺炎」字詞 與 台灣Coser 終止合作</td><td><a href=' https://gnn.gamer.com.tw/detail.php?sn=213074'> https://gnn.gamer.com.tw/detail.php?sn=213074</a></td></tr>
+
+
+</tbody>
+</table>
+
+中資遊戲回報/意見: <a href="https://forms.gle/vDx7ewKsUHX4JEkU9">https://forms.gle/vDx7ewKsUHX4JEkU9</a>
+
+<script>
+var tr_tag = document.getElementsByTagName("tr");
+var search_input = document.getElementById("search_input")
+function replaceSearchText(text){
+	return text.replace(/[`：・！～「」－~!@#$%^&*()_|+\-=?;:'",.<>\s\{\}\[\]\\\/]/gi, '').toUpperCase()
+}
+
+function search(){
+//console.log(document.getElementById("search_input").value)
+	for(var i= 0; i< tr_tag.length ; i++){
+		if(!search_input.value)
+			tr_tag[i].style.display = "table-row";
+		else if(replaceSearchText(tr_tag[i].getElementsByTagName("td")[0].textContent).search(replaceSearchText(search_input.value))!=-1 
+			|| replaceSearchText(tr_tag[i].getElementsByTagName("td")[1].textContent).search(replaceSearchText(search_input.value))!=-1 
+			|| replaceSearchText(tr_tag[i].getElementsByTagName("td")[2].textContent).search(replaceSearchText(search_input.value))!=-1 
+			)
+			tr_tag[i].style.display = "table-row";
+		else 
+			tr_tag[i].style.display = "none";
+	}
+}
+</script>
+
+</body>
+</html>
