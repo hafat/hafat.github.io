@@ -27,7 +27,7 @@
 
   </h2>
 </div>
-<table width='100%' cellpadding="0" cellspacing="0" border="1"><tbody> 
+<table id="table1" width='100%' cellpadding="0" cellspacing="0" border="1"><tbody> 
 <!-- <tr> <td>中文名</td> <td>英文名</td><td>原因</td> </tr>-->
  <tr> <td>中文名</td><td>日文名</td> <td>英文名</td><td>原因</td> </tr>
 
@@ -1773,17 +1773,40 @@
 <tr><td>異域戰記 - 戰略動畫</td><td></td><td>OUTERPLANE - Strategy Anime</td><td>禁字 「天安門」</td></tr>
 <tr><td>鬥破蒼穹:怒火雲嵐</td><td></td><td>Battle Through the Heavens</td><td>YW GAMES, 艾樂思網路</td></tr>
 <tr><td>螞蟻軍團</td><td>立ち上がれ、アリ帝国</td><td>Ant Legion: For The Swarm</td><td>37GAMES</td></tr>
+<tr><td>代號：無限大</td><td></td><td>Project Mugen</td><td>網易</td></tr>
+<tr><td>終極動員令：軍團</td><td></td><td>Command & Conquer : Legions</td><td>Level Infinite</td></tr>
 
 
 </tbody>
 </table>
 
+<div id="mayList_text" style="background-color:#fdd">以下是疑似項目，請自行判斷</div>
+<table id="table2" width='100%' cellpadding="0" cellspacing="0" border="1" style="background-color:#fdd"><tbody> 
+
+<tr> <td>中文名</td><td>日文名</td> <td>英文名</td><td>原因</td> </tr>
+
+<tr><td>風之國度</td><td></td><td></td><td>Ejoy</td></tr>
+<tr><td>緋染天空</td><td></td><td>Heaven Burns Red</td><td>製作商其中之一 Visual Art's=>俗稱 Key社。已經公司股份100%轉給騰訊。 情報來源：https://gnn.gamer.com.tw/detail.php?sn=253577 網友提到：營運是WFS, Inc. 劇本是VisualArts/Key (無法確認騰訊影響力以及實際營運情況)</td></tr>
+<tr><td>無盡之劍 3 インフィニティブレード 3 </td><td></td><td>Infinity Blade 3</td><td>Chair Entertainment Group, LLC</td></tr>
+<tr><td>絕地求生：未來之役</td><td></td><td>PUBG：NEW STATE</td><td>KRAFTON</td></tr>
+<tr><td>要塞英雄</td><td></td><td>Fortnite</td><td>Epic Games</td></tr>
+<tr><td>守望傳說 || 坎公騎冠劍</td><td></td><td>Guardian Tales</td><td>Kakao</td></tr>
+<tr><td>守護德比</td><td></td><td>Defense Derby</td><td>KRAFTON</td></tr>
+<tr><td>柏德之門 3</td><td></td><td>Baldur’s Gate 3</td><td>Larian Studios</td></tr>
+<tr><td>MARVEL Future Fight</td><td></td><td></td><td>Netmarble</td></tr>
+
+</tbody>
+ </table>
+
 中資遊戲回報/意見: <a href="https://forms.gle/vDx7ewKsUHX4JEkU9">https://forms.gle/vDx7ewKsUHX4JEkU9</a>
 <br><a href="cn_game_question.html">中資遊戲問答</a>
 
 <script>
-var tr_tag = document.getElementsByTagName("tr");
+var tr_tag = document.getElementById("table1").getElementsByTagName("tr");
 var search_input = document.getElementById("search_input")
+var tr_tag2 = document.getElementById("table2").getElementsByTagName("tr");
+var mayList_text = document.getElementById("mayList_text")
+
 function replaceSearchText(text){
 	return text.replace(/[`：・･·！～「」’－〜~!@#$%^&*()│_|+\-=?;:'",.<>\s\{\}\[\]\\\/]/gi, '').toUpperCase()
 }
@@ -1802,6 +1825,26 @@ function search(){
 		else 
 			tr_tag[i].style.display = "none";
 	}
+	
+	var show_mayList_text = false;
+	for(var i= 0; i< tr_tag2.length ; i++){
+		if(!search_input.value)
+			tr_tag2[i].style.display = "table-row";
+		else if(replaceSearchText(tr_tag2[i].getElementsByTagName("td")[0].textContent).search(replaceSearchText(search_input.value))!=-1 
+				)
+		{
+			tr_tag2[i].style.display = "table-row";
+			show_mayList_text = true;
+		}
+		else 
+		{
+			tr_tag2[i].style.display = "none";
+		}
+	}
+	if(show_mayList_text)
+		mayList_text.style.display = "block"; 
+	else
+		mayList_text.style.display = "none";
 }
 
 function toggleView(ele_id){
