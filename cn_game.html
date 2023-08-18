@@ -1831,6 +1831,8 @@ function search(){
 		if(!search_input.value)
 			tr_tag2[i].style.display = "table-row";
 		else if(replaceSearchText(tr_tag2[i].getElementsByTagName("td")[0].textContent).search(replaceSearchText(search_input.value))!=-1 
+			|| replaceSearchText(tr_tag2[i].getElementsByTagName("td")[1].textContent).search(replaceSearchText(search_input.value))!=-1 
+			|| replaceSearchText(tr_tag2[i].getElementsByTagName("td")[2].textContent).search(replaceSearchText(search_input.value))!=-1 
 				)
 		{
 			tr_tag2[i].style.display = "table-row";
