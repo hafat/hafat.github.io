@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>新手機遊戲</title>
+</head>
+
+<style>
+tr td {
+    white-space: nowrap;
+}
+</style>
+
+<body>
+
+
+<button onclick="showAll()">showAll</button>
+<button onclick="hideOld()">hide old</button>
+<table cellpadding="0" cellspacing="0" border="1"><tbody> 
+ <tr> <td>名稱</td><td>日期</td> </tr>
+
+
+
+
+<tr data-date='40312'><td>《Zynga Poker - 德州撲克遊戲》</td><td>20100514</td></tr>
+<tr data-date='40717'><td>《Tiny Tower: Pixel Life Builder》</td><td>20110623</td></tr>
+<tr data-date='40959'><td>《Puzzle & Dragons》</td><td>20120220</td></tr>
+<tr data-date='40962'><td>《Dark Summoner》</td><td>20120223</td></tr>
+<tr data-date='41228'><td>《貓咪大戰爭》</td><td>20121115</td></tr>
+<tr data-date='41233'><td>《LINE PLAY 我們的秘密世界》</td><td>20121120</td></tr>
+<tr data-date='41309'><td>《AVABEL ONLINE》</td><td>20130204</td></tr>
+<tr data-date='41338'><td>《問答RPG 魔法使與黑貓維茲》</td><td>20130305</td></tr>
+<tr data-date='41428'><td>《依露娜戰紀 Online》</td><td>20130603</td></tr>
+<tr data-date='41536'><td>《通膨勇者》</td><td>20130919</td></tr>
+<tr data-date='41544'><td>《怪物彈珠》</td><td>20130927</td></tr>
+<tr data-date='41610'><td>《大海賊探險物語》</td><td>20131202</td></tr>
+<tr data-date='41647'><td>《Cookie Jam: Match 3 Games》</td><td>20140108</td></tr>
+<tr data-date='41668'><td>《LINE: Disney Tsum Tsum》</td><td>20140129</td></tr>
+<tr data-date='41680'><td>《召喚圖板》</td><td>20140210</td></tr>
+<tr data-date='41698'><td>《LINE Rangers》</td><td>20140228</td></tr>
+<tr data-date='41711'><td>《CocoPPa Play》</td><td>20140313</td></tr>
+<tr data-date='41771'><td>《ONE PIECE TREASURE CRUISE》</td><td>20140512</td></tr>
+<tr data-date='41834'><td>《白貓Project》</td><td>20140714</td></tr>
+<tr data-date='41851'><td>《MAH-JONG FIGHT CLUB Sp》</td><td>20140731</td></tr>
+<tr data-date='41862'><td>《Eternium》</td><td>20140811</td></tr>
+<tr data-date='41933'><td>《Neko Atsume: Kitty Collector》</td><td>20141021</td></tr>
+<tr data-date='41942'><td>《LINE POP2》</td><td>20141030</td></tr>
+<tr data-date='41977'><td>《Unison League》</td><td>20141204</td></tr>
+<tr data-date='41990'><td>《SimCity BuildIt》</td><td>20141217</td></tr>
+<tr data-date='42017'><td>《Landlord - Real Estate Game》</td><td>20150113</td></tr>
+<tr data-date='42034'><td>《DRAGON BALL Z：七龍珠爆裂激戰》</td><td>20150130</td></tr>
+<tr data-date='42091'><td>《藥水製造師》</td><td>20150328</td></tr>
+<tr data-date='42118'><td>《LINE Bubble 2》</td><td>20150424</td></tr>
+<tr data-date='42123'><td>《Jurassic World™: The Game》</td><td>20150429</td></tr>
+<tr data-date='42138'><td>《托蘭異世錄》</td><td>20150514</td></tr>
+<tr data-date='42171'><td>《勇者之塔》</td><td>20150616</td></tr>
+<tr data-date='42174'><td>《Buriedbornes 》</td><td>20150619</td></tr>
+<tr data-date='42193'><td>《Crash Fever》</td><td>20150708</td></tr>
+<tr data-date='42236'><td>《IDOLiSH7-偶像星願-》</td><td>20150820</td></tr>
+<tr data-date='42240'><td>《境界之詩Tactics》</td><td>20150824</td></tr>
+<tr data-date='42299'><td>《FINAL FANTASY BRAVE EXVIUS》</td><td>20151022</td></tr>
+<tr data-date='42332'><td>《星際大戰：銀河戰將》</td><td>20151124</td></tr>
+<tr data-date='42384'><td>《BLEACH: Brave Souls》</td><td>20160115</td></tr>
+<tr data-date='42426'><td>《Coin Master》</td><td>20160226</td></tr>
+<tr data-date='42445'><td>《迪士尼夢幻王國-Disney Magic Kingdoms》</td><td>20160316</td></tr>
+<tr data-date='42494'><td>《Hungry Shark World》</td><td>20160504</td></tr>
+<tr data-date='42530'><td>《神域召喚》</td><td>20160609</td></tr>
+<tr data-date='42538'><td>《闇影詩章》</td><td>20160617</td></tr>
+<tr data-date='42550'><td>《CSR Racing 2》</td><td>20160629</td></tr>
+<tr data-date='42563'><td>《Lanota》</td><td>20160712</td></tr>
+<tr data-date='42564'><td>《Sumikko gurashi-Puzzling Ways》</td><td>20160713</td></tr>
+<tr data-date='42565'><td>《Disney Emoji Blitz Game》</td><td>20160714</td></tr>
+<tr data-date='42570'><td>《LINE: 鋼彈大亂鬥》</td><td>20160719</td></tr>
+<tr data-date='42620'><td>《Super Mario Run》</td><td>20160907</td></tr>
+<tr data-date='42654'><td>《FIFA足球》</td><td>20161011</td></tr>
+<tr data-date='42656'><td>《楓之谷M》</td><td>20161013</td></tr>
+<tr data-date='42669'><td>《跑跑薑餅人：烤箱大逃亡》</td><td>20161026</td></tr>
+<tr data-date='42691'><td>《遊戲王 決鬥聯盟》</td><td>20161117</td></tr>
+<tr data-date='42704'><td>《你的目的就是殺死我３》</td><td>20161130</td></tr>
+<tr data-date='42753'><td>《Golf Clash》</td><td>20170118</td></tr>
+<tr data-date='42767'><td>《DISSIDIA FINAL FANTASY OO》</td><td>20170201</td></tr>
+<tr data-date='42768'><td>《Fire Emblem Heroes》</td><td>20170202</td></tr>
+<tr data-date='42795'><td>《Empires & Puzzles Epic Match 3》</td><td>20170301</td></tr>
+<tr data-date='42837'><td>《ANOTHER EDEN 穿越時空的貓》</td><td>20170412</td></tr>
+<tr data-date='42849'><td>《棕色塵埃》</td><td>20170424</td></tr>
+<tr data-date='42865'><td>《Crush Them All - Idle RPG》</td><td>20170510</td></tr>
+<tr data-date='42878'><td>《Zombie Gunship Survival》</td><td>20170523</td></tr>
+<tr data-date='42878'><td>《eFootball™ 2024》</td><td>20170523</td></tr>
+<tr data-date='42904'><td>《地城邂逅～記憶憧憬～》</td><td>20170618</td></tr>
+<tr data-date='42907'><td>《天堂M》</td><td>20170621</td></tr>
+<tr data-date='42909'><td>《知識王LIVE》</td><td>20170623</td></tr>
+<tr data-date='42911'><td>《MilkChoco - Online FPS》</td><td>20170625</td></tr>
+<tr data-date='42914'><td>《Merge Dragons!》</td><td>20170628</td></tr>
+<tr data-date='42929'><td>《漂流少女》</td><td>20170713</td></tr>
+<tr data-date='42961'><td>《塔防傳說 - 魔獸征服者》</td><td>20170814</td></tr>
+<tr data-date='42996'><td>《Stormbound》</td><td>20170918</td></tr>
+<tr data-date='43033'><td>《動物森友會 口袋露營廣場》</td><td>20171025</td></tr>
+<tr data-date='43037'><td>《eFootball Champion Squads》</td><td>20171029</td></tr>
+<tr data-date='43046'><td>《Words With Friends 2 Word Game》</td><td>20171107</td></tr>
+<tr data-date='43055'><td>《進擊的喵喵》</td><td>20171116</td></tr>
+<tr data-date='43061'><td>《世界大戰 - 英雄》</td><td>20171122</td></tr>
+<tr data-date='43069'><td>《鍊金術物語》</td><td>20171130</td></tr>
+<tr data-date='43071'><td>《刀劍神域 關鍵鬥士》</td><td>20171202</td></tr>
+<tr data-date='43089'><td>《永恆的賽妮亞-雨後的紫陽花》</td><td>20171220</td></tr>
+<tr data-date='43122'><td>《D×2 真·女神轉生：解放》</td><td>20180122</td></tr>
+<tr data-date='43146'><td>《超異域公主連結！Re:Dive》</td><td>20180215</td></tr>
+<tr data-date='43152'><td>《Endless Frontier - RPG》</td><td>20180221</td></tr>
+<tr data-date='43159'><td>《黑色沙漠 MOBILE》</td><td>20180228</td></tr>
+<tr data-date='43187'><td>《JUMPUTI HEROES 英雄氣泡 》</td><td>20180328</td></tr>
+<tr data-date='43188'><td>《ONE PIECE Bounty Rush》</td><td>20180329</td></tr>
+<tr data-date='43188'><td>《ONE PIECE Bounty Rush》</td><td>20180329</td></tr>
+<tr data-date='43215'><td>《哈利波特: 霍格華茲之謎》</td><td>20180425</td></tr>
+<tr data-date='43236'><td>《Disney Heroes: Battle Mode》</td><td>20180516</td></tr>
+<tr data-date='43237'><td>《Dragon Ball Legends》</td><td>20180517</td></tr>
+<tr data-date='43237'><td>《DungeonMaker 》</td><td>20180517</td></tr>
+<tr data-date='43241'><td>《職業棒球9》</td><td>20180521</td></tr>
+<tr data-date='43249'><td>《Jurassic World 適者生存》</td><td>20180529</td></tr>
+<tr data-date='43249'><td>《寶可夢探險尋寶》</td><td>20180529</td></tr>
+<tr data-date='43279'><td>《Westland Survival — 西部土地》</td><td>20180628</td></tr>
+<tr data-date='43307'><td>《狂野飆車9：競速傳奇》</td><td>20180726</td></tr>
+<tr data-date='43320'><td>《SUMI SUMI : Matching Puzzle》</td><td>20180808</td></tr>
+<tr data-date='43355'><td>《吞食天地M》</td><td>20180912</td></tr>
+<tr data-date='43395'><td>《少女歌劇Revue Starlight - Re LIVE-》</td><td>20181022</td></tr>
+<tr data-date='43398'><td>《像素星艦 : Pixel Starships™》</td><td>20181025</td></tr>
+<tr data-date='43436'><td>《細胞到奇點 — 進化永無止境》</td><td>20181202</td></tr>
+<tr data-date='43440'><td>《Romancing SaGa Re;univerSe》</td><td>20181206</td></tr>
+<tr data-date='43495'><td>《三重幻想》</td><td>20190130</td></tr>
+<tr data-date='43529'><td>《FRAG Pro Shooter》</td><td>20190305</td></tr>
+<tr data-date='43540'><td>《Orna: Turn-based GPS RPG》</td><td>20190316</td></tr>
+<tr data-date='43545'><td>《亙古幻想》</td><td>20190321</td></tr>
+<tr data-date='43559'><td>《ASTROKINGS》</td><td>20190404</td></tr>
+<tr data-date='43601'><td>《Fishing and Life》</td><td>20190516</td></tr>
+<tr data-date='43602'><td>《Hello Sweet Days》</td><td>20190517</td></tr>
+<tr data-date='43604'><td>《我的化石博物館》</td><td>20190519</td></tr>
+<tr data-date='43605'><td>《LINE 熊大上菜》</td><td>20190520</td></tr>
+<tr data-date='43698'><td>《超級機器人大戰DD》</td><td>20190821</td></tr>
+<tr data-date='43705'><td>《Pokémon Masters EX》</td><td>20190828</td></tr>
+<tr data-date='43706'><td>《王都創世物語》</td><td>20190829</td></tr>
+<tr data-date='43713'><td>《北斗之拳 傳承者再臨》</td><td>20190905</td></tr>
+<tr data-date='43725'><td>《Merge Magic!》</td><td>20190917</td></tr>
+<tr data-date='43733'><td>《Mario Kart Tour》</td><td>20190925</td></tr>
+<tr data-date='43740'><td>《動物王者》</td><td>20191002</td></tr>
+<tr data-date='43761'><td>《網球傳奇: 冠軍遊戲》</td><td>20191023</td></tr>
+<tr data-date='43781'><td>《AnimA ARPG (Action RPG)》</td><td>20191112</td></tr>
+<tr data-date='43783'><td>《FINAL FANTASY BE:WOTV》</td><td>20191114</td></tr>
+<tr data-date='43796'><td>《彈射世界》</td><td>20191127</td></tr>
+<tr data-date='43835'><td>《迪士尼 我的小娃娃》</td><td>20200105</td></tr>
+<tr data-date='43916'><td>《英雄之王》</td><td>20200326</td></tr>
+<tr data-date='43924'><td>《Landlord GO》</td><td>20200403</td></tr>
+<tr data-date='44005'><td>《歡迎光臨！寶可夢咖啡店》</td><td>20200623</td></tr>
+<tr data-date='44068'><td>《守城-聯機》</td><td>20200825</td></tr>
+<tr data-date='44071'><td>《勇士食堂》</td><td>20200828</td></tr>
+<tr data-date='44096'><td>《哈利波特：解謎魔咒》</td><td>20200922</td></tr>
+<tr data-date='44109'><td>《Action對魔忍》</td><td>20201005</td></tr>
+<tr data-date='44123'><td>《神王城堡》</td><td>20201019</td></tr>
+<tr data-date='44130'><td>《死亡騎士》</td><td>20201026</td></tr>
+<tr data-date='44131'><td>《Sumikkogurashi Farm》</td><td>20201027</td></tr>
+<tr data-date='44192'><td>《Zen Match - Relaxing Puzzle》</td><td>20201227</td></tr>
+<tr data-date='44215'><td>《薑餅人王國》</td><td>20210119</td></tr>
+<tr data-date='44239'><td>《Stumble Guys》</td><td>20210212</td></tr>
+<tr data-date='44279'><td>《Hunt Royale: Action RPG Battle》</td><td>20210324</td></tr>
+<tr data-date='44313'><td>《The Spike - Volleyball Story》</td><td>20210427</td></tr>
+<tr data-date='44316'><td>《Golf Impact - 真正的高爾夫遊戲》</td><td>20210430</td></tr>
+<tr data-date='44332'><td>《麻糬貓收藏》</td><td>20210516</td></tr>
+<tr data-date='44361'><td>《GODZILLA BATTLE LINE》</td><td>20210614</td></tr>
+<tr data-date='44378'><td>《寵物島 Livly Island　與寵物同住的小島》</td><td>20210701</td></tr>
+<tr data-date='44435'><td>《十二之天M》</td><td>20210827</td></tr>
+<tr data-date='44475'><td>《天空戰士：空戰遊戲》</td><td>20211006</td></tr>
+<tr data-date='44497'><td>《轉生史萊姆 魔王與龍的建國譚》</td><td>20211028</td></tr>
+<tr data-date='44530'><td>《Postknight 2》</td><td>20211130</td></tr>
+<tr data-date='44579'><td>《Yu-Gi-Oh! Master Duel》</td><td>20220118</td></tr>
+<tr data-date='44616'><td>《貓島探險記》</td><td>20220224</td></tr>
+<tr data-date='44684'><td>《Pet Master》</td><td>20220503</td></tr>
+<tr data-date='44733'><td>《王領英雄》</td><td>20220621</td></tr>
+<tr data-date='44741'><td>《Gang Start : 異世界極道傳說》</td><td>20220629</td></tr>
+<tr data-date='44749'><td>《#Me: 3D Avatar, Meet & Play》</td><td>20220707</td></tr>
+<tr data-date='44763'><td>《ALICE Fiction飄渺群像》</td><td>20220721</td></tr>
+<tr data-date='44768'><td>《史萊姆傳奇：放置型RPG》</td><td>20220726</td></tr>
+<tr data-date='44797'><td>《狂戰士養成記：放置型RPG》</td><td>20220824</td></tr>
+<tr data-date='44840'><td>《DungeonSquad》</td><td>20221006</td></tr>
+<tr data-date='44894'><td>《Little Alchemist: Remastered》</td><td>20221129</td></tr>
+<tr data-date='44900'><td>《F Class Adventurer》</td><td>20221205</td></tr>
+<tr data-date='44915'><td>《MemorySpirit - 記憶精靈》</td><td>20221220</td></tr>
+<tr data-date='44991'><td>《菇菇栽培研究室》</td><td>20230306</td></tr>
+<tr data-date='45005'><td>《EA SPORTS MLB TAP BASEBALL 23》</td><td>20230320</td></tr>
+<tr data-date='45027'><td>《MONOPOLY GO!》</td><td>20230411</td></tr>
+<tr data-date='45033'><td>《無名騎士團：像素的英雄》</td><td>20230417</td></tr>
+<tr data-date='45041'><td>《錯誤遊戲Re:set》</td><td>20230425</td></tr>
+<tr data-date='45049'><td>《Dragon Village Collection》</td><td>20230503</td></tr>
+<tr data-date='45075'><td>《魔石騎士團》</td><td>20230529</td></tr>
+<tr data-date='45079'><td>《創造都市島物語》</td><td>20230602</td></tr>
+<tr data-date='45092'><td>《魔女的騎士》</td><td>20230615</td></tr>
+<tr data-date='45092'><td>《棕色塵埃2》</td><td>20230615</td></tr>
+<tr data-date='45098'><td>《Tailed Demon Slayer: RISE》</td><td>20230621</td></tr>
+<tr data-date='45106'><td>《創意咖啡店物語》</td><td>20230629</td></tr>
+<tr data-date='45120'><td>《星痕遺跡》</td><td>20230713</td></tr>
+<tr data-date='45125'><td>《洛伊的移動要塞 : AFK RPG》</td><td>20230718</td></tr>
+<tr data-date='45126'><td>《Pokémon Sleep》</td><td>20230719</td></tr>
+<tr data-date='45133'><td>《Master of Knights- Tactics RPG》</td><td>20230726</td></tr>
+<tr data-date='45134'><td>《魑魅少女》</td><td>20230727</td></tr>
+<tr data-date='45146'><td>《Icarus M: Guild War》</td><td>20230808</td></tr>
+<tr data-date='45162'><td>《BRIXITY》</td><td>20230824</td></tr>
+<tr data-date='45170'><td>《ROCKMAN X DiVE 離線版》</td><td>20230901</td></tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</tbody>
+</table>
+
+
+<script>
+var tr_tag = document.getElementsByTagName("tr");
+var date = new Date()/86400000+25568.375;
+
+// highlight
+for(var i= 0; i< tr_tag.length ; i++){
+	if(tr_tag[i].getAttribute("data-date") && Math.abs(date - tr_tag[i].getAttribute("data-date")) <=90){
+		tr_tag[i].style.backgroundColor= "#ffd";    
+	}
+}
+
+function hideOld(){
+	for(var i= 0; i< tr_tag.length ; i++){
+		if(!tr_tag[i].getAttribute("data-date") 
+		  || parseInt(tr_tag[i].getAttribute("data-date"))+365 >= date
+		  ){
+			tr_tag[i].style.display = "table-row";
+		}
+		else 
+			tr_tag[i].style.display = "none";
+	}
+}
+
+function showAll(){
+	for(var i= 0; i< tr_tag.length ; i++){
+		tr_tag[i].style.display = "table-row";
+	}
+}
+
+hideOld();
+</script>
+
+
+</body>
+</html>
